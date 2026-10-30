@@ -551,7 +551,7 @@ const Hero = () => {
                   lg:justify-start
                 "
               >
-                <Link to="/who-we-are">
+                <Link to="/about-us">
                   <button
                     type="button"
                     className="

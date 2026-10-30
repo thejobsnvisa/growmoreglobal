@@ -4,35 +4,30 @@ import "swiper/css/pagination";
 
 import { Pagination, Autoplay } from "swiper/modules";
 
-import maraCard from "../assets/mara-card.png";
 import bg18 from "../assets/bg18.svg";
 import icef from "../assets/icef.png";
 import qeac from "../assets/qeac.svg";
 import isana from "../assets/isana.svg";
 
 const certifications = [
+
   {
     id: 1,
-    image: maraCard,
-    alt: "MARA Certification",
-  },
-  {
-    id: 2,
     image: bg18,
     alt: "Certification",
   },
   {
-    id: 3,
+    id: 2,
     image: icef,
     alt: "ICEF Certification",
   },
   {
-    id: 4,
+    id: 3,
     image: qeac,
     alt: "QEAC Certification",
   },
   {
-    id: 5,
+    id: 4,
     image: isana,
     alt: "ISANA Certification",
   },

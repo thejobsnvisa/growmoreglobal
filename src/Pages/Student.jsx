@@ -45,10 +45,10 @@ const Student = () => {
           {/* Heading */}
           <div className="mb-8 text-left sm:mb-10 lg:mb-12">
             <p className="m-0 text-xl font-normal leading-snug text-[#31859A] sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-              Start Your Abroad Study Adventure
+             Why Studying Abroad Is
             </p>
             <h2 className="m-0 mt-1 text-2xl font-bold leading-tight text-[#5B9E7D] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-              By Getting Your Student Visa
+              The Smart Choice
             </h2>
           </div>
 

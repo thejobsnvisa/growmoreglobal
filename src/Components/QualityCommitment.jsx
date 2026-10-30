@@ -174,7 +174,7 @@ const QualityCommitment = () => {
           ====================================================== */}
 
           <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] items-center gap-[clamp(1rem,2vw,1.5rem)] mt-[clamp(2rem,5vw,3.5rem)]">
-          <div className="relative mx-auto h-[clamp(190px,22vw,240px)] w-full max-w-[300px] overflow-hidden rounded-[26px] bg-white shadow-[0px_4px_20px_0px_#CFCFCFB0]">
+          <div className="relative mx-auto h-[clamp(190px,22vw,240px)] w-full max-w-[280px] overflow-hidden rounded-[26px] bg-white shadow-[0px_4px_20px_0px_#CFCFCFB0]">
             <div
               key={`left-${activeIndex}`}
               className="
@@ -208,7 +208,7 @@ const QualityCommitment = () => {
               CENTER CARD
           ====================================================== */}
 
-          <div className="relative mx-auto h-[clamp(270px,27vw,330px)] w-full max-w-[500px] overflow-hidden rounded-[30px] bg-white shadow-[0px_4px_20px_0px_#00000033]">
+          <div className="relative mx-auto h-[clamp(270px,27vw,330px)] w-full max-w-[540px] overflow-hidden rounded-[30px] bg-white shadow-[0px_4px_20px_0px_#00000033]">
             {/* Fixed Header */}
 
             <div
@@ -313,7 +313,7 @@ const QualityCommitment = () => {
               RIGHT CARD
           ====================================================== */}
 
-          <div className="relative mx-auto h-[clamp(190px,22vw,240px)] w-full max-w-[300px] overflow-hidden rounded-[26px] bg-white shadow-[0px_4px_20px_0px_#CFCFCFB0]">
+          <div className="relative mx-auto h-[clamp(190px,22vw,240px)] w-full max-w-[280px] overflow-hidden rounded-[26px] bg-white shadow-[0px_4px_20px_0px_#CFCFCFB0]">
             <div
               key={`right-${activeIndex}`}
               className="

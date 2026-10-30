@@ -72,7 +72,7 @@ const Videos = () => {
 
   return (
     <>
-      <section className="relative h-[280px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[380px] lg:h-[520px] mb-30">
+      <section className="relative h-[280px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[380px] lg:h-[520px]">
         <img
           src={img}
           alt="Student Visa Banner"
@@ -122,7 +122,7 @@ const Videos = () => {
 
         {!loading && !error && liveStreams.length > 0 && (
           <section className="mx-auto max-w-7xl px-6 pb-16 md:px-16">
-            <h3 className="mb-8 text-center text-[30px] text-teal-600 pl-4 text-2xl font-semibold text-[#28535B]">
+            <h3 className="mb-6 text-center text-[30px] text-teal-600 pl-4 text-2xl font-semibold text-[#28535B]">
               Latest Uploads
             </h3>
 
@@ -187,13 +187,13 @@ const Videos = () => {
         )}
 
         {!loading && !error && latestVideos.length > 0 && (
-          <section className="py-16">
+          <section className="py-16 mb-30">
             <div className="mx-auto max-w-7xl px-6 md:px-16">
-              <h3 className="mb-8 text-center text-[30px] font-semibold text-cyan-600">
+              <h3 className=" text-center text-[30px] font-semibold text-cyan-600">
                 Past Live Sessions
               </h3>
 
-              <div className="grid grid-cols-1 gap-8 rounded-[12px]  p-4 md:grid-cols-2 lg:grid-cols-3 mb-30">
+              <div className="grid grid-cols-1 gap-8 rounded-[12px]  p-4 md:grid-cols-2 lg:grid-cols-3 mb-30 mt-10">
                 {latestVideos.map((video) => (
                   <div key={video.id.videoId} className="overflow-hidden rounded-xl  shadow-md">
                     <div className="relative aspect-video overflow-hidden">

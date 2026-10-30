@@ -96,10 +96,10 @@ const QualityCommitment = () => {
       ====================================================== */}
 
       <style>{`
-        @keyframes slideTopToBottom {
+        @keyframes slideRightToLeft {
           0% {
             opacity: 0;
-            transform: translateY(-100px);
+            transform: translateX(100px);
           }
 
           100% {
@@ -109,26 +109,9 @@ const QualityCommitment = () => {
         }
 
         .slide-right-to-left {
-          animation: slideTopToBottom 0.8s ease-out;
+          animation: slideRightToLeft 0.8s ease-out;
         }
 
-        @media (min-width: 768px) {
-          @keyframes slideRightToLeft {
-            0% {
-              opacity: 0;
-              transform: translateX(100px);
-            }
-
-            100% {
-              opacity: 1;
-              transform: translateX(0);
-            }
-          }
-
-          .slide-right-to-left {
-            animation-name: slideRightToLeft;
-          }
-        }
       `}</style>
 
       <section
@@ -138,30 +121,16 @@ const QualityCommitment = () => {
           overflow-hidden
           bg-[linear-gradient(90deg,#EEF7FC_0%,#FBF6E9_100%)]
 
-          px-5
-          py-10
-
-          sm:px-8
-          sm:py-12
-
-          md:px-8
-          md:py-14
-          md:h-[500px]
-
-          xl:h-[576px]
-          xl:px-0
-          xl:py-[42px]
+          px-[clamp(1rem,4vw,3rem)]
+          py-[clamp(2rem,5vw,3.5rem)]
         "
       >
         <div
           className="
             relative
             mx-auto
-            h-auto
             w-full
             max-w-[1240px]
-
-            xl:h-full
           "
         >
           {/* =====================================================
@@ -172,25 +141,15 @@ const QualityCommitment = () => {
             className="
               relative
               z-40
-
-              xl:absolute
-              xl:left-0
-              xl:top-0
             "
           >
             <p
               className="
                 m-0
-                text-[25px]
+                text-[clamp(1.25rem,3vw,2.375rem)]
                 font-normal
                 leading-[1.15]
                 text-[#26839A]
-
-                sm:text-[29px]
-                md:text-[32px]
-
-                xl:mt-6
-                xl:text-[38px]
               "
             >
               Quality and Environmental
@@ -200,14 +159,10 @@ const QualityCommitment = () => {
               className="
                 m-0
                 mt-[4px]
-                text-[36px]
+                text-[clamp(2rem,5vw,3.75rem)]
                 font-bold
                 leading-[1.05]
                 text-[#5B9E7D]
-
-                sm:text-[42px]
-                md:text-[48px]
-                xl:text-[60px]
               "
             >
               Commitment
@@ -218,38 +173,8 @@ const QualityCommitment = () => {
               LEFT CARD
           ====================================================== */}
 
-          <div
-            className="
-              relative
-              mx-auto
-              mt-[50px]
-              h-[210px]
-              w-full
-              max-w-[280px]
-              overflow-hidden
-              rounded-[26px]
-              bg-white
-              shadow-[0px_4px_20px_0px_#CFCFCFB0]
-
-              sm:h-[220px]
-              sm:max-w-[300px]
-
-              md:absolute
-              md:left-0
-              md:top-[175px]
-              md:mt-0
-              md:h-[195px]
-              md:w-[180px]
-
-              lg:left-[80px]
-
-              xl:absolute
-              xl:left-0
-              xl:top-[210px]
-              xl:h-[240px]
-              xl:w-[280px]
-            "
-          >
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] items-center gap-[clamp(1rem,2vw,1.5rem)] mt-[clamp(2rem,5vw,3.5rem)]">
+          <div className="relative mx-auto h-[clamp(190px,22vw,240px)] w-full max-w-[300px] overflow-hidden rounded-[26px] bg-white shadow-[0px_4px_20px_0px_#CFCFCFB0]">
             <div
               key={`left-${activeIndex}`}
               className="
@@ -269,14 +194,9 @@ const QualityCommitment = () => {
                   mt-4
                   px-4
                   text-center
-                  text-[20px]
+                  text-[clamp(1.125rem,1.7vw,1.4375rem)]
                   font-semibold
                   text-[#159B89]
-
-                  sm:text-[21px]
-
-                  xl:mt-5
-                  xl:text-[23px]
                 "
               >
                 {leftItem.title}
@@ -288,43 +208,7 @@ const QualityCommitment = () => {
               CENTER CARD
           ====================================================== */}
 
-          <div
-            className="
-              relative
-              mx-auto
-              mt-5
-              h-[285px]
-              w-full
-              max-w-[500px]
-              overflow-hidden
-              rounded-[30px]
-              bg-white
-              shadow-[0px_4px_20px_0px_#00000033]
-
-              sm:h-[290px]
-
-              md:absolute
-              md:left-1/2
-              md:top-[125px]
-              md:mt-0
-              md:w-[280px]
-              md:-translate-x-1/2
-
-              lg:absolute
-              lg:left-[360px]
-              lg:top-[132px]
-              lg:h-[260px]
-              lg:w-[430px]
-              lg:translate-x-0
-
-              xl:absolute
-              xl:left-1/2
-              xl:top-[182px]
-              xl:h-[290px]
-              xl:w-[500px]
-              xl:-translate-x-1/2
-            "
-          >
+          <div className="relative mx-auto h-[clamp(270px,27vw,330px)] w-full max-w-[500px] overflow-hidden rounded-[30px] bg-white shadow-[0px_4px_20px_0px_#00000033]">
             {/* Fixed Header */}
 
             <div
@@ -352,10 +236,8 @@ const QualityCommitment = () => {
 
                 <span
                   className="
-                    text-[20px]
+                    text-[clamp(1.125rem,1.7vw,1.375rem)]
                     font-semibold
-                    lg:text-[22px]
-                    xl:text-[22px]
                   "
                 >
                   Visa
@@ -369,19 +251,11 @@ const QualityCommitment = () => {
               key={`center-${activeIndex}`}
               className="
                 flex
-                h-[240px]
+                h-[calc(100%-45px)]
                 w-full
                 items-center
-                px-5
+                px-[clamp(0.75rem,2vw,2rem)]
                 slide-right-to-left
-
-                sm:px-7
-
-                md:px-4
-                lg:h-[200px]
-                lg:px-6
-                xl:h-[245px]
-                xl:px-8
               "
             >
               {/* Icon */}
@@ -389,16 +263,10 @@ const QualityCommitment = () => {
               <div
                 className="
                   flex
-                  w-[125px]
+                  w-[clamp(80px,13vw,185px)]
                   shrink-0
                   items-center
                   justify-center
-
-                  sm:w-[150px]
-
-                  md:w-[105px]
-
-                  xl:w-[185px]
                 "
               >
                 {renderIcon(centerItem, 82)}
@@ -416,16 +284,10 @@ const QualityCommitment = () => {
               >
                 <h3
                   className="
-                    text-[20px]
+                    text-[clamp(1.125rem,1.8vw,1.5625rem)]
                     font-semibold
                     leading-tight
                     text-[#83BEE5]
-
-                    sm:text-[22px]
-
-                    md:text-[20px]
-
-                    xl:text-[25px]
                   "
                 >
                   {centerItem.title}
@@ -435,22 +297,10 @@ const QualityCommitment = () => {
                   className="
                     mt-2
                     max-w-[260px]
-                    text-[14px]
+                    text-[clamp(0.8125rem,1.25vw,1.0625rem)]
                     leading-[1.45]
                     text-[#159B89]
-
-                    sm:text-[15px]
-
-                    md:max-w-[190px]
-                    md:text-[13px]
                     
-                  lg:mt-3
-                    lg:max-w-[240px]
-                    lg:text-[18px]
-
-                    xl:mt-2
-                    xl:max-w-[260px]
-                    xl:text-[17px]
                   "
                 >
                   {centerItem.description}
@@ -463,38 +313,7 @@ const QualityCommitment = () => {
               RIGHT CARD
           ====================================================== */}
 
-          <div
-            className="
-              relative
-              mx-auto
-              mt-5
-              h-[210px]
-              w-full
-              max-w-[280px]
-              overflow-hidden
-              rounded-[26px]
-              bg-white
-              shadow-[0px_4px_20px_0px_#CFCFCFB0]
-
-              sm:h-[220px]
-              sm:max-w-[300px]
-
-              md:absolute
-              md:right-0
-              md:top-[175px]
-              md:mt-0
-              md:h-[195px]
-              md:w-[180px]
-              
-              lg:left-[750px]
-              xl:absolute
-              xl:left-auto
-              xl:right-0
-              xl:top-[210px]
-              xl:h-[240px]
-              xl:w-[280px]
-            "
-          >
+          <div className="relative mx-auto h-[clamp(190px,22vw,240px)] w-full max-w-[300px] overflow-hidden rounded-[26px] bg-white shadow-[0px_4px_20px_0px_#CFCFCFB0]">
             <div
               key={`right-${activeIndex}`}
               className="
@@ -514,19 +333,15 @@ const QualityCommitment = () => {
                   mt-4
                   px-4
                   text-center
-                  text-[20px]
+                  text-[clamp(1.125rem,1.7vw,1.4375rem)]
                   font-semibold
                   text-[#159B89]
-
-                  sm:text-[21px]
-
-                  xl:mt-5
-                  xl:text-[23px]
                 "
               >
                 {rightItem.title}
               </h3>
             </div>
+          </div>
           </div>
         </div>
       </section>

@@ -63,7 +63,7 @@ export default function RequirementsRight8() {
 
               <ul className="list-disc pl-5 space-y-[2px]">
                <li>Tuition Fees (as mentioned in Offer Letter)</li>
-               <li>Living Expenses: CAD 20,635 per year</li>
+               <li>Living Expenses: CAD 23,448 per year</li>
               </ul>
             </div>
 

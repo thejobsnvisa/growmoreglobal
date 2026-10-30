@@ -28,7 +28,7 @@ const ContactUs = () => {
       whatsapp: "(+91) 9081899669",
       email: "study@growmore.one",
       hours: "Monday-Saturday",
-      hoursLabel: "9 am -5 pm",
+      hoursLabel: "10 am - 7 pm",
       address: "417, Block A, ISCON Centre, Shivranjini Cross Roads, Ahmedabad, Gujarat 380015.",
       map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.991827088126!2d72.5299896!3d23.024072299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e858c5649e9f7%3A0x417159f01a72ec1c!2sGrowmore%20Global%20Visa!5e0!3m2!1sen!2sin!4v1773825960657!5m2!1sen!2sin",
     },
@@ -75,7 +75,7 @@ const ContactUs = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-8 xl:grid-cols-2 xl:gap-10">
-            {[...offices, ...offices1].map((office) => (
+            {[...offices1, ...offices].map((office) => (
               <div key={office.country} className="w-full min-w-0">
                 <div className="mb-6 text-center">
                   <p className={`text-[22px] font-semibold ${office.country === "India" ? "text-slate-400" : "text-slate-500"}`}>{office.country}</p>

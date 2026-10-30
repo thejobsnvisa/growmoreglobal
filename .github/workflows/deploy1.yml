@@ -26,10 +26,10 @@ jobs:
       - name: Build Project
         run: npm run build
 
-      - name: Sync Files via FTP
+     - name: Sync Files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.growmoreglobalvisa.com
+          server: ftp://145.223.17.63
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /

@@ -45,10 +45,10 @@ const Student = () => {
           {/* Heading */}
           <div className="mb-8 text-left sm:mb-10 lg:mb-12">
             <p className="m-0 text-xl font-normal leading-snug text-[#31859A] sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
-             Why Studying Abroad Is
+              Start Your Abroad Study Adventure
             </p>
             <h2 className="m-0 mt-1 text-2xl font-bold leading-tight text-[#5B9E7D] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-              The Smart Choice
+              By Getting Your Student Visa
             </h2>
           </div>
 
@@ -119,7 +119,7 @@ const Student = () => {
               Why Studying Abroad Is
             </p>
             <h2 className="m-0 mt-1 text-2xl font-bold leading-tight text-[#5B9E7D] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-              By Getting Your Student Visa
+              The Smart Choice
             </h2>
             <p className="text-slate-700 lg:w-[974px] md:w-[768px] sm:w-[576px] w-full  mt-8 text-[18px] leading-relaxed">
               Studying abroad will always stand as a smart investment for one’s

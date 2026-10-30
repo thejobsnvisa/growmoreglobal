@@ -66,7 +66,7 @@ export default function RequirementsRight2() {
                  Tuition Fees (as per Offer Letter) 
                 </li>
                 <li>
-                  Living Expenses: <b>€7,000–€10,000 per year</b>
+                  Living Expenses: <b>€7,000–€10,536 per year</b>
                 </li>
               </ul>
             </div>

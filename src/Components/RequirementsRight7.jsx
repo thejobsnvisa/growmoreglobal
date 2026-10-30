@@ -75,7 +75,7 @@ export default function RequirementsRight7() {
                <p>(Funds must be liquid and verifiable)</p>
               <ul className="list-disc pl-5 space-y-[2px] mt-3">
                 <li>Bank Savings Account</li>
-                <li>Education Loan (approved banks)</li>
+                <li>Secured Education Loan (approved banks)</li>
                 <li>Fixed Deposits (FDs)</li>
                 <li>Sponsor Affidavit (Parents/Guardians)</li>
                 <li>Income Proof of Sponsor (ITRs, Salary slips)</li>

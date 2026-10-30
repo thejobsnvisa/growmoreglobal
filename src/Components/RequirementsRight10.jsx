@@ -78,7 +78,7 @@ export default function RequirementsRight10() {
               </h4>
 
               <ul className="list-disc pl-5  font-bold space-y-[2px]">
-               <li>£1,483 per month × 9 months = £13,347</li>
+               <li>£1,529 per month × 9 months = £13,761</li>
               </ul>
             </div>
                  <div className="mb-3">
@@ -87,7 +87,7 @@ export default function RequirementsRight10() {
               </h4>
 
               <ul className="list-disc pl-5  font-bold space-y-[2px]">
-               <li>£1,136 per month × 9 months = £10,224</li>
+               <li>£1,171 per month × 9 months = £10,539</li>
               </ul>
             </div>
             <div className="mb-3">

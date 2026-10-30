@@ -600,12 +600,16 @@ const English = () => {
                       IELTS (International English Language Testing System) :
                     </span>{" "}
                     It is accepted globally for migration goals, while offering
-                    two formats: Academic and General Training. PTE Academic:
+                    two formats: Academic and General Training.
+                  </p>
+                   <p>
+                    <span className="font-bold text-slate-600">
+                       PTE Academic :
+                    </span>{" "}
                     It is a fully computer-based test that provides quick
                     results, making it ideal for students who have tight visa
                     deadlines.
                   </p>
-
                   <p>
                     <span className="font-bold text-slate-600">
                       TOEFL iBT :

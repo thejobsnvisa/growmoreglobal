@@ -28,7 +28,7 @@ const Policy = () =>{
                   </h1>
                 </div>
               </section>
-          <main className="mx-auto mb-45 w-full max-w-[1256px] px-5 py-8 text-sm leading-relaxed text-[#0085a3] sm:px-8 sm:py-10 sm:text-[15px] md:px-12 md:text-base lg:px-10 lg:text-[17px]">
+          <main className="mx-auto mb-75 w-full max-w-[1256px] px-5 py-8 text-sm leading-relaxed text-[#0085a3] sm:px-8 sm:py-10 sm:text-[15px] md:px-12 md:text-base lg:px-10 lg:text-[17px]">
             <article className="w-full max-w-full break-words text-justify">
               <p className="mt-3 font-bold">
                Privacy Policy 

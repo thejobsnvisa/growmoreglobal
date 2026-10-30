@@ -28,7 +28,7 @@ const Terms = () =>{
                   </h1>
                 </div>
               </section>
-          <main className="mx-auto mb-45 w-full max-w-[1256px] px-5 py-8 text-sm leading-relaxed text-[#0085a3] sm:px-8 sm:py-10 sm:text-[15px] md:px-12 md:text-base lg:px-10 lg:text-[17px]">
+          <main className="mx-auto mb-75 w-full max-w-[1256px] px-5 py-8 text-sm leading-relaxed text-[#0085a3] sm:px-8 sm:py-10 sm:text-[15px] md:px-12 md:text-base lg:px-10 lg:text-[17px]">
             <article className="w-full max-w-full break-words text-justify">  
               <p className="mt-3 font-bold">Terms & Services</p>
               <p className="mt-3">Website & Social Media Privacy Policy for Grow More Global Immigration Private Limited (CIN: U82990GJ2026PTC174187, GSTIN: 24AAMCG8333M1Z5). This Privacy Policy outlines how we collect, use, store and share personal information when you access our website, interact with our social media platforms or use our immigration and visa-related services.</p>

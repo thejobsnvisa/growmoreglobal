@@ -16,7 +16,7 @@ import FrancePdf from "../assets/France.pdf";
 import RussiaPdf from "../assets/Russia.pdf";
 import NewZealandPdf from "../assets/New Zealand.pdf";
 import l1 from "../assets/l1.png";
-import { PiFileArrowUpDuotone } from "react-icons/pi";
+import { PiFileArrowDownDuotone } from "react-icons/pi";
 
 const Brochures = () => {
   const Data = [
@@ -97,7 +97,7 @@ const Brochures = () => {
           </h1>
         </div>
       </section>
-      <div className="mb-50 w-full px-4 py-8 sm:mb-20 sm:px-6 md:mb-50 lg:mb-55 xl:mb-60 lg:px-8 xl:mb-22">
+      <div className="mb-35 mt-15 w-full px-4 py-8 sm:mb-20 sm:px-6 md:mb-64 lg:mb-75 xl:mb-80 lg:px-8 ">
         <div className="mx-auto w-full max-w-[1200px]">
           <style>{`
             @keyframes brochureCardIn {
@@ -105,7 +105,7 @@ const Brochures = () => {
               to { opacity: 1; transform: translateY(0); }
             }
           `}</style>
-          <div className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
+          <div className="grid grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
             {Data.map((item, index) => (
               <div
                 key={item.id}
@@ -129,7 +129,7 @@ const Brochures = () => {
                     alt="bg image"
                     className="-mt-[70px]  w-full rounded-b-[30px] object-cover"
                   />
-                  <h2 className="relative z-10 lg:-mt-[128px] xl:-mt-[120px] ml-5 text-[20px] font-bold text-teal-800 sm:text-[20px]">
+                  <h2 className="relative z-10 -mt-[125px] md:-mt-[125px] lg:-mt-[128px] xl:-mt-[120px] ml-5 text-[20px] font-bold text-teal-800 sm:text-[20px]">
                     {item.title}
                   </h2>
                   <a
@@ -139,7 +139,7 @@ const Brochures = () => {
                     className="relative z-10 mx-auto mb-5 mt-8 flex h-10 w-[min(160px,calc(100%-2rem))] items-center justify-center gap-2 rounded-[12px] bg-sky-300 px-3  text-sm font-semibold leading-[125%] text-[#265257] transition-colors duration-300"
                   >
                     <span className="text-[16px] font-semibold text-sky-950">Download</span>
-                    <PiFileArrowUpDuotone className="h-6 w-6 text-sky-950" />
+                    <PiFileArrowDownDuotone className="h-6 w-6 text-sky-950" />
                   </a>
                 </div>
               </div>

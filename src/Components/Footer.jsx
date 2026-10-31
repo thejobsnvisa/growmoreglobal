@@ -111,14 +111,14 @@ className="hidden xl:block absolute w-[540px] h-[350px] rotate-0 opacity-100 top
                   aria-label="Call us"
                   className="flex items-center justify-center rounded-full bg-[#8FE7F266] w-[50px] h-[50px] 2xl:w-[60px] 2xl:h-[60px] hover:bg-[#8FE7F2] transition-colors"
                 >
-                  <img src={call} alt="" className="w-5 h-5 2xl:w-7 2xl:h-7 filter brightness-0 invert" />
+                  <img src={call} alt="" className="w-8 h-8 2xl:w-7 2xl:h-7 filter brightness-0 invert" />
                 </a>
                 <a
                   href="mailto:info@example.com"
                   aria-label="Email us"
                   className="flex items-center justify-center rounded-full bg-[#8FE7F266] w-[50px] h-[50px] 2xl:w-[60px] 2xl:h-[60px] hover:bg-[#8FE7F2] transition-colors"
                 >
-                  <img src={email} alt="" className="w-5 h-5 2xl:w-7 2xl:h-7 filter brightness-0 invert" />
+                  <img src={email} alt="" className="w-8 h-8 2xl:w-7 2xl:h-7 filter brightness-0 invert" />
                 </a>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Growmore+Global+Visa"
@@ -127,26 +127,26 @@ className="hidden xl:block absolute w-[540px] h-[350px] rotate-0 opacity-100 top
                   aria-label="View on Google Maps"
                   className="flex items-center justify-center rounded-full bg-[#8FE7F266] w-[50px] h-[50px] 2xl:w-[60px] 2xl:h-[60px] hover:bg-[#8FE7F2] transition-colors"
                 >
-                  <img src={location} alt="" className="w-5 h-5 2xl:w-7 2xl:h-7 filter brightness-0 invert" />
+                  <img src={location} alt="" className="w-8 h-8 2xl:w-7 2xl:h-7 filter brightness-0 invert" />
                 </a>
               </div>
             </div>
                {/* Social Icons */}
               <div className="relative z-10 flex items-center justify-between 2xl:mt-[-10px] xl:ml-[-12px] pt-6 gap-2 ml-[-90px] rounded-b-[20px] px-24 xl:px-6 pb-5">
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-[40px] h-[40px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
-                  <img src={facebook} alt="" className="w-5 h-5 filter brightness-0 invert" />
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
+                  <img src={facebook} alt="" className="w-8 h-8 filter brightness-0 invert font-bold" />
                 </a>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center justify-center w-[40px] h-[40px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
-                  <CiLinkedin className="w-5 h-5 text-white" />
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
+                  <CiLinkedin className="w-8 h-8 filter brightness-0 invert font-bold" />
                 </a>
-                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center w-[40px] h-[40px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
-                  <img src={youtube} alt="" className="w-5 h-5 filter brightness-0 invert" />
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
+                  <img src={youtube} alt="" className="w-8 h-8 filter brightness-0 invert font-bold" />
                 </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-[40px] h-[40px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
-                  <img src={instagram} alt="" className="w-5 h-5 filter brightness-0 invert" />
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
+                  <img src={instagram} alt="" className="w-8 h-8 filter brightness-0 invert font-bold" />
                 </a>
-                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="flex items-center justify-center w-[40px] h-[40px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
-                  <img src={twitter} alt="" className="w-5 h-5 filter brightness-0 invert" />
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
+                  <img src={twitter} alt="" className="w-7 h-6 filter brightness-0 invert font-bold" />
                 </a>
               </div>
           </div>

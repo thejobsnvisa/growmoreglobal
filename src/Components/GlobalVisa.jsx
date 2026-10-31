@@ -36,7 +36,7 @@ const GlobalVisa = () => {
       opacity: [0, 1, 1, 0],
       x: [80, 0, 0, -40],
       transition: {
-        duration: 2,
+        duration: 4,
         ease: [0.16, 1, 0.3, 1],
         repeat: Infinity,
         repeatDelay: 1.5,

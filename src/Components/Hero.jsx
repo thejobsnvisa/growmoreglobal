@@ -790,7 +790,7 @@ const Hero = () => {
                       font-bold
                       uppercase
                       tracking-wide
-                      text-[#026CC0]
+                      text-[#CAD5E2]
 
                       sm:text-[15px]
 
@@ -872,7 +872,7 @@ const Hero = () => {
                         text-[#333]
                         outline-none
                         transition
-                        placeholder:text-[#026CC0]
+                        placeholder:text-[#CAD5E2]
                         focus:border-[#69b99e]
 
                         lg:h-[40px]
@@ -904,7 +904,7 @@ const Hero = () => {
                         text-[#333]
                         outline-none
                         transition
-                        placeholder:text-[#026CC0]
+                        placeholder:text-[#CAD5E2]
                         focus:border-[#69b99e]
 
                         lg:h-[40px]
@@ -973,7 +973,7 @@ const Hero = () => {
                           text-[#333]
                           outline-none
                           transition
-                          placeholder:text-[#026CC0]
+                          placeholder:text-[#CAD5E2]
                           focus:border-[#69b99e]
 
                           lg:h-[40px]
@@ -1006,7 +1006,7 @@ const Hero = () => {
                         bg-white
                         px-4
                         text-[13px]
-                        text-[#026CC0]
+                        text-[#CAD5E2]
                         outline-none
                         focus:border-[#69b99e]
 
@@ -1075,7 +1075,7 @@ const Hero = () => {
                         bg-white
                         px-4
                         text-[12px]
-                        text-[#026CC0]
+                        text-[#CAD5E2]
                         outline-none
                         focus:border-[#69b99e]
 
@@ -1170,7 +1170,7 @@ const Hero = () => {
                       text-[12px]
                       text-[#333]
                       outline-none
-                      placeholder:text-[#026CC0]
+                      placeholder:text-[#CAD5E2]
                       focus:border-[#69b99e]
 
                       sm:min-h-[75px]

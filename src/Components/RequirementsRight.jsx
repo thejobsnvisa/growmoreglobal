@@ -216,18 +216,13 @@ export default function RequirementsRight() {
           <div className="px-5 pb-4 text-[14px] leading-[1.5] text-[#08739A]">
             <ul className="list-disc pl-5 space-y-1">
               <li>
-                Academic requirements depend on the selected course and
-                institution.
+              Undergraduate (UG): Minimum 60% in 12th | IELTS 6.0 (no band &lt; 5.5)
               </li>
               <li>
-                IELTS, PTE, TOEFL or other accepted English tests may be
-                required.
+               Postgraduate (PG): 60%+ in Bachelor | IELTS 6.5 (no band &lt; 6.0)
               </li>
               <li>
-                Minimum English scores vary between universities and courses.
-              </li>
-              <li>
-                Some applicants may qualify for an English test exemption.
+                Accepted Alternatives: PTE, TOEFL
               </li>
             </ul>
           </div>

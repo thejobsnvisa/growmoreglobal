@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import e1 from "../assets/e1.png";
 import e2 from "../assets/e2.png";
 import e3 from "../assets/e3.png";
@@ -30,15 +30,20 @@ const countries = [
 const Country = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(true);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartX = useRef(0);
+  const hasDragged = useRef(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
+      if (isDragging) return;
       setIsAnimating(true);
       setActiveSlide((slide) => slide + 1);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isDragging]);
 
   const handleTransitionEnd = (event) => {
     if (
@@ -50,31 +55,84 @@ const Country = () => {
     }
   };
 
+  const handlePointerDown = (event) => {
+    if (event.button !== 0) return;
+    dragStartX.current = event.clientX;
+    hasDragged.current = false;
+    setIsDragging(true);
+    setIsAnimating(false);
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event) => {
+    if (!isDragging) return;
+    const offset = event.clientX - dragStartX.current;
+    if (Math.abs(offset) > 5) hasDragged.current = true;
+    setDragOffset(offset);
+  };
+
+  const handlePointerUp = (event) => {
+    if (!isDragging) return;
+    const offset = event.clientX - dragStartX.current;
+    const firstCard = event.currentTarget.firstElementChild;
+    const step = firstCard
+      ? firstCard.getBoundingClientRect().width + 48
+      : 200;
+    const steps = Math.max(1, Math.round(Math.abs(offset) / step));
+
+    setIsDragging(false);
+    setDragOffset(0);
+    setIsAnimating(true);
+    if (Math.abs(offset) > 30) {
+      setActiveSlide((slide) =>
+        Math.max(
+          0,
+          Math.min(countries.length, slide + (offset < 0 ? steps : -steps)),
+        ),
+      );
+    }
+  };
+
   return (
     <section className="w-full overflow-hidden bg-white py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <div className="overflow-visible">
           <div
             onTransitionEnd={handleTransitionEnd}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
+            onClickCapture={(event) => {
+              if (hasDragged.current) {
+                event.preventDefault();
+                event.stopPropagation();
+                hasDragged.current = false;
+              }
+            }}
             className={`flex gap-12 [--slide-width:calc(50%_-_6px)] sm:[--slide-width:calc(25%_-_9px)] ${
               isAnimating
                 ? "transition-transform duration-500 ease-in-out"
                 : ""
             }`}
             style={{
-              transform: `translateX(calc(-${activeSlide} * (var(--slide-width) + 1.25rem)))`,
+              transform: `translateX(calc(-${activeSlide} * (var(--slide-width) + 3rem) + ${dragOffset}px))`,
+              cursor: isDragging ? "grabbing" : "grab",
+              touchAction: "pan-y",
             }}
           >
             {[...countries, ...countries].map(([name, image, path], index) => (
               <a
                 key={`${name}-${index}`}
                 href={path}
+                draggable={false}
                 className="flex h-[153px] min-w-[calc(50%_-_6px)] shrink-0 flex-col items-center justify-center rounded-[20px] bg-gradient-to-r from-[#E4FFED] to-[#E8F7FF] py-3 sm:min-w-[calc(25%_-_9px)]"
               >
                 <div className="mt-[-65px] mb-2 flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white shadow-sm">
                   <img
                     src={image}
                     alt={`${name} landmark`}
+                    draggable={false}
                     className="h-full w-full object-cover"
                   />
                 </div>

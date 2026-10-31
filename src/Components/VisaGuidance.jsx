@@ -121,17 +121,17 @@ const VisaGuidance = () => {
   return (
     <section className="w-full overflow-hidden bg-white">
       <div className="mx-auto flex min-h-[450px] w-full max-w-[1440px] items-center px-5 py-[50px] sm:px-6 sm:py-[55px] lg:px-[70px] lg:py-[60px] xl:px-[100px]">
-        <div className="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:items-center lg:gap-14">
+        <div className="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:items-center lg:gap-10 xl:gap-14">
           
           {/* LEFT CONTENT */}
-          <div className="w-full max-w-[390px] flex-shrink-0 lg:max-w-[490px]">
+          <div className="w-full max-w-[390px] flex-shrink-0 lg:w-[42%] lg:max-w-[490px]">
             <div className="mb-2 flex items-center gap-[10px] sm:mb-3">
               <span className="text-[28px] text-[#338292] sm:text-[36px] md:text-[40px] lg:text-[40px]">
                 Personalized{" "}
               </span>
             </div>
             <div className="mt-[-30px]">
-              <span className="text-[32px] font-bold text-[#5B9E7D] sm:mt-4 sm:text-[40px] md:text-[45px] lg:text-[60px]">
+              <span className="text-[32px] font-bold text-[#5B9E7D] sm:mt-4 sm:text-[40px] md:text-[45px] lg:text-[48px] xl:text-[60px]">
                 Visa Guidance
               </span>
             </div>
@@ -152,7 +152,7 @@ const VisaGuidance = () => {
             </p>
 
             {/* THUMBNAILS */}
-            <div className="scrollbar-hide mt-6 flex w-full gap-3 overflow-x-auto pb-2 sm:mt-7 lg:overflow-visible lg:pb-0">
+            <div className="scrollbar-hide mt-6 flex w-full gap-3 overflow-x-auto pb-2 sm:mt-7 xl:overflow-visible xl:pb-0">
               {loading ? (
                 <>
                   {[1, 2, 3].map((item) => (

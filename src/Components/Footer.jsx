@@ -99,13 +99,13 @@ src={bg}
 alt="Footer background"
 className="hidden xl:block absolute w-[540px] h-[350px] rotate-0 opacity-100 top-[100px] right-[-90px] 2xl:w-[600px] 2xl:h-[390px] 2xl:top-[170px] 2xl:right-[-130px] object-cover pointer-events-none"
 />
-            <div className="w-[350px] bg-[#0F727B54] h-[170px] 2xl:h-[180px] xl:mt-13 xl:h-[140px] xl:w-[390px] backdrop-blur-[2px] rounded-[20px] p-6 2xl:p-8 border border-teal-500/20 shadow-xl">
-              <p className="text-[18px] 2xl:mt-[-12px] 2xl:text-[24px] font-semibold leading-snug mb-6">
+            <div className="w-full max-w-[390px] min-h-[170px] 2xl:min-h-[180px] h-auto xl:mt-13 backdrop-blur-[2px] rounded-[20px] p-5 sm:p-6 2xl:p-8 border border-teal-500/20 shadow-xl bg-[#0F727B54]">
+              <p className="text-[18px] 2xl:text-[24px] text-center font-semibold leading-snug mb-6">
                 Looking for Professional Visa Support?
               </p>
               
               {/* Contact Buttons */}
-              <div className="flex items-center gap-16 2xl:mt-[-15px] flex-wrap">
+              <div className="flex items-center justify-center gap-6 sm:gap-10 2xl:gap-16 flex-wrap">
                 <a
                   href="tel:+1234567890"
                   aria-label="Call us"

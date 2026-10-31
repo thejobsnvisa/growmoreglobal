@@ -289,7 +289,7 @@ const StudentvisaCanada = () => {
              xl:leading-[1.6]
            "
               >
-              With globally respected qualifications, supportive professors, and industry-connected programs, Canada gives students the confidence to step into the future with purpose. Studying in Canada is also about living fully. From vibrant cities to peaceful natural landscapes, from multicultural friendships to meaningful work experiences, students grow not only academically, but personally. Many who come to Canada as students choose to stay — building careers, families, and a life they are proud of.Canada’s education system is built on balance — academic excellence combined with practical learning, research, and real-world exposure.
+              With globally respected qualifications, supportive professors, and industry-connected programs, Canada gives students the confidence to step into the future with purpose. Studying in Canada is also about living fully. From vibrant cities to peaceful natural landscapes, from multicultural friendships to meaningful work experiences, students grow not only academically, but personally. Many who come to Canada as students choose to stay — building careers, families, and a life they are proud of. Canada’s education system is built on balance — academic excellence combined with practical learning, research, and real-world exposure.
               </p>
             </div>
           </div>

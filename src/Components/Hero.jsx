@@ -1006,7 +1006,7 @@ const Hero = () => {
                         bg-white
                         px-4
                         text-[13px]
-                        text-[#CAD5E2]
+                        text-[#026CC0]
                         outline-none
                         focus:border-[#69b99e]
 
@@ -1075,7 +1075,7 @@ const Hero = () => {
                         bg-white
                         px-4
                         text-[12px]
-                        text-[#CAD5E2]
+                        text-[#026CC0]
                         outline-none
                         focus:border-[#69b99e]
 

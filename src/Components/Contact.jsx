@@ -350,7 +350,7 @@ const Contact = () => {
               value={formData.inquiry}
               onChange={handleChange}
               required
-              className="h-[36px] w-full appearance-none rounded-[9px] border border-[#e0e4e8] bg-white px-4 text-[12px] text-[#CAD5E2] outline-none focus:border-[#69b99e]"
+              className="h-[36px] w-full appearance-none rounded-[9px] border border-[#e0e4e8] bg-white px-4 text-[12px] text-[#026CC0] outline-none focus:border-[#69b99e]"
             >
               <option value="">Inquiry for</option>
               <option value="Student Visa">Student Visa</option>
@@ -371,7 +371,7 @@ const Contact = () => {
               value={formData.country}
               onChange={handleChange}
               required
-              className="h-[36px] w-full appearance-none rounded-[9px] border border-[#e0e4e8] bg-white px-4 text-[12px] text-[#CAD5E2] outline-none focus:border-[#69b99e]"
+              className="h-[36px] w-full appearance-none rounded-[9px] border border-[#e0e4e8] bg-white px-4 text-[12px] text-[#026CC0] outline-none focus:border-[#69b99e]"
             >
               <option value="">Country</option>
                 <option value="Australia">

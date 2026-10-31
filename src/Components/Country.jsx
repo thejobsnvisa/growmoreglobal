@@ -13,18 +13,18 @@ import e11 from "../assets/e11.png";
 import e12 from "../assets/e12.png";
 
 const countries = [
-  ["Australia", e1, "student-visa/australia"],
-  ["Canada", e2, "student-visa/canada"],
-  ["United Kingdom", e3, "student-visa/united-kingdom"],
-  ["Dubai", e4, "student-visa/dubai"],
-  ["France", e5, "student-visa/france"],
-  ["USA", e6, "student-visa/usa"],
-  ["Germany", e7, "student-visa/germany"],
-  ["New Zealand", e8, "student-visa/new-zealand"],
-  ["Europe", e9, "student-visa/europe"],
-  ["Georgia", e10, "student-visa/georgia"],
-  ["Singapore", e11, "student-visa/singapore"],
-  ["Russia", e12, "student-visa/russia"],
+  ["Australia", e1, "/services/student-visa/australia"],
+  ["Canada", e2, "/services/student-visa/canada"],
+  ["United Kingdom", e3, "/services/student-visa/united-kingdom"],
+  ["Dubai", e4, "/services/student-visa/dubai"],
+  ["France", e5, "/services/student-visa/france"],
+  ["USA", e6, "/services/student-visa/usa"],
+  ["Germany", e7, "/services/student-visa/germany"],
+  ["New Zealand", e8, "/services/student-visa/new-zealand"],
+  ["Europe", e9, "/services/student-visa/europe"],
+  ["Georgia", e10, "/services/student-visa/georgia"],
+  ["Singapore", e11, "/services/student-visa/singapore"],
+  ["Russia", e12, "/services/student-visa/russia"],
 ];
 
 const Country = () => {
@@ -61,7 +61,7 @@ const Country = () => {
     hasDragged.current = false;
     setIsDragging(true);
     setIsAnimating(false);
-    event.currentTarget.setPointerCapture(event.pointerId);
+    event.target.closest("a")?.setPointerCapture(event.pointerId);
   };
 
   const handlePointerMove = (event) => {

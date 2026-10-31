@@ -4,6 +4,25 @@ import one1 from "../assets/one1.png";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const testimonials = [
+  
+  {
+    id: -2,
+    name: "Roschelle Atienza",
+    visa: "SC500 - Australia student visa",
+    text: "Today is a day I’ll always remember as my student visa has finally been granted! My heartfelt thanks to Growmore and especially Rubina for their outstanding support throughout my visa journey. Rubina’s patience, professionalism and constant guidance made process smooth and stress-free. I truly appreciate  Growmore team for their reliable support and commitment. I highly recommend Growmore to anyone seeking trustworthy and professional immigration guidance!",
+  },
+  {
+    id: -1,
+    name: "Aarya Bhatt",
+    visa: "United Kingdom student visa",
+    text: "Hi, I’m Aarya. My UK student visa got approved in just 2 days, and I’ll be studying at the University of Greenwich! I met the Growmore team at an education expo, and that’s where my journey started. Dev Sir, Rubina Ma’am and Juhi Ma’am guided me throughout the university, interview and visa process. Everything went really smoothly, and now I’m super excited to start my new journey in the UK. Thank you, Growmore!",
+  },
+  {
+    id: 0,
+    name: "Zoya saiyed",
+    visa: "SC500 - Australia student dependent visa",
+    text: "Very excellent staff and they consult us very nicely . I will definitely recommend this to others also . They just cleared all the doubts in my mind . Very excellent Consultancy",
+  },
   {
     id: 1,
     name: "Akash Upadhya",

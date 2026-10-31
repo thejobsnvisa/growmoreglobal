@@ -159,13 +159,13 @@ export default function RequirementsRight() {
         {openSection === "documents" && (
           <div className="px-5 pb-4 text-[14px] leading-[1.5] text-[#08739A]">
             <ul className="list-disc pl-5 space-y-1">
-              <li>Valid passport</li>
-              <li>Academic transcripts and certificates</li>
-              <li>English language test results</li>
-              <li>Offer letter from the education provider</li>
-              <li>Proof of financial capacity</li>
-              <li>Overseas Student Health Cover (OSHC)</li>
-              <li>Statement of Purpose / Genuine Student documents</li>
+              <li>Valid Passport (Front & Back Pages)</li>
+              <li>Academic Transcripts (10th, 12th, Diploma/Degree)</li>
+              <li>IELTS / PTE Scorecard</li>
+              <li>SOP / GTE Statement</li>
+              <li>Work Experience Documents (if applicable)</li>
+              <li>Proof of Funds – Bank statements / Loan letter</li>
+              <li>Income Documents – ITR, salary slips, business proof</li>
             </ul>
           </div>
         )}

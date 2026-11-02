@@ -211,7 +211,7 @@ const Overseas = () => {
                 md:text-[17px]
                 lg:text-[18px]
                 xl:text-[18px]
-                xl:mt-20
+                lg:mt-35
               "
             >
               Migrating abroad offers more than just a new address. It’s an
@@ -235,7 +235,7 @@ const Overseas = () => {
                 sm:gap-7
                 md:mt-8
                 md:gap-8
-                lg:mt-[7px]
+                lg:mt-[27px]
                 lg:gap-0
               "
             >

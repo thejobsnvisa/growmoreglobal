@@ -119,7 +119,7 @@ const FlipCard = ({ icon, title, description, bgColor, textColor }) => {
 
 const Visa = () => {
   return (
-    <section className="w-full bg-white py-12 md:py-16 md:mt-[-180px] lg:mt-[-120px] mb-30">
+    <section className="w-full bg-white py-12 md:py-16 md:mt-[-190px] lg:mt-[-100px] xl:mt-[-50px] mb-30">
       <div className="mx-auto w-full max-w-[1350px] px-5 sm:px-8 lg:px-10 mb-43">
         
         {/* Header */}

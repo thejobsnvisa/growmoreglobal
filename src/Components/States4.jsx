@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
 const states4List = [
@@ -92,34 +92,37 @@ const stateData = {
   },
 };
 
+function scheduleStateChange(delay, timeoutRef, selectedIndexRef, setSelectedStateId) {
+  clearTimeout(timeoutRef.current);
+  timeoutRef.current = setTimeout(() => {
+    selectedIndexRef.current = (selectedIndexRef.current + 1) % states4List.length;
+    setSelectedStateId(states4List[selectedIndexRef.current].id);
+    scheduleStateChange(5000, timeoutRef, selectedIndexRef, setSelectedStateId);
+  }, delay);
+}
+
 const States4 = () => {
   const [selectedStateId, setSelectedStateId] = useState(states4List[0].id);
-  const [animationKey, setAnimationKey] = useState(0);
 
   const sectionRef = useRef(null);
+  const cycleTimeoutRef = useRef(null);
+  const selectedIndexRef = useRef(0);
   const isInView = useInView(sectionRef, { amount: 0.3 });
+
+  const scheduleNextState = useCallback(
+    (delay) => scheduleStateChange(delay, cycleTimeoutRef, selectedIndexRef, setSelectedStateId),
+    [],
+  );
 
   useEffect(() => {
     if (!isInView) return;
 
-    const timeouts = [];
-
-    states4List.forEach((state, index) => {
-      const timer = setTimeout(() => {
-        setSelectedStateId(state.id);
-      }, index * 1800);
-      timeouts.push(timer);
-    });
-
-    const cycleInterval = setInterval(() => {
-      setAnimationKey((prev) => prev + 1);
-    }, 13500);
+    scheduleNextState(5000);
 
     return () => {
-      timeouts.forEach((timer) => clearTimeout(timer));
-      clearInterval(cycleInterval);
+      clearTimeout(cycleTimeoutRef.current);
     };
-  }, [isInView, animationKey]);
+  }, [isInView, scheduleNextState]);
 
   // Button drop-in animation variants
   const buttonContainerVariants = {
@@ -162,7 +165,6 @@ const States4 = () => {
         <div className="w-[420px] min-h-[580px]">
           <AnimatePresence mode="wait">
             <motion.div
-              key={animationKey}
               variants={buttonContainerVariants}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
@@ -175,7 +177,11 @@ const States4 = () => {
                   <motion.button
                     key={id}
                     variants={buttonItemVariants}
-                    onClick={() => setSelectedStateId(id)}
+                    onClick={() => {
+                      selectedIndexRef.current = states4List.findIndex((state) => state.id === id);
+                      setSelectedStateId(id);
+                      scheduleNextState(1500);
+                    }}
                     animate={{
                       backgroundColor: isSelected ? "#1C5B6C" : "#B8E6FE",
                       color: isSelected ? "#FFFFFF" : "#00609C",

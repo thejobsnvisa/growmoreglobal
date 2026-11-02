@@ -163,33 +163,28 @@ const stateData = {
 
 const States = () => {
   const [selectedStateId, setSelectedStateId] = useState("nsw");
-  const [animationKey, setAnimationKey] = useState(0);
 
   const sectionRef = useRef(null);
+  const manualPauseUntilRef = useRef(0);
   const isInView = useInView(sectionRef, { amount: 0.3 });
 
-  // Step through each state with readable timing
+  // Keep each state visible for 10 seconds and pause autoplay for 5 seconds after manual selection.
   useEffect(() => {
     if (!isInView) return;
 
-    const timeouts = [];
-
-    statesList.forEach((state, index) => {
-      const timer = setTimeout(() => {
-        setSelectedStateId(state.id);
-      }, index * 1800);
-      timeouts.push(timer);
-    });
-
     const cycleInterval = setInterval(() => {
-      setAnimationKey((prev) => prev + 1);
-    }, 13500);
+      if (Date.now() < manualPauseUntilRef.current) return;
+
+      setSelectedStateId((currentId) => {
+        const currentIndex = statesList.findIndex(({ id }) => id === currentId);
+        return statesList[(currentIndex + 1) % statesList.length].id;
+      });
+    }, 10000);
 
     return () => {
-      timeouts.forEach((timer) => clearTimeout(timer));
       clearInterval(cycleInterval);
     };
-  }, [isInView, animationKey]);
+  }, [isInView]);
 
   // Button drop-in animation variants
   const buttonContainerVariants = {
@@ -237,7 +232,6 @@ const States = () => {
         <div className="w-full max-w-[420px] lg:w-[420px] lg:min-h-[580px]">
           <AnimatePresence mode="wait">
             <motion.div
-              key={animationKey}
               variants={buttonContainerVariants}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
@@ -250,13 +244,17 @@ const States = () => {
                   <motion.button
                     key={id}
                     variants={buttonItemVariants}
-                    onClick={() => setSelectedStateId(id)}
+                    onClick={() => {
+                      setSelectedStateId(id);
+                      manualPauseUntilRef.current = Date.now() + 1500;
+                    }}
                     animate={{
                       backgroundColor: isSelected ? "#1C5B6C" : "#B8E6FE",
                       color: isSelected ? "#FFFFFF" : "#00609C",
                       borderColor: isSelected ? "#1C5B6C" : "#93D3FB",
                       scale: isSelected ? 1.02 : 1,
                     }}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                     className="flex h-[52px] w-full items-center justify-center rounded-[12px] border text-center text-[16px] font-medium cursor-pointer shadow-sm sm:h-[62px] sm:text-[20px]"
                   >

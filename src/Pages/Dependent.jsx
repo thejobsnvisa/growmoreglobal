@@ -185,7 +185,7 @@ const Dependent = () => {
     lg:items-start
     lg:gap-[30px]
 
-    xl:gap-[65px]
+    xl:gap-[45px]
   "
           >
             {/* ================= IMAGE ================= */}
@@ -204,9 +204,9 @@ const Dependent = () => {
       md:h-[400px]
       md:max-w-[600px]
 
-      lg:mt-[13px]
+      lg:mb-[33px]
       lg:h-[450px]
-      lg:w-[50%]
+      lg:w-[calc(50%_-_15px)]
       lg:max-w-none
 
       xl:h-[420px]
@@ -249,7 +249,7 @@ const Dependent = () => {
       sm:gap-6
       md:gap-7
 
-      lg:w-[50%]
+      lg:w-[calc(50%_-_15px)]
       lg:max-w-[550px]
       lg:gap-7
 
@@ -275,7 +275,7 @@ const Dependent = () => {
         md:text-[16px]
         md:leading-[1.7]
 
-        lg:text-[16px]
+        lg:text-[20px]
         lg:leading-[1.6]
 
         xl:text-[18px]
@@ -305,7 +305,7 @@ const Dependent = () => {
         md:text-[16px]
         md:leading-[1.7]
 
-        lg:text-[16px]
+        lg:text-[20px]
         lg:leading-[1.6]
 
         xl:text-[18px]

@@ -167,30 +167,42 @@ const States7 = () => {
   const [animationKey, setAnimationKey] = useState(0);
 
   const sectionRef = useRef(null);
+  const pauseTimeoutRef = useRef(null);
   const isInView = useInView(sectionRef, { amount: 0.3 });
 
-  // Step through each state with readable timing
+  // Advance automatically every 5 seconds and pause briefly after manual selection.
   useEffect(() => {
     if (!isInView) return;
 
-    const timeouts = [];
-
-    States7List.forEach((state, index) => {
-      const timer = setTimeout(() => {
-        setSelectedStateId(state.id);
-      }, index * 1800);
-      timeouts.push(timer);
-    });
-
     const cycleInterval = setInterval(() => {
+      if (!pauseTimeoutRef.current) {
+        setSelectedStateId((currentId) => {
+          const currentIndex = States7List.findIndex((state) => state.id === currentId);
+          return States7List[(currentIndex + 1) % States7List.length].id;
+        });
+      }
       setAnimationKey((prev) => prev + 1);
-    }, 13500);
+    }, 5000);
 
     return () => {
-      timeouts.forEach((timer) => clearTimeout(timer));
       clearInterval(cycleInterval);
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current);
+      }
     };
-  }, [isInView, animationKey]);
+  }, [isInView]);
+
+  const handleStateClick = (id) => {
+    setSelectedStateId(id);
+
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current);
+    }
+
+    pauseTimeoutRef.current = setTimeout(() => {
+      pauseTimeoutRef.current = null;
+    }, 1500);
+  };
 
   // Button drop-in animation variants
   const buttonContainerVariants = {
@@ -248,7 +260,7 @@ const States7 = () => {
                   <motion.button
                     key={id}
                     variants={buttonItemVariants}
-                    onClick={() => setSelectedStateId(id)}
+                    onClick={() => handleStateClick(id)}
                     animate={{
                       backgroundColor: isSelected ? "#1C5B6C" : "#B8E6FE",
                       color: isSelected ? "#FFFFFF" : "#00609C",

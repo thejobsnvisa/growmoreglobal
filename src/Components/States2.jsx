@@ -79,33 +79,40 @@ const States2 = () => {
   };
 
   const [selectedStateId, setSelectedStateId] = useState(States2List[0].id);
-  const [animationKey, setAnimationKey] = useState(0);
-
   const sectionRef = useRef(null);
+  const timerRef = useRef(null);
+  const advanceRef = useRef(null);
   const isInView = useInView(sectionRef, { amount: 0.3 });
 
-  // Step through each state with readable timing
+  // Automatically advance through the states every five seconds.
   useEffect(() => {
     if (!isInView) return;
 
-    const timeouts = [];
+    const advance = () => {
+      setSelectedStateId((currentId) => {
+        const currentIndex = States2List.findIndex(({ id }) => id === currentId);
+        return States2List[(currentIndex + 1) % States2List.length].id;
+      });
+      timerRef.current = setTimeout(advance, 5000);
+    };
 
-    States2List.forEach((state, index) => {
-      const timer = setTimeout(() => {
-        setSelectedStateId(state.id);
-      }, index * 1800);
-      timeouts.push(timer);
-    });
-
-    const cycleInterval = setInterval(() => {
-      setAnimationKey((prev) => prev + 1);
-    }, 13500);
+    advanceRef.current = advance;
+    timerRef.current = setTimeout(advance, 5000);
 
     return () => {
-      timeouts.forEach((timer) => clearTimeout(timer));
-      clearInterval(cycleInterval);
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+      advanceRef.current = null;
     };
-  }, [isInView, animationKey]);
+  }, [isInView]);
+
+  const handleStateClick = (id) => {
+    setSelectedStateId(id);
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => advanceRef.current?.(), 1500);
+    }
+  };
 
   // Button drop-in animation variants
   const buttonContainerVariants = {
@@ -150,7 +157,6 @@ const States2 = () => {
         <div className="w-full max-w-[420px] xl:w-[420px] xl:shrink-0">
           <AnimatePresence mode="wait">
             <motion.div
-              key={animationKey}
               variants={buttonContainerVariants}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
@@ -164,7 +170,7 @@ const States2 = () => {
                     key={id}
                     type="button"
                     variants={buttonItemVariants}
-                    onClick={() => setSelectedStateId(id)}
+                    onClick={() => handleStateClick(id)}
                     aria-pressed={isSelected}
                     animate={{
                       backgroundColor: isSelected ? "#1C5B6C" : "#B8E6FE",

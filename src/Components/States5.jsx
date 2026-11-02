@@ -167,33 +167,29 @@ const States5 = () => {
   };
 
   const [selectedStateId, setSelectedStateId] = useState(States5List[0].id);
-  const [animationKey, setAnimationKey] = useState(0);
+  const [manualPauseUntil, setManualPauseUntil] = useState(0);
 
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { amount: 0.3 });
 
-  // Step through each state with readable timing
+  // Advance automatically every five seconds; a clicked state stays selected for 1.5 seconds.
   useEffect(() => {
     if (!isInView) return;
 
-    const timeouts = [];
-
-    States5List.forEach((state, index) => {
-      const timer = setTimeout(() => {
-        setSelectedStateId(state.id);
-      }, index * 1800);
-      timeouts.push(timer);
-    });
-
-    const cycleInterval = setInterval(() => {
-      setAnimationKey((prev) => prev + 1);
-    }, 13500);
-
-    return () => {
-      timeouts.forEach((timer) => clearTimeout(timer));
-      clearInterval(cycleInterval);
+    const advanceState = () => {
+      setSelectedStateId((currentId) => {
+        const currentIndex = States5List.findIndex((state) => state.id === currentId);
+        return States5List[(currentIndex + 1) % States5List.length].id;
+      });
     };
-  }, [isInView, animationKey]);
+    const isManualPause = manualPauseUntil > Date.now();
+    const timer = setTimeout(() => {
+      if (isManualPause) setManualPauseUntil(0);
+      advanceState();
+    }, isManualPause ? manualPauseUntil - Date.now() : 5000);
+
+    return () => clearTimeout(timer);
+  }, [isInView, manualPauseUntil, selectedStateId]);
 
   // Button drop-in animation variants
   const buttonContainerVariants = {
@@ -238,7 +234,6 @@ const States5 = () => {
         <div className="w-full max-w-[420px] lg:w-[420px] lg:min-h-[580px]">
           <AnimatePresence mode="wait">
             <motion.div
-              key={animationKey}
               variants={buttonContainerVariants}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
@@ -251,7 +246,10 @@ const States5 = () => {
                   <motion.button
                     key={id}
                     variants={buttonItemVariants}
-                    onClick={() => setSelectedStateId(id)}
+                    onClick={() => {
+                      setSelectedStateId(id);
+                      setManualPauseUntil(Date.now() + 1500);
+                    }}
                     animate={{
                       backgroundColor: isSelected ? "#1C5B6C" : "#B8E6FE",
                       color: isSelected ? "#FFFFFF" : "#00609C",

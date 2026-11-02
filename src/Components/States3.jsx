@@ -93,32 +93,26 @@ const stateData = {
 
 const States3 = () => {
   const [selectedStateId, setSelectedStateId] = useState("Au");
-  const [animationKey, setAnimationKey] = useState(0);
-
   const sectionRef = useRef(null);
+  const manualSelectionUntil = useRef(0);
   const isInView = useInView(sectionRef, { amount: 0.3 });
 
   useEffect(() => {
     if (!isInView) return;
 
-    const timeouts = [];
-
-    States3List.forEach((state, index) => {
-      const timer = setTimeout(() => {
-        setSelectedStateId(state.id);
-      }, index * 1800);
-      timeouts.push(timer);
-    });
-
     const cycleInterval = setInterval(() => {
-      setAnimationKey((prev) => prev + 1);
-    }, 13500);
+      if (Date.now() < manualSelectionUntil.current) return;
+
+      setSelectedStateId((currentId) => {
+        const currentIndex = States3List.findIndex(({ id }) => id === currentId);
+        return States3List[(currentIndex + 1) % States3List.length].id;
+      });
+    }, 5000);
 
     return () => {
-      timeouts.forEach((timer) => clearTimeout(timer));
       clearInterval(cycleInterval);
     };
-  }, [isInView, animationKey]);
+  }, [isInView]);
 
   const buttonContainerVariants = {
     hidden: { opacity: 0 },
@@ -160,7 +154,6 @@ const States3 = () => {
         <div className="w-full max-w-[420px] lg:w-[420px] lg:min-h-[580px]">
           <AnimatePresence mode="wait">
             <motion.div
-              key={animationKey}
               variants={buttonContainerVariants}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
@@ -173,7 +166,10 @@ const States3 = () => {
                   <motion.button
                     key={id}
                     variants={buttonItemVariants}
-                    onClick={() => setSelectedStateId(id)}
+                    onClick={() => {
+                      manualSelectionUntil.current = Date.now() + 1500;
+                      setSelectedStateId(id);
+                    }}
                     animate={{
                       backgroundColor: isSelected ? "#1C5B6C" : "#B8E6FE",
                       color: isSelected ? "#FFFFFF" : "#00609C",

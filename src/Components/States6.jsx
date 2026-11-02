@@ -162,33 +162,23 @@ const States6 = () => {
   };
 
   const [selectedStateId, setSelectedStateId] = useState(States6List[0].id);
-  const [animationKey, setAnimationKey] = useState(0);
+  const [manualSelection, setManualSelection] = useState(false);
 
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { amount: 0.3 });
 
-  // Step through each state with readable timing
+  // Automatically advance every 5 seconds; pause manual selections for 1.5 seconds.
   useEffect(() => {
     if (!isInView) return;
 
-    const timeouts = [];
+    const timer = setTimeout(() => {
+      const currentIndex = States6List.findIndex(({ id }) => id === selectedStateId);
+      setSelectedStateId(States6List[(currentIndex + 1) % States6List.length].id);
+      setManualSelection(false);
+    }, manualSelection ? 1500 : 5000);
 
-    States6List.forEach((state, index) => {
-      const timer = setTimeout(() => {
-        setSelectedStateId(state.id);
-      }, index * 1800);
-      timeouts.push(timer);
-    });
-
-    const cycleInterval = setInterval(() => {
-      setAnimationKey((prev) => prev + 1);
-    }, 13500);
-
-    return () => {
-      timeouts.forEach((timer) => clearTimeout(timer));
-      clearInterval(cycleInterval);
-    };
-  }, [isInView, animationKey]);
+    return () => clearTimeout(timer);
+  }, [isInView, selectedStateId, manualSelection]);
 
   // Button drop-in animation variants
   const buttonContainerVariants = {
@@ -233,7 +223,6 @@ const States6 = () => {
         <div className="w-full max-w-[420px] lg:w-[420px] lg:min-h-[580px]">
           <AnimatePresence mode="wait">
             <motion.div
-              key={animationKey}
               variants={buttonContainerVariants}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
@@ -246,7 +235,10 @@ const States6 = () => {
                   <motion.button
                     key={id}
                     variants={buttonItemVariants}
-                    onClick={() => setSelectedStateId(id)}
+                    onClick={() => {
+                      setSelectedStateId(id);
+                      setManualSelection(true);
+                    }}
                     animate={{
                       backgroundColor: isSelected ? "#1C5B6C" : "#B8E6FE",
                       color: isSelected ? "#FFFFFF" : "#00609C",

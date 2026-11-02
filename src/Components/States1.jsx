@@ -79,33 +79,26 @@ const stateData = {
 
 const States1 = () => {
   const [selectedStateId, setSelectedStateId] = useState("Pa");
-  const [animationKey, setAnimationKey] = useState(0);
+  const [isClickHold, setIsClickHold] = useState(false);
 
   const sectionRef = useRef(null);
+  const clickHoldTimeout = useRef(null);
   const isInView = useInView(sectionRef, { amount: 0.3 });
 
-  // Step through each state with readable timing
+  // Automatically advance every five seconds, except during the click hold.
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || isClickHold) return;
 
-    const timeouts = [];
+    const timer = setTimeout(() => {
+      const currentIndex = States1List.findIndex(
+        (state) => state.id === selectedStateId
+      );
+      const nextState = States1List[(currentIndex + 1) % States1List.length];
+      setSelectedStateId(nextState.id);
+    }, 5000);
 
-    States1List.forEach((state, index) => {
-      const timer = setTimeout(() => {
-        setSelectedStateId(state.id);
-      }, index * 1800);
-      timeouts.push(timer);
-    });
-
-    const cycleInterval = setInterval(() => {
-      setAnimationKey((prev) => prev + 1);
-    }, 13500);
-
-    return () => {
-      timeouts.forEach((timer) => clearTimeout(timer));
-      clearInterval(cycleInterval);
-    };
-  }, [isInView, animationKey]);
+    return () => clearTimeout(timer);
+  }, [isInView, isClickHold, selectedStateId]);
 
   // Button drop-in animation variants
   const buttonContainerVariants = {
@@ -150,7 +143,6 @@ const States1 = () => {
         <div className="w-full max-w-[420px] flex-[1_1_320px]">
           <AnimatePresence mode="wait">
             <motion.div
-              key={animationKey}
               variants={buttonContainerVariants}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
@@ -163,7 +155,14 @@ const States1 = () => {
                   <motion.button
                     key={id}
                     variants={buttonItemVariants}
-                    onClick={() => setSelectedStateId(id)}
+                    onClick={() => {
+                      setSelectedStateId(id);
+                      setIsClickHold(true);
+                      clearTimeout(clickHoldTimeout.current);
+                      clickHoldTimeout.current = setTimeout(() => {
+                        setIsClickHold(false);
+                      }, 1500);
+                    }}
                     animate={{
                       backgroundColor: isSelected ? "#1C5B6C" : "#B8E6FE",
                       color: isSelected ? "#FFFFFF" : "#00609C",

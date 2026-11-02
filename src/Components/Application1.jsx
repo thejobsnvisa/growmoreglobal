@@ -24,7 +24,7 @@ const steps = [
     // Distinct styles per breakpoint
     lgStyle: { top: "60%", left: "10.5%" },
     xlStyle: { top: "54%", left: "10.5%" },
-    xxlStyle: { top: "44%", left: "7.5%" },
+    xxlStyle: { top: "50%", left: "8.5%" },
     position: "bottom",
     image: img1,
   },
@@ -33,9 +33,9 @@ const steps = [
     title: "University & Course Matchmaking",
     points:
       "Tailored guidance based on your profile and university requirements",
-    lgStyle: { top: "67%", left: "31%" },
+    lgStyle: { top: "64%", left: "31%" },
     xlStyle: { top: "62%", left: "30.5%" },
-    xxlStyle: { top: "50%", left: "28.5%" },
+    xxlStyle: { top: "49%", left: "34.5%" },
     position: "top",
     image: img2,
   },
@@ -46,7 +46,7 @@ const steps = [
       "Handling paperwork and deadline",
     lgStyle: { top: "47%", left: "54%" },
     xlStyle: { top: "42%", left: "53%" },
-    xxlStyle: { top: "34%", left: "54%" },
+    xxlStyle: { top: "33%", left: "60%" },
     position: "bottom",
     image: img3,
   },
@@ -57,7 +57,7 @@ const steps = [
       "Assistance with financials, documents, and embassy processes.",
     lgStyle: { top: "54%", left: "72%" },
     xlStyle: { top: "48%", left: "72%" },
-    xxlStyle: { top: "38%", left: "75%" },
+    xxlStyle: { top: "40%", left: "82%" },
     position: "top",
     image: img4,
   },
@@ -66,9 +66,9 @@ const steps = [
     title: "Pre-Departure Support",
     points:
       "Orientation on travel, accommodation, and life abroad.",
-    lgStyle: { top: "35%", left: "92%" },
+    lgStyle: { top: "38%", left: "92%" },
     xlStyle: { top: "28.8%", left: "93%" },
-    xxlStyle: { top: "20.8%", left: "98%" },
+    xxlStyle: { top: "18.8%", left: "108%" },
     position: "bottom",
     image: img5,
   },
@@ -76,10 +76,10 @@ const steps = [
 
 const Application1 = () => {
   return (
-    <section className="relative min-h-screen mb-30 w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 xl:h-[680px] xl:min-h-0 xl:py-0 2xl:h-[880px]">
+    <section className="relative min-h-screen mb-30 w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:h-[600px] lg:min-h-0 lg:py-0 xl:h-[680px] 2xl:h-[880px]">
       <div className="relative mx-auto h-full w-full max-w-[1440px] px-5 sm:px-8 md:px-10 lg:px-6 xl:px-[54px]">
         {/* Header Section */}
-        <div className="relative z-30 xl:absolute xl:left-[54px] xl:top-[30px]">
+        <div className="relative z-30 lg:absolute lg:left-6 lg:top-4 xl:left-[54px] xl:top-[30px]">
           <p
             className="m-0 mt-4 text-[24px] leading-[1.15] text-[#26839A] sm:text-[26px] md:text-[28px] lg:text-[24px] xl:text-[40px] 2xl:text-[46px]"
             
@@ -98,7 +98,7 @@ const Application1 = () => {
         </div>
 
         {/* Timeline Desktop Container */}
-        <div className="absolute inset-x-0 top-0 hidden h-full xl:block xl:mt-[-38px]">
+        <div className="absolute inset-x-0 top-0 hidden h-full lg:block lg:mt-[-80px] xl:mt-[-38px]">
           <img
             src={c4}
             alt=""
@@ -108,6 +108,14 @@ const Application1 = () => {
 
           {steps.map((item, index) => (
             <React.Fragment key={index}>
+              {/* LG View Node */}
+              <div
+                className="absolute z-20 -translate-x-1/2 -translate-y-1/2 lg:block xl:hidden"
+                style={item.lgStyle}
+              >
+                <StepContent item={item} isXl={false} />
+              </div>
+
               {/* XL View Node */}
               <div
                 className="absolute z-20 hidden -translate-x-1/2 -translate-y-1/2 xl:block 2xl:hidden"
@@ -128,8 +136,8 @@ const Application1 = () => {
         </div>
 
         {/* Mobile View */}
-        <div className="mt-8 block xl:hidden">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6 lg:grid-cols-2">
+        <div className="mt-8 block lg:hidden">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6">
             {steps.map((item, index) => (
               <div
                 key={index}

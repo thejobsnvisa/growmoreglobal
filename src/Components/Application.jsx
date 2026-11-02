@@ -20,9 +20,9 @@ const steps = [
     points:
       "We assess your qualifications, work experience, and occupation to determine your eligibility under country-specific work visa rules.",
     // Distinct styles per breakpoint
-    lgStyle: { top: "58%", left: "11.5%" },
-    xlStyle: { top: "60%", left: "10.5%" },
-    "2xlStyle": { top: "53%", left: "7%" },
+    lgStyle: { top: "58%", left: "9%" },
+    xlStyle: { top: "60%", left: "9%" },
+    "2xlStyle": { top: "60%", left: "9%" },
     position: "bottom",
     image: img1,
   },
@@ -31,9 +31,9 @@ const steps = [
     title: "Visa Pathway Selection",
     points:
       "Based on your profile, we recommend the most suitable work visa category that goes well with current immigration regulations.",
-    lgStyle: { top: "65%", left: "31%" },
-    xlStyle: { top: "67%", left: "28.5%" },
-    "2xlStyle": { top: "61%", left: "28.5%" },
+    lgStyle: { top: "65%", left: "29%" },
+    xlStyle: { top: "67%", left: "29%" },
+    "2xlStyle": { top: "65%", left: "29%" },
     position: "top",
     image: img2,
   },
@@ -42,9 +42,9 @@ const steps = [
     title: "Document Guidance & Review",
     points:
       "We provide a structured document checklist and carefully review all records to ensure accuracy.",
-    lgStyle: { top: "47%", left: "54%" },
-    xlStyle: { top: "48%", left: "53%" },
-    "2xlStyle": { top: "40%", left: "53%" },
+    lgStyle: { top: "47%", left: "50%" },
+    xlStyle: { top: "48%", left: "51%" },
+    "2xlStyle": { top: "47%", left: "51%" },
     position: "bottom",
     image: img3,
   },
@@ -53,9 +53,9 @@ const steps = [
     title: "Application Preparation & Submission",
     points:
       "Once the documents are ready, we carefully prepare and submit your work visa application.",
-    lgStyle: { top: "54%", left: "72%" },
+    lgStyle: { top: "54%", left: "71%" },
     xlStyle: { top: "54%", left: "72%" },
-    "2xlStyle": { top: "46%", left: "72%" },
+    "2xlStyle": { top: "54%", left: "72%" },
     position: "top",
     image: img4,
   },
@@ -64,10 +64,10 @@ const steps = [
     title: "Post-Submission Support",
     points:
       "We monitor the application, respond to immigration queries, and guide you through the process until a final decision is issued.",
-    lgStyle: { top: "37%", left: "93%" },
-    // Keep the label inside the section so it is not clipped at the right edge.
-    xlStyle: { top: "34.8%", left: "92.5%" },
-    "2xlStyle": { top: "28.8%", left: "92.5%" },
+    // Keep the final step and its label inside the timeline at all desktop widths.
+    lgStyle: { top: "37%", left: "91%" },
+    xlStyle: { top: "34.8%", left: "92%" },
+    "2xlStyle": { top: "37%", left: "92%" },
     position: "bottom",
     image: img5,
   },
@@ -75,10 +75,10 @@ const steps = [
 
 const Application = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-[#F0FDFA] py-10 sm:py-12 md:py-14 xl:h-[700px] xl:py-0">
-      <div className="relative mx-auto h-full w-full max-w-[1440px] px-5 sm:px-8 md:px-10 lg:px-6 xl:px-[54px]">
+    <section className="relative w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:h-[600px] xl:h-[700px] lg:py-0">
+      <div className="relative mx-auto h-full w-full max-w-[1440px] min-[1800px]:max-w-[1920px] px-5 sm:px-8 md:px-10 lg:px-6 xl:px-[54px] min-[1800px]:px-[72px] bg-white">
         {/* Header Section */}
-        <div className="relative z-30 xl:absolute xl:left-[54px] xl:top-[30px]">
+        <div className="relative z-30 lg:absolute lg:left-6 lg:top-[26px] xl:left-[54px] xl:top-[30px]">
           <p
             className="m-0 mt-4 text-[24px] leading-[1.15] text-[#26839A] sm:text-[26px] md:text-[28px] lg:text-[24px] xl:text-[40px]"
             
@@ -100,7 +100,7 @@ const Application = () => {
         </div>
 
         {/* Timeline Desktop Container */}
-        <div className="absolute inset-x-0 top-0 hidden h-full xl:block">
+        <div className="absolute inset-x-0 top-0 hidden h-full lg:block">
           <img
             src={c4}
             alt=""
@@ -127,7 +127,7 @@ const Application = () => {
         </div>
 
         {/* Mobile View */}
-        <div className="mt-8 block xl:hidden">
+        <div className="mt-8 block lg:hidden">
           <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-6">
             {steps.map((item, index) => (
               <div

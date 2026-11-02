@@ -131,7 +131,8 @@ const PointsCalculator = () => {
                 mt-[-70px]
                 sm:text-[16px]
                 md:text-[17px]
-                lg:text-[18px]
+                lg:text-[20px]
+                2xl:ml-[-180px]
               "
           >
             <span className="text-sky-500">Home &gt; </span>
@@ -144,7 +145,7 @@ const PointsCalculator = () => {
             className="
                 mt-6
                 w-full
-                max-w-[450px]
+                max-w-[480px]
                 text-[38px]
                 font-semibold
                 leading-[1.1]
@@ -158,6 +159,7 @@ const PointsCalculator = () => {
     
                 lg:mt-12
                 lg:text-[50px]
+                2xl:ml-[-180px]
               "
           >
             Australia PR Points Calculator

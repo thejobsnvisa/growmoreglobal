@@ -116,7 +116,8 @@ const PointsCalculatorCanada = () => {
                 mt-[-70px]
                 sm:text-[16px]
                 md:text-[17px]
-                lg:text-[18px]
+                lg:text-[20px]
+                2xl:ml-[-285px]
               "
           >
             <span className="text-sky-500">Home &gt; </span>
@@ -143,6 +144,7 @@ const PointsCalculatorCanada = () => {
     
                 lg:mt-12
                 lg:text-[50px]
+                2xl:ml-[-285px]
               "
           >
             Canada PR Points Calculator

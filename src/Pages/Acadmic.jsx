@@ -12,7 +12,7 @@ const Acadmic = () => {
   return (
     <>
       {/* ==================== BANNER ==================== */}
-           <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px]">
+           <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[400px]">
                                       {/* Banner Image */}
                                       <img
                                         src={img}
@@ -21,7 +21,7 @@ const Acadmic = () => {
                                       />
                               
                                       {/* Gradient Overlay */}
-                                      <div className="absolute inset-0 bg-[linear-gradient(89.92deg,#FFFFFF_0.06%,rgba(255,255,255,0)_48.4%)]" />
+                                      <div className="absolute inset-0 bg-[linear-gradient(89.92deg,#FFFFFF_0.06%,rgba(255,255,255,0)_78.4%)]" />
                               
                                       {/* Banner Content */}
                                       <div className="relative z-10 mx-auto flex h-full w-full max-w-[1256px] flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-10">

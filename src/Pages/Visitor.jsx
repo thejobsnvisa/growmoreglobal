@@ -7,7 +7,7 @@ import bg2 from "../assets/bg5.png";
 const Visitor = () => {
   return (
     <>
-      <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[420px] xl:h-[510px]">
+      <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px]">
         {/* Banner Image */}
         <img
           src={img}
@@ -16,7 +16,7 @@ const Visitor = () => {
     absolute
     top-0
     left-0
-    h-full
+    h-[650px]
     w-full
     object-cover
   "
@@ -27,7 +27,7 @@ const Visitor = () => {
           className="pointer-events-none absolute inset-0 z-[3]"
           style={{
             background:
-              "linear-gradient(89.92deg, #FFFFFF 0.06%, rgba(255, 255, 255, 0) 58.4%)",
+              "linear-gradient(89.92deg, #FFFFFF 0.06%, rgba(255, 255, 255, 0) 68.4%)",
           }}
         />
 

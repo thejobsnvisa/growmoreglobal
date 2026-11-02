@@ -225,14 +225,6 @@ const Dependent = () => {
       "
               />
 
-              {/* Gradient Overlay */}
-              <div
-                className="
-        absolute
-        inset-0
-        bg-[linear-gradient(180deg,rgba(255,255,255,0)_84.79%,#FFFFFF_100%),linear-gradient(1.81deg,rgba(255,255,255,0)_66.81%,#FFFFFF_96.98%),linear-gradient(90deg,rgba(255,255,255,0)_83.12%,rgba(255,255,255,0.83)_91.88%,#FFFFFF_100%),linear-gradient(268.94deg,rgba(255,255,255,0)_90.57%,#FFFFFF_99.02%)]
-      "
-              />
             </div>
 
             {/* ================= CONTENT ================= */}
@@ -266,7 +258,11 @@ const Dependent = () => {
         w-full
         text-[15px]
         leading-7
-        text-cyan-700
+        bg-gradient-to-r
+        from-cyan-700
+        to-teal-700
+        bg-clip-text
+        text-transparent
         text-justify
 
         sm:text-[15px]
@@ -296,7 +292,11 @@ const Dependent = () => {
         w-full
         text-[15px]
         leading-7
-        text-teal-700
+        bg-gradient-to-r
+        from-cyan-700
+        to-teal-700
+        bg-clip-text
+        text-transparent
         text-justify
 
         sm:text-[15px]

@@ -115,14 +115,20 @@ const Brochures = () => {
                 }}
                 className="xl:h-[330px] lg:h-[320px] md:h-[322px] h-[310px] w-full max-w-[328px] overflow-hidden rounded-[30px] shadow-[0_0_10px_0_#59595933] transition duration-300 hover:-translate-y-2 hover:shadow-[0_8px_20px_0_#59595955]"
               >
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  loading="eager"
-                  decoding="async"
-
-                  className="mt-[-40px] lg:h-[290px] md:h-[280px] h-[270px] w-full rounded-t-[30px] object-contain"
-                />
+                <a
+                  href={item.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${item.title} brochure`}
+                >
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    loading="eager"
+                    decoding="async"
+                    className="mt-[-40px] lg:h-[290px] md:h-[280px] h-[270px] w-full rounded-t-[30px] object-contain"
+                  />
+                </a>
                 <div>
                   <img
                     src={l1}

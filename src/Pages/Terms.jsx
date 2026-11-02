@@ -12,18 +12,18 @@ const Terms = () =>{
                 />
         
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-[linear-gradient(89.92deg,#FFFFFF_0.06%,rgba(255,255,255,0)_48.4%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(89.92deg,#FFFFFF_0.06%,rgba(255,255,255,0)_68.4%)]" />
         
                 {/* Banner Content */}
                 <div className="relative z-10 mx-auto flex h-full w-full max-w-[1256px] flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-10">
                   {/* Breadcrumb */}
-                  <p className="mb-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
+                  <p className="mb-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[20px] 2xl:ml-[-280px]">
                     <span className="text-sky-500">Home &gt; </span>
                     <span className="text-cyan-800 font-medium">Terms & Services</span>
                   </p>
         
                   {/* Banner Heading */}
-                  <h1 className="mt-4 text-[38px] font-semibold leading-[1.1] text-[#669980] sm:mt-6 sm:text-[44px] md:mt-8 md:text-[52px] lg:mt-10 lg:text-[60px]">
+                  <h1 className="mt-4 text-[38px] font-semibold leading-[1.1] text-[#669980] sm:mt-6 sm:text-[44px] md:mt-8 md:text-[52px] lg:mt-10 lg:text-[60px] 2xl:ml-[-280px]">
                     Terms & Services
                   </h1>
                 </div>

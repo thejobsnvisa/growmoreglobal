@@ -76,10 +76,10 @@ const steps = [
 
 const Application1 = () => {
   return (
-    <section className="relative min-h-screen mb-30 w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 lg:h-[600px] lg:min-h-0 lg:py-0 xl:h-[680px] 2xl:h-[880px]">
+    <section className="relative min-h-screen mb-30 w-full overflow-hidden bg-white py-10 sm:py-12 md:py-14 xl:h-[680px] xl:min-h-0 xl:py-0 2xl:h-[880px]">
       <div className="relative mx-auto h-full w-full max-w-[1440px] px-5 sm:px-8 md:px-10 lg:px-6 xl:px-[54px]">
         {/* Header Section */}
-        <div className="relative z-30 lg:absolute lg:left-6 lg:top-4 xl:left-[54px] xl:top-[30px]">
+        <div className="relative z-30 xl:absolute xl:left-[54px] xl:top-[30px]">
           <p
             className="m-0 mt-4 text-[24px] leading-[1.15] text-[#26839A] sm:text-[26px] md:text-[28px] lg:text-[24px] xl:text-[40px] 2xl:text-[46px]"
             
@@ -98,7 +98,7 @@ const Application1 = () => {
         </div>
 
         {/* Timeline Desktop Container */}
-        <div className="absolute inset-x-0 top-0 hidden h-full lg:block lg:mt-[-80px] xl:mt-[-38px]">
+        <div className="absolute inset-x-0 top-0 hidden h-full xl:block xl:mt-[-38px]">
           <img
             src={c4}
             alt=""
@@ -108,14 +108,6 @@ const Application1 = () => {
 
           {steps.map((item, index) => (
             <React.Fragment key={index}>
-              {/* LG View Node */}
-              <div
-                className="absolute z-20 -translate-x-1/2 -translate-y-1/2 lg:block xl:hidden"
-                style={item.lgStyle}
-              >
-                <StepContent item={item} isXl={false} />
-              </div>
-
               {/* XL View Node */}
               <div
                 className="absolute z-20 hidden -translate-x-1/2 -translate-y-1/2 xl:block 2xl:hidden"
@@ -136,8 +128,8 @@ const Application1 = () => {
         </div>
 
         {/* Mobile View */}
-        <div className="mt-8 block lg:hidden">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6">
+        <div className="mt-8 block xl:hidden">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6 lg:grid-cols-2">
             {steps.map((item, index) => (
               <div
                 key={index}

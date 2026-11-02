@@ -75,10 +75,10 @@ const steps = [
 
 const Application = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-[#F0FDFA] py-10 sm:py-12 md:py-14 lg:h-[600px] xl:h-[700px] lg:py-0">
+    <section className="relative w-full overflow-hidden bg-[#F0FDFA] py-10 sm:py-12 md:py-14 xl:h-[700px] xl:py-0">
       <div className="relative mx-auto h-full w-full max-w-[1440px] px-5 sm:px-8 md:px-10 lg:px-6 xl:px-[54px]">
         {/* Header Section */}
-        <div className="relative z-30 lg:absolute lg:left-6 lg:top-[26px] xl:left-[54px] xl:top-[30px]">
+        <div className="relative z-30 xl:absolute xl:left-[54px] xl:top-[30px]">
           <p
             className="m-0 mt-4 text-[24px] leading-[1.15] text-[#26839A] sm:text-[26px] md:text-[28px] lg:text-[24px] xl:text-[40px]"
             
@@ -100,7 +100,7 @@ const Application = () => {
         </div>
 
         {/* Timeline Desktop Container */}
-        <div className="absolute inset-x-0 top-0 hidden h-full lg:block">
+        <div className="absolute inset-x-0 top-0 hidden h-full xl:block">
           <img
             src={c4}
             alt=""
@@ -127,7 +127,7 @@ const Application = () => {
         </div>
 
         {/* Mobile View */}
-        <div className="mt-8 block lg:hidden">
+        <div className="mt-8 block xl:hidden">
           <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 md:gap-6">
             {steps.map((item, index) => (
               <div

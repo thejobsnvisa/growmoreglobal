@@ -132,28 +132,8 @@ const Work = () => {
         {/* =====================================================
       WHITE GRADIENT OVERLAY
   ====================================================== */}
-        <div
-          className="
-      absolute
-      inset-0
-      z-[1]
+                       <div className="absolute inset-y-0 left-0 w-[70%] bg-gradient-to-r from-white via-white/90 to-transparent" />
 
-      /* Mobile */
-      bg-[linear-gradient(90deg,#FFFFFF_0%,rgba(255,255,255,0.94)_28%,rgba(255,255,255,0.55)_58%,rgba(255,255,255,0)_100%)]
-
-      /* Small */
-      sm:bg-[linear-gradient(90deg,#FFFFFF_0%,rgba(255,255,255,0.92)_27%,rgba(255,255,255,0.45)_62%,rgba(255,255,255,0)_100%)]
-
-      /* Tablet */
-      md:bg-[linear-gradient(90deg,#FFFFFF_0%,rgba(255,255,255,0.90)_25%,rgba(255,255,255,0.35)_65%,rgba(255,255,255,0)_100%)]
-
-      /* Large */
-      lg:bg-[linear-gradient(89.92deg,#FFFFFF_0.06%,rgba(255,255,255,0)_55%)]
-
-      /* XL - KEEP YOUR PERFECT DESIGN */
-      xl:bg-[linear-gradient(89.92deg,#FFFFFF_0.06%,rgba(255,255,255,0)_48.4%)]
-    "
-        />
 
         {/* =====================================================
       CONTENT

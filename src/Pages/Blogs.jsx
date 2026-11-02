@@ -12,13 +12,8 @@ const Blogs = () => {
             className="absolute inset-0 h-full w-full object-cover object-center"
           />
 
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.78) 35%, rgba(255,255,255,0) 80%)",
-            }}
-          />
+                          <div className="absolute inset-y-0 left-0 w-[70%] bg-gradient-to-r from-white via-white/90 to-transparent" />
+
 
           <div className="relative z-10 mx-auto flex h-full w-full max-w-[1256px] flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-10 xl:px-0">
             <p className="mb-2 text-sm sm:text-base md:text-[17px] lg:text-[18px]">

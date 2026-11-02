@@ -15,14 +15,8 @@ const News = () => {
                  className="absolute inset-0 h-full w-full object-cover"
                />
        
-               <div
-                 className="absolute inset-0"
-                 style={{
-                   background:
-                     "linear-gradient(89.92deg, #FFFFFF 0.06%, rgba(255, 255, 255, 0.79) 20.33%, rgba(255, 255, 255, 0) 48.4%)",
-                 }}
-               />
-       
+                              <div className="absolute inset-y-0 left-0 w-[70%] bg-gradient-to-r from-white via-white/90 to-transparent" />
+
                <div className="relative z-10 mx-auto flex h-full w-full max-w-[1256px] flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-0">
                  <p className="mb-2 text-[14px] sm:text-[16px] md:text-[17px] lg:text-[18px]">
                    <span className="text-sky-500 lg:ml-10 xl:ml-0">Home &gt; </span>

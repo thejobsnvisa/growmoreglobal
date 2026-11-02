@@ -12,7 +12,8 @@ const AI = () =>{
                 />
         
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-[linear-gradient(89.92deg,#FFFFFF_0.06%,rgba(255,255,255,0)_68.4%)]" />
+                     {/* Gradient Overlay */}
+                <div className="absolute inset-y-0 left-0 w-[70%] bg-gradient-to-r from-white via-white/90 to-transparent" />
         
                 {/* Banner Content */}
                 <div className="relative z-10 mx-auto flex h-full w-full max-w-[1256px] flex-col justify-center px-5 sm:px-8 md:px-12 lg:px-10">
@@ -23,7 +24,7 @@ const AI = () =>{
                   </p>
         
                   {/* Banner Heading */}
-                  <h1 className="mt-4 lg:w-[450pxhero] 2xl:w-[600px]  text-[38px] font-semibold leading-[1.1] text-[#669980] sm:mt-6 sm:text-[44px] md:mt-8 md:text-[52px] lg:mt-10 lg:text-[60px] 2xl:ml-[-284px]">
+                  <h1 className="mt-4 lg:w-[450px] 2xl:w-[600px]  text-[38px] font-semibold leading-[1.1] text-[#669980] sm:mt-6 sm:text-[44px] md:mt-8 md:text-[52px] lg:mt-10 lg:text-[60px] 2xl:ml-[-284px]">
                     Artificial Intelligence Use Policy
                   </h1>
                 </div>

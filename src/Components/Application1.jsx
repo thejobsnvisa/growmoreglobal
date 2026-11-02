@@ -22,9 +22,9 @@ const steps = [
     points:
       "Understand your goals and eligibility",
     // Distinct styles per breakpoint
-    lgStyle: { top: "60%", left: "10.5%" },
+    lgStyle: { top: "58%", left: "10.5%" },
     xlStyle: { top: "54%", left: "10.5%" },
-    xxlStyle: { top: "50%", left: "8.5%" },
+    xxlStyle: { top: "53%", left: "5.5%" },
     position: "bottom",
     image: img1,
   },
@@ -35,7 +35,7 @@ const steps = [
       "Tailored guidance based on your profile and university requirements",
     lgStyle: { top: "64%", left: "31%" },
     xlStyle: { top: "62%", left: "30.5%" },
-    xxlStyle: { top: "49%", left: "34.5%" },
+    xxlStyle: { top: "56%", left: "31.5%" },
     position: "top",
     image: img2,
   },
@@ -46,7 +46,7 @@ const steps = [
       "Handling paperwork and deadline",
     lgStyle: { top: "47%", left: "54%" },
     xlStyle: { top: "42%", left: "53%" },
-    xxlStyle: { top: "33%", left: "60%" },
+    xxlStyle: { top: "37%", left: "55%" },
     position: "bottom",
     image: img3,
   },
@@ -55,9 +55,9 @@ const steps = [
     title: "Visa Filing & Support",
     points:
       "Assistance with financials, documents, and embassy processes.",
-    lgStyle: { top: "54%", left: "72%" },
+    lgStyle: { top: "53%", left: "72%" },
     xlStyle: { top: "48%", left: "72%" },
-    xxlStyle: { top: "40%", left: "82%" },
+    xxlStyle: { top: "44%", left: "81%" },
     position: "top",
     image: img4,
   },
@@ -66,9 +66,9 @@ const steps = [
     title: "Pre-Departure Support",
     points:
       "Orientation on travel, accommodation, and life abroad.",
-    lgStyle: { top: "38%", left: "92%" },
+    lgStyle: { top: "37%", left: "93%" },
     xlStyle: { top: "28.8%", left: "93%" },
-    xxlStyle: { top: "18.8%", left: "108%" },
+    xxlStyle: { top: "22.8%", left: "108%" },
     position: "bottom",
     image: img5,
   },
@@ -103,7 +103,7 @@ const Application1 = () => {
             src={c4}
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-[58%] z-0 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 object-cover lg:top-1/2 xl:mt-[-40px] 2xl:mt-[-130px]"
+            className="pointer-events-none absolute left-1/2 top-[58%] z-0 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 object-cover lg:top-1/2 xl:mt-[-40px] 2xl:mt-[-90px]"
           />
 
           {steps.map((item, index) => (

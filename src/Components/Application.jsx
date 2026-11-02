@@ -20,9 +20,9 @@ const steps = [
     points:
       "We assess your qualifications, work experience, and occupation to determine your eligibility under country-specific work visa rules.",
     // Distinct styles per breakpoint
-    lgStyle: { top: "58%", left: "11.5%" },
+    lgStyle: { top: "58%", left: "10.5%" },
     xlStyle: { top: "60%", left: "10.5%" },
-    "2xlStyle": { top: "60%", left: "7.5%" },
+    "2xlStyle": { top: "60%", left: "5.5%" },
     position: "bottom",
     image: img1,
   },
@@ -31,9 +31,9 @@ const steps = [
     title: "Visa Pathway Selection",
     points:
       "Based on your profile, we recommend the most suitable work visa category that goes well with current immigration regulations.",
-    lgStyle: { top: "65%", left: "31%" },
-    xlStyle: { top: "67%", left: "28.5%" },
-    "2xlStyle": { top: "62%", left: "30.5%" },
+    lgStyle: { top: "64%", left: "31%" },
+    xlStyle: { top: "67%", left: "30.5%" },
+    "2xlStyle": { top: "65%", left: "28.5%" },
     position: "top",
     image: img2,
   },
@@ -42,9 +42,9 @@ const steps = [
     title: "Document Guidance & Review",
     points:
       "We provide a structured document checklist and carefully review all records to ensure accuracy.",
-    lgStyle: { top: "47%", left: "54%" },
-    xlStyle: { top: "48%", left: "53%" },
-    "2xlStyle": { top: "38%", left: "56%" },
+    lgStyle: { top: "48%", left: "53.5%" },
+    xlStyle: { top: "48%", left: "53.5%" },
+    "2xlStyle": { top: "39%", left: "54%" },
     position: "bottom",
     image: img3,
   },
@@ -53,9 +53,9 @@ const steps = [
     title: "Application Preparation & Submission",
     points:
       "Once the documents are ready, we carefully prepare and submit your work visa application.",
-    lgStyle: { top: "54%", left: "72%" },
-    xlStyle: { top: "54%", left: "72%" },
-    "2xlStyle": { top: "46%", left: "84%" },
+    lgStyle: { top: "53%", left: "72%" },
+    xlStyle: { top: "54%", left: "72.5%" },
+    "2xlStyle": { top: "47%", left: "82%" },
     position: "top",
     image: img4,
   },
@@ -105,7 +105,7 @@ const Application = () => {
             src={c4}
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-[58%] z-0 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 object-cover lg:top-1/2 xl:top-1/2 2xl:mt-[-60px]"
+            className="pointer-events-none absolute left-1/2 top-[69%] z-0 w-screen max-w-none -translate-x-1/2 -translate-y-1/2 object-cover lg:top-1/2 xl:top-1/2 2xl:mt-[-55px]"
           />
 
           {steps.map((item, index) => (

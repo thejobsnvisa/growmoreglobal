@@ -454,7 +454,7 @@ const Faq = () => {
       id: 1,
       text: "Can Growmore Global Visa assist with all types of visa queries?",
       answer:
-        "Yes. Growmore Global Visa can assist with a wide range of visa queries for all countries, including student, work, dependent, visitor and migration-related visa pathways.",
+        "Yes. Growmore Global Visa can assist with a wide range of visa queries for various countries, including student, work, dependent, visitor and migration-related visa pathways.",
     },
 
     {

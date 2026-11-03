@@ -12,6 +12,7 @@ import WhyGrowmore from "../Components/WhyGrowmore"
 import { Helmet } from "react-helmet-async";
 
 const url = "https://growmoreglobalvisa.com/";
+const ogImage = "https://growmoreglobalvisa.com/assets/hero-image.png";
 
 const Home = () => {
   return (
@@ -36,10 +37,14 @@ const Home = () => {
           property="og:description"
           content="Get expert immigration and visa support in Melbourne for skilled migration, permanent residency, employer-sponsored visas, and documentation assistance."
         />
-         <meta property="og:url" content={url} />
-        <meta property="og:image" content="https://growmoreglobalvisa.com/assets/hero-image.png" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:width" content="630" />
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:secure_url" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="Growmore Global Visa" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={ogImage} />
 
       </Helmet>
     <div>

@@ -175,7 +175,7 @@ const States6 = () => {
       const currentIndex = States6List.findIndex(({ id }) => id === selectedStateId);
       setSelectedStateId(States6List[(currentIndex + 1) % States6List.length].id);
       setManualSelection(false);
-    }, manualSelection ? 1500 : 5000);
+    }, manualSelection ? 10000 : 5000);
 
     return () => clearTimeout(timer);
   }, [isInView, selectedStateId, manualSelection]);

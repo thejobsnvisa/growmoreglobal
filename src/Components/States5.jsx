@@ -186,7 +186,7 @@ const States5 = () => {
     const timer = setTimeout(() => {
       if (isManualPause) setManualPauseUntil(0);
       advanceState();
-    }, isManualPause ? manualPauseUntil - Date.now() : 5000);
+    }, isManualPause ? manualPauseUntil - Date.now() : 10000);
 
     return () => clearTimeout(timer);
   }, [isInView, manualPauseUntil, selectedStateId]);

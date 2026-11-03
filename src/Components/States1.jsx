@@ -95,7 +95,7 @@ const States1 = () => {
       );
       const nextState = States1List[(currentIndex + 1) % States1List.length];
       setSelectedStateId(nextState.id);
-    }, 5000);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, [isInView, isClickHold, selectedStateId]);

@@ -182,7 +182,7 @@ const States7 = () => {
         });
       }
       setAnimationKey((prev) => prev + 1);
-    }, 5000);
+    }, 10000);
 
     return () => {
       clearInterval(cycleInterval);

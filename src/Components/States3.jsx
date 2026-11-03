@@ -107,7 +107,7 @@ const States3 = () => {
         const currentIndex = States3List.findIndex(({ id }) => id === currentId);
         return States3List[(currentIndex + 1) % States3List.length].id;
       });
-    }, 5000);
+    }, 10000);
 
     return () => {
       clearInterval(cycleInterval);

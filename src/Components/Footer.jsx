@@ -3,7 +3,6 @@ import call from "../assets/Phone.svg";
 import email from "../assets/email.svg";
 import location from "../assets/Location.svg";
 import facebook from "../assets/Facebook.svg";
-import twitter from "../assets/X.svg";
 import instagram from "../assets/Instagram.svg";
 import youtube from "../assets/Youtube.svg";
 import { CiLinkedin } from "react-icons/ci";
@@ -133,21 +132,19 @@ className="hidden xl:block absolute w-[540px] h-[350px] rotate-0 opacity-100 top
             </div>
                {/* Social Icons */}
               <div className="relative z-10 flex items-center justify-between 2xl:mt-[-10px] xl:ml-[-12px] pt-6 gap-2 ml-[-90px] rounded-b-[20px] px-24 xl:px-6 pb-5">
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
+                <a href="https://www.facebook.com/growmoreglobalvisa/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
                   <img src={facebook} alt="" className="w-8 h-8 filter brightness-0 invert font-bold" />
                 </a>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
+                <a href="https://www.linkedin.com/company/growmore-global-visa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
                   <CiLinkedin className="w-8 h-8 filter brightness-0 invert font-bold" />
                 </a>
-                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
+                <a href="https://www.youtube.com/@GrowmoreGlobalVisa" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
                   <img src={youtube} alt="" className="w-8 h-8 filter brightness-0 invert font-bold" />
                 </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
+                <a href="https://www.instagram.com/growmoreglobalvisa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
                   <img src={instagram} alt="" className="w-8 h-8 filter brightness-0 invert font-bold" />
                 </a>
-                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="flex items-center justify-center w-[45px] h-[45px] 2xl:w-[48px] 2xl:h-[48px] rounded-[12px] transition-colors hover:brightness-125" style={{ backgroundColor: "rgba(143, 231, 242, 0.3)" }}>
-                  <img src={twitter} alt="" className="w-7 h-6 filter brightness-0 invert font-bold" />
-                </a>
+                
               </div>
           </div>
 

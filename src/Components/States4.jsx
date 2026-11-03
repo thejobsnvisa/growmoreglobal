@@ -117,7 +117,7 @@ const States4 = () => {
   useEffect(() => {
     if (!isInView) return;
 
-    scheduleNextState(5000);
+    scheduleNextState(10000);
 
     return () => {
       clearTimeout(cycleTimeoutRef.current);

@@ -93,11 +93,11 @@ const States2 = () => {
         const currentIndex = States2List.findIndex(({ id }) => id === currentId);
         return States2List[(currentIndex + 1) % States2List.length].id;
       });
-      timerRef.current = setTimeout(advance, 5000);
+      timerRef.current = setTimeout(advance, 10000);
     };
 
     advanceRef.current = advance;
-    timerRef.current = setTimeout(advance, 5000);
+    timerRef.current = setTimeout(advance, 10000);
 
     return () => {
       clearTimeout(timerRef.current);
@@ -152,16 +152,16 @@ const States2 = () => {
         </span>
       </div>
 
-      <div className="mt-8 flex flex-col items-center gap-6 px-4 sm:px-6 xl:mt-[60px] xl:flex-row xl:items-start xl:justify-center xl:gap-10 xl:px-10">
+      <div className="mt-8 flex flex-col items-center gap-6 px-4 sm:px-6 lg:mt-[60px] lg:flex-row lg:items-start lg:justify-center lg:gap-8 lg:px-8 xl:gap-10 xl:px-10">
         {/* Left Side Buttons */}
-        <div className="w-full max-w-[420px] xl:w-[420px] xl:shrink-0">
+        <div className="w-full max-w-[420px] lg:w-[40%] lg:shrink-0 xl:w-[420px]">
           <AnimatePresence mode="wait">
             <motion.div
               variants={buttonContainerVariants}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
               exit="exit"
-              className="flex flex-col gap-[14px] xl:gap-[18px]"
+              className="flex flex-col gap-[14px] lg:gap-[18px]"
             >
               {States2List.map(({ id, title }) => {
                 const isSelected = selectedStateId === id;
@@ -179,7 +179,7 @@ const States2 = () => {
                       scale: isSelected ? 1.02 : 1,
                     }}
                     transition={{ duration: 0.2 }}
-                    className="flex h-[54px] w-full items-center justify-center rounded-[12px] border text-center text-[18px] font-medium cursor-pointer shadow-sm sm:h-[58px] xl:h-[62px] xl:text-[20px]"
+                    className="flex h-[54px] w-full items-center justify-center rounded-[12px] border text-center text-[18px] font-medium cursor-pointer shadow-sm sm:h-[58px] lg:h-[62px] lg:text-[20px]"
                   >
                     {title}
                   </motion.button>
@@ -190,7 +190,7 @@ const States2 = () => {
         </div>
 
         {/* Right Side: Entire Card Animated as a Whole */}
-        <div className="relative w-full max-w-[580px] xl:w-[580px] xl:h-[400px]">
+        <div className="relative w-full max-w-[580px] lg:min-w-0 lg:flex-1 lg:h-[400px] xl:w-[580px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedStateId}
@@ -198,18 +198,18 @@ const States2 = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -80 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="w-full rounded-[28px] bg-white px-[22px] py-[24px] shadow-sm flex flex-col gap-[14px] sm:px-[28px] sm:py-[28px] xl:h-full xl:rounded-[36px] xl:px-[36px] xl:py-[30px] xl:gap-[16px]"
+              className="w-full rounded-[28px] bg-white px-[22px] py-[24px] shadow-sm flex flex-col gap-[14px] sm:px-[28px] sm:py-[28px] lg:h-full lg:rounded-[36px] lg:px-[30px] lg:py-[30px] lg:gap-[16px] xl:px-[36px]"
             >
               <div className="text-center">
-                <p className="text-[22px] font-bold text-[#20697B] xl:text-[24px]">
+                <p className="text-[22px] font-bold text-[#20697B] lg:text-[24px]">
                   {activeData.title}
                 </p>
-                <p className="mt-1 text-[14px] text-slate-500 sm:text-[15px] xl:text-[16px]">
+                <p className="mt-1 text-[14px] text-slate-500 sm:text-[15px] lg:text-[16px]">
                   {activeData.description}
                 </p>
               </div>
 
-              <div className="text-[14px] leading-[1.35] text-[#20697B] flex flex-col gap-2.5 sm:text-[15px] xl:text-[16px]">
+              <div className="text-[14px] leading-[1.35] text-[#20697B] flex flex-col gap-2.5 sm:text-[15px] lg:text-[16px]">
                 <div>
                   <p className="font-bold">Popular Universities</p>
                   <ul className="list-disc pl-5 mt-1 text-[#00609C] space-y-0.5">

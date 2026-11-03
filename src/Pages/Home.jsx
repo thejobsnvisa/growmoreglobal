@@ -12,7 +12,7 @@ import WhyGrowmore from "../Components/WhyGrowmore"
 import { Helmet } from "react-helmet-async";
 
 const url = "https://growmoreglobalvisa.com/";
-const ogImage = "https://growmoreglobalvisa.com/assets/hero-image.png";
+const ogImage = "https://growmoreglobalvisa.com/assets/hero-image-DLcpu16U.png";
 
 const Home = () => {
   return (

@@ -24,7 +24,7 @@ const BlogStep = () => {
   };
 
   return (
-    <section className="bg-white py-20 mb-40 lg:mb-[155px] md:mb-40 xl:mb-50 ">
+    <section className="bg-white py-20 mb-40 lg:mb-[170px] md:mb-40 xl:mb-50 ">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         {/* Grid */}
         <div className="mx-auto w-full">
@@ -75,7 +75,6 @@ const BlogStep = () => {
                     alt={article.title}
                     className="
                     h-[180px]
-                    p-3
                     rounded-[40px]
                     w-full
                     object-contain
@@ -143,14 +142,14 @@ const BlogStep = () => {
         </div>
 
         {/* ✅ PAGINATION */}
-        <div className="mt-8 flex items-center justify-center gap-3">
+        <div className="relative z-20 isolate mt-8 flex w-full items-center justify-center gap-3">
           {/* PREV */}
           <button
             type="button"
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
             aria-label="Previous page"
-            className={`flex h-7 w-7 items-center justify-center rounded-full bg-sky-100 text-cyan-700 font-bold cursor-pointer ${
+            className={`relative z-20 flex h-7 w-7 items-center justify-center rounded-full bg-sky-100 text-cyan-700 font-bold cursor-pointer ${
               currentPage === 1
                 ? "text-blue-400 cursor-pointer hover:text-green-500"
                 : "text-black hover:text-green-500 cursor-pointer"
@@ -168,7 +167,7 @@ const BlogStep = () => {
             onClick={goToNextPage}
             disabled={currentPage === totalPages}
             aria-label="Next page"
-            className="flex h-7 w-7 items-center justify-center rounded-full bg-sky-100 text-cyan-700 font-bold"
+            className="relative z-20 flex h-7 w-7 items-center justify-center rounded-full bg-sky-100 text-cyan-700 font-bold cursor-pointer"
           >
             <LuArrowRight  className="h-6 w-6"/>
           </button>

@@ -21,7 +21,8 @@ const Student = () => {
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(89.92deg,#FFFFFF_0.06%,rgba(255,255,255,0)_68.4%)]" />
+                      <div className="absolute inset-y-0 left-0 w-[70%] bg-gradient-to-r from-white via-white/90 to-transparent" />
+
 
         {/* Banner Content */}
         <div className="relative z-10 mx-auto flex h-full w-full max-w-[1400px] flex-col justify-center px-4 sm:px-6 lg:px-10">

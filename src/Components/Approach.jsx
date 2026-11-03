@@ -118,11 +118,9 @@ const Approach = () => {
   return (
     <div className="w-full min-h-screen bg-[#EFFCFF] py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-10 lg:px-28 2xl:min-h-[800px]">
       {/* Header */}
-      <div className="flex items-center gap-[10px] mb-2 sm:mb-3">
-        <span className="text-[28px] sm:text-[36px] md:text-[40px] lg:text-[40px] 2xl:text-[50px] text-[#338292]">Our</span>
-      </div>
-      <div className="mt-[-30px]">
-         <span className="text-[32px] sm:text-[40px] sm:mt-4 md:text-[45px] lg:text-[60px] font-bold text-[#5B9E7D]">
+      <div className="mb-2 leading-none sm:mb-3">
+        <span className="block text-[28px] sm:text-[36px] md:text-[40px] lg:text-[40px] 2xl:text-[50px] text-[#338292]">Our</span>
+        <span className="mt-1 block text-[32px] sm:text-[40px] md:text-[45px] lg:text-[60px] font-bold text-[#5B9E7D]">
           Approach
         </span>
       </div>

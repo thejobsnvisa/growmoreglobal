@@ -15,6 +15,7 @@ export default function DependentVisaSection() {
         xl:h-[590px]
         xl:min-h-0
         xl:py-0
+        2xl:h-[640px]
       "
     >
       <div
@@ -37,6 +38,8 @@ export default function DependentVisaSection() {
           xl:items-start
           xl:gap-10
           xl:gap-[60px]
+          2xl:max-w-[1500px]
+          2xl:gap-[72px]
         "
       >
         {/* ================= IMAGE ================= */}
@@ -60,6 +63,9 @@ export default function DependentVisaSection() {
             xl:w-[738px]
             xl:shrink-0
             xl:ml-[-85px]
+            2xl:h-[640px]
+            2xl:w-[820px]
+            2xl:ml-[-100px]
           "
         >
           <img
@@ -104,6 +110,8 @@ export default function DependentVisaSection() {
             /* Original Desktop dimensions and offsets */
             xl:mt-[80px]
             xl:w-[473px]
+            2xl:mt-[90px]
+            2xl:w-[540px]
           "
         >
           <p
@@ -122,13 +130,14 @@ export default function DependentVisaSection() {
 
               /* Original Desktop values */
               xl:w-[473px]
+              2xl:w-[540px]
               xl:mt-[-50px]
               xl:ml-6
               xl:text-[40px]
               xl:leading-[60px]
             "
           >
-            What is a Dependent Visa
+            What a Dependent Visa
           </p>
 
           <h2
@@ -147,7 +156,8 @@ export default function DependentVisaSection() {
               lg:text-[38px]
 
               /* Original Desktop values */
-              xl:w-[473px]
+              xl:w-[533px]
+              2xl:w-[580px]
               xl:mt-[4px]
               xl:ml-3
               xl:text-[60px]
@@ -190,6 +200,10 @@ export default function DependentVisaSection() {
             xl:pr-[30px]
             xl:pb-[40px]
             xl:pl-[30px]
+            2xl:mt-[225px]
+            2xl:ml-[-600px]
+            2xl:w-[620px]
+            2xl:h-[340px]
           "
         >
           <p
@@ -206,6 +220,8 @@ export default function DependentVisaSection() {
 
               /* Original Desktop values */
               xl:w-[485px]
+              2xl:w-[560px]
+              2xl:h-auto
               xl:h-[59px]
               xl:text-[16px]
             "
@@ -229,6 +245,8 @@ export default function DependentVisaSection() {
               /* Original Desktop values */
               xl:mt-8
               xl:w-[486px]
+              2xl:w-[560px]
+              2xl:h-auto
               xl:h-[31px]
               xl:text-[15px]
             "
@@ -255,6 +273,8 @@ export default function DependentVisaSection() {
               xl:mt-8
               xl:ml-4
               xl:w-[372px]
+              2xl:w-[500px]
+              2xl:h-auto
               xl:h-[94px]
               xl:text-[15px]
             "

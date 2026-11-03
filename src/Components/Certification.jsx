@@ -35,18 +35,17 @@ const certifications = [
 
 export default function Certification() {
   return (
-    <section className="max-w-[1400px] rounded-[40px] bg-sky-100 mx-auto px-6 md:px-12 ">
+    <section className="mx-auto max-w-[1400px] rounded-[24px] bg-sky-100 px-4 py-6 sm:rounded-[40px] sm:px-6 sm:py-8 md:px-12">
       {/* Heading */}
-        <div className="flex items-center gap-[10px] xl:ml-12 mb-2 sm:mb-2 mt-10">
+        <div className="mb-1 mt-2 flex items-center gap-[10px] sm:mt-0 xl:ml-12">
             <span
               className="
-                text-[28px]
+                text-[24px]
                 sm:text-[36px]
                 md:text-[40px]
                 lg:text-[40px]
                 leading-tight
                 text-[#338292]
-                mt-10
               "
             >
               Certification And
@@ -54,10 +53,10 @@ export default function Certification() {
           </div>
 
           {/* Testimonials */}
-          <div className="mt-[12px] sm:mt-[-8px] md:mt-[-10px] xl:ml-12 xl:mt-[-14px]">
+          <div className="mb-4 mt-0 xl:ml-12">
             <span
               className="
-                text-[32 px]
+                text-[32px]
                 sm:text-[40px]
                 md:text-[45px]
                 xl:text-[60px]
@@ -86,7 +85,7 @@ export default function Certification() {
       >
         {certifications.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="h-[280px] flex items-center justify-center">
+            <div className="flex h-[200px] items-center justify-center sm:h-[280px]">
               <img
                 src={item.image}
                 alt="certification"

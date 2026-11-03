@@ -75,7 +75,7 @@ const CountrySelect = ({ value, onChange }) => {
           />
         )}
 
-        <span className="whitespace-nowrap text-[12px] font-medium text-[#333]">
+        <span className="whitespace-nowrap text-[12px] font-medium text-sky-800">
           +{getCountryCallingCode(selectedCountry)}
         </span>
 
@@ -869,10 +869,10 @@ const Hero = () => {
                         bg-white
                         px-4
                         text-[12px]
-                        text-[#333]
+                        text-sky-800
                         outline-none
                         transition
-                        placeholder:text-gray-500
+                        placeholder:text-gray-400
                         focus:border-[#69b99e]
 
                         lg:h-[40px]
@@ -901,10 +901,10 @@ const Hero = () => {
                         bg-white
                         px-4
                         text-[12px]
-                        text-[#333]
+                        text-sky-800
                         outline-none
                         transition
-                        placeholder:text-gray-500
+                        placeholder:text-gray-400
                         focus:border-[#69b99e]
 
                         lg:h-[40px]
@@ -970,10 +970,10 @@ const Hero = () => {
                           bg-white
                           px-4
                           text-[12px]
-                          text-[#333]
+                          text-sky-800
                           outline-none
                           transition
-                          placeholder:text-gray-500
+                          placeholder:text-gray-400
                           focus:border-[#69b99e]
 
                           lg:h-[40px]
@@ -996,29 +996,9 @@ const Hero = () => {
                       value={formData.inquiry}
                       onChange={handleChange}
                       required
-                      className="
-                        h-[36px]
-                        w-full
-                        appearance-none
-                        rounded-[9px]
-                        border
-                        border-[#e0e4e8]
-                        bg-white
-                        px-4
-                        text-[13px]
-                        text-gray-500
-                        outline-none
-                        focus:border-[#69b99e]
-
-                        sm:text-[14px]
-
-                        lg:h-[40px]
-
-                        xl:h-[42px]
-
-                        2xl:h-[45px]
-                        2xl:text-[15px]
-                      "
+                      className={`h-[36px] w-full appearance-none rounded-[9px] border border-[#e0e4e8] bg-white px-4 text-[12px] outline-none focus:border-[#69b99e] ${
+                formData.inquiry ? "text-sky-800" : "text-gray-400"
+              }`}
                     >
                       <option value="">
                         Inquiry for
@@ -1065,28 +1045,9 @@ const Hero = () => {
                       value={formData.country}
                       onChange={handleChange}
                       required
-                      className="
-                        h-[36px]
-                        w-full
-                        appearance-none
-                        rounded-[9px]
-                        border
-                        border-[#e0e4e8]
-                        bg-white
-                        px-4
-                        text-[12px]
-                        text-gray-500
-                        outline-none
-                        focus:border-[#69b99e]
-
-                        lg:h-[40px]
-
-                        xl:h-[42px]
-                        xl:text-[14px]
-
-                        2xl:h-[45px]
-                        2xl:text-[15px]
-                      "
+                      className={`h-[36px] w-full appearance-none rounded-[9px] border border-[#e0e4e8] bg-white px-4 text-[12px] outline-none focus:border-[#69b99e] ${
+                formData.country ? "text-sky-800" : "text-gray-400"
+              }`}
                     >
                       <option value="">
                         Country
@@ -1168,9 +1129,9 @@ const Hero = () => {
                       px-4
                       py-3
                       text-[12px]
-                      text-[#333]
+                      text-sky-800
                       outline-none
-                      placeholder:text-gray-500
+                      placeholder:text-gray-400
                       focus:border-[#69b99e]
 
                       sm:min-h-[75px]

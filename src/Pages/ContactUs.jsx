@@ -113,7 +113,7 @@ const ContactUs = () => {
                 </div>
 
                 <div className="mt-4 flex min-h-[94px] items-start gap-3 rounded-[10px] bg-slate-100 px-4 py-4 sm:items-center sm:px-5">
-                  <img src={location} alt="location icon" className="h-10 w-10 shrink-0 object-contain" style={{ filter: office.country === "India" ? "brightness(0) saturate(100%) invert(35%) sepia(36%) saturate(780%) hue-rotate(124deg) brightness(92%) contrast(91%)" : "brightness(0) saturate(100%) invert(36%) sepia(84%) saturate(704%) hue-rotate(166deg) brightness(91%) contrast(94%)" }} />
+                  <img src={location} alt="location icon" className="h-10 mt-[-20px] w-10 shrink-0 object-contain" style={{ filter: office.country === "India" ? "brightness(0) saturate(100%) invert(35%) sepia(36%) saturate(780%) hue-rotate(124deg) brightness(92%) contrast(91%)" : "brightness(0) saturate(100%) invert(36%) sepia(84%) saturate(704%) hue-rotate(166deg) brightness(91%) contrast(94%)" }} />
                   <div className="ml-1 flex min-w-0 flex-col sm:ml-3">
                     <p className={`text-[16px] font-semibold ${office.country === "India" ? "text-teal-700" : "text-cyan-700"}`}>Location</p>
                     <p className={`mt-2 break-words text-[15px] sm:text-[16px] ${office.country === "India" ? "text-teal-600" : "text-cyan-600"}`}>{office.address}</p>

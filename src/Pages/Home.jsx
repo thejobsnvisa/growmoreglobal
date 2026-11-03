@@ -37,7 +37,7 @@ const Home = () => {
           content="Get expert immigration and visa support in Melbourne for skilled migration, permanent residency, employer-sponsored visas, and documentation assistance."
         />
          <meta property="og:url" content={url} />
-        <meta property="og:image" content="https://growmoreglobalvisa.com/assets/hero-img.png" />
+        <meta property="og:image" content="https://growmoreglobalvisa.com/assets/hero-image.png" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:width" content="630" />
 

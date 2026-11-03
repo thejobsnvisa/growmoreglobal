@@ -71,6 +71,7 @@ export default function Certification() {
 
       {/* Carousel */}
       <Swiper
+        className="pb-8 [&_.swiper-pagination]:!static [&_.swiper-pagination]:pt-6"
         modules={[Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={4}

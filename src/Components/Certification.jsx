@@ -35,7 +35,7 @@ const certifications = [
 
 export default function Certification() {
   return (
-    <section className="mx-auto max-w-[1400px] rounded-[24px] bg-sky-100 px-4 py-6 sm:rounded-[40px] sm:px-6 sm:py-8 md:px-12">
+    <section className="mx-auto 2xl:mt-20 max-w-[1400px] rounded-[24px] bg-sky-100 px-4 py-6 sm:rounded-[40px] sm:px-6 sm:py-8 md:px-12">
       {/* Heading */}
         <div className="mb-1 mt-2 flex items-center gap-[10px] sm:mt-0 xl:ml-12">
             <span

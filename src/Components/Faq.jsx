@@ -552,6 +552,7 @@ const Faq = () => {
           xl:mt-10
           xl:ml-25
           xl:px-0
+          2xl:ml-[365px]
         "
       >
         <h2

@@ -118,19 +118,19 @@ const Approach = () => {
   return (
     <div className="w-full min-h-screen bg-[#EFFCFF] py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-10 lg:px-28 2xl:min-h-[800px]">
       {/* Header */}
-      <div className="mb-2 leading-none sm:mb-3">
+      <div className="mb-2 leading-none sm:mb-3 2xl:ml-[230px]">
         <span className="block text-[28px] sm:text-[36px] md:text-[40px] lg:text-[40px] 2xl:text-[50px] text-[#338292]">Our</span>
         <span className="mt-1 block text-[32px] sm:text-[40px] md:text-[45px] lg:text-[60px] font-bold text-[#5B9E7D]">
           Approach
         </span>
       </div>
-      <p className="text-[clamp(0.875rem,1.2vw,1.25rem)] mt-2 text-[#3682B1] mb-8 sm:mb-10 md:mb-12 leading-snug">
+      <p className="text-[clamp(0.875rem,1.2vw,1.25rem)] 2xl:ml-[230px] mt-2 text-[#3682B1] mb-8 sm:mb-10 md:mb-12 leading-snug">
         Workflow at Growmore Global Visa <br /> Making Immigration Simple Across
         All Countries
       </p>
 
       {/* Main Container */}
-      <div className="flex flex-col lg:flex-row gap-[clamp(1.5rem,4vw,3rem)] items-start w-full max-w-[1500px] mx-auto" ref={cardSectionRef}>
+      <div className="flex flex-col lg:flex-row gap-[clamp(1.5rem,4vw,3rem)] 2xl:ml-[230px] items-start w-full max-w-[1500px] mx-auto" ref={cardSectionRef}>
         <div className="w-full min-w-0 lg:flex-1 lg:mt-12 xl:mt-0">
           {cards.map((card, index) => (
             <div

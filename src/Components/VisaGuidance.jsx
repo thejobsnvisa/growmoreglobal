@@ -130,7 +130,7 @@ const VisaGuidance = () => {
                 Personalized{" "}
               </span>
             </div>
-            <div className="mt-[-15px]">
+            <div className="mt-[-15px] lg:mt-[-30px]">
               <span className="text-[32px] font-bold text-[#5B9E7D] sm:mt-4 sm:text-[40px] md:text-[45px] lg:text-[48px] xl:text-[60px]">
                 Visa Guidance
               </span>

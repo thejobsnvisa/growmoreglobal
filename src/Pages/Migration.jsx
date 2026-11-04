@@ -10,6 +10,7 @@ import germany from "../assets/germany.jpg"
 import france from "../assets/france.jpg"
 import uk from "../assets/united kingdom.jpg"
 import canada from "../assets/canada.jpg"
+import { Helmet } from "react-helmet-async";
 
 const destination = [
   {
@@ -51,8 +52,39 @@ const destination = [
 ];
 
 const Migration = () => {
-  return (
-    <>
+    const url = "https://growmoreglobalvisa.com/services/migration-visa";
+      const ogImage = "https://growmoreglobalvisa.com/assets/img29-kS0-QExO.png";
+        
+        return (
+            <>
+             <Helmet>
+                <title>Migration Visa Services | Growmore Global Visa</title>
+        
+                <meta
+                  name="description"
+                  content="Explore migration visa options with Growmore Global Visa. Get expert guidance to plan your move abroad and navigate the visa application process."
+                />
+        
+                {/* ✅ Canonical for Work Visa page */}
+                <link rel="canonical" href={url} />
+        
+                {/* ✅ OG */}
+                <meta
+                  property="og:title"
+                  content="Migration Visa Services | Growmore Global Visa"
+                />
+                <meta
+                  property="og:description"
+                  content="Explore migration visa options with Growmore Global Visa. Get expert guidance to plan your move abroad and navigate the visa application process."
+                />
+                <meta property="og:url" content={url} />
+                <meta property="og:image" content={ogImage} />
+                <meta property="og:image:secure_url" content={ogImage} />
+                <meta property="og:image:type" content="image/png" />
+                <meta property="og:image:alt" content="Migration Visa Services | Growmore Global Visa" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:image" content={ogImage} />        
+              </Helmet>
       <section
         className="
         relative

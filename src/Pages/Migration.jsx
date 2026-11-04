@@ -53,7 +53,7 @@ const destination = [
 
 const Migration = () => {
     const url = "https://growmoreglobalvisa.com/services/migration-visa";
-      const ogImage = "https://growmoreglobalvisa.com/assets/img29-kS0-QExO.png";
+      const ogImage = "https://growmoreglobalvisa.com/assets/q2-Btyrc-6T.png";
         
         return (
             <>

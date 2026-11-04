@@ -33,11 +33,11 @@ const AboutUs = () => {
   return (
       <>
        <Helmet>
-          <title>About Growmore Global Visa | Trusted Immigration Consultants in Melbourne</title>
+          <title>About Growmore Global Visa | Trusted Immigration Consultants Across the Globe</title>
   
           <meta
             name="description"
-            content="Learn about Growmore Global Visa, a trusted immigration consultancy in Melbourne helping individuals and families with skilled migration, permanent residency, employer-sponsored visas, and global visa support."
+            content="Learn about Growmore Global Visa, a trusted immigration consultancy helping individuals and families across the globe with skilled migration, permanent residency, employer-sponsored visas, and global visa support."
           />
   
           {/* ✅ Canonical for About Us page */}

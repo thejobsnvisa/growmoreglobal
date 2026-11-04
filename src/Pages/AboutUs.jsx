@@ -6,6 +6,7 @@ import team1 from "../assets/team1.png";
 import team2 from "../assets/team2.png";
 import team3 from "../assets/team3.png";
 import QualityCommitment from "../Components/QualityCommitment";
+import { Helmet } from "react-helmet-async";
 
 const AboutUs = () => {
   const teams = [
@@ -25,8 +26,41 @@ const AboutUs = () => {
       role: "Director of Operations",
     },
   ];
+  
+  const url = "https://growmoreglobalvisa.com/about-us";
+  const ogImage = "https://growmoreglobalvisa.com/assets/hero-image-DLcpu16U.png";
+  
   return (
-    <>
+      <>
+       <Helmet>
+          <title>About Growmore Global Visa | Trusted Immigration Consultants in Melbourne</title>
+  
+          <meta
+            name="description"
+            content="Learn about Growmore Global Visa, a trusted immigration consultancy in Melbourne helping individuals and families with skilled migration, permanent residency, employer-sponsored visas, and global visa support."
+          />
+  
+          {/* ✅ Canonical for About Us page */}
+          <link rel="canonical" href={url} />
+  
+          {/* ✅ OG */}
+          <meta
+            property="og:title"
+            content="Meet the Growmore Global Visa Team | Migration Guidance in Melbourne"
+          />
+          <meta
+            property="og:description"
+            content="Get to know the people behind Growmore Global Visa and discover how we guide clients through their migration journey, from visa options to settling in Australia."
+          />
+          <meta property="og:url" content={url} />
+          <meta property="og:image" content={ogImage} />
+          <meta property="og:image:secure_url" content={ogImage} />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:alt" content="Growmore Global Visa" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content={ogImage} />
+  
+        </Helmet>
       {/* =====================================================
           BANNER SECTION
       ====================================================== */}

@@ -334,7 +334,7 @@ const Navbar = () => {
         ==================================================== */}
 
         <a
-          href="/contact"
+          href="/contact-us"
           className="
             hidden
             h-[46px]

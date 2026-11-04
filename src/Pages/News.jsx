@@ -1,10 +1,40 @@
 import NewsSection from "../Components/NewsSection";
 import img from "../assets/img24.png";
-
+import { Helmet } from "react-helmet-async";
 
 const News = () => {
-  return (
-    <>
+  const url = "https://growmoreglobalvisa.com/news";
+      const ogImage = "https://growmoreglobalvisa.com/assets/img24-akcN61EP.png";
+      return (
+          <>
+            <Helmet>
+              <title>News | Growmore Global Visa</title>
+      
+              <meta
+                name="description"
+                content="Stay updated with the latest news and updates from Growmore Global Visa."
+              />
+      
+              {/* ✅ Canonical for News */}
+              <link rel="canonical" href={url} />
+      
+              {/* ✅ OG */}
+              <meta
+                property="og:title"
+                content="News | Growmore Global Visa"
+              />
+              <meta
+                property="og:description"
+                content="Stay updated with the latest news and updates from Growmore Global Visa."
+              />
+              <meta property="og:url" content={url} />
+              <meta property="og:image" content={ogImage} />
+              <meta property="og:image:secure_url" content={ogImage} />
+              <meta property="og:image:type" content="image/png" />
+              <meta property="og:image:alt" content="News by Growmore Global Visa" />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:image" content={ogImage} />
+            </Helmet>
       <div>
        <section
                className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[480px]"

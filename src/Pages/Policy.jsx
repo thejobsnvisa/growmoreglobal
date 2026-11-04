@@ -1,8 +1,39 @@
 import img from "../assets/privacy.png"
+import { Helmet } from "react-helmet-async";
 
 const Policy = () =>{
-    return(
-        <>
+     const url = "https://growmoreglobalvisa.com/privacy-policy";
+           const ogImage = "https://growmoreglobalvisa.com/assets/privacy-Y5dXACC5.png";
+           return (
+               <>
+                 <Helmet>
+                   <title>Privacy Policy | Growmore Global Visa</title>
+           
+                   <meta
+                     name="description"
+                     content="Read the Privacy Policy of Grow More Global Immigration Private Limited to learn how we collect, use, protect, and manage your personal information."
+                   />
+           
+                   {/* Canonical for Privacy Policy */}
+                   <link rel="canonical" href={url} />
+           
+                   {/* ✅ OG */}
+                   <meta
+                     property="og:title"
+                     content="Privacy Policy | Growmore Global Visa"
+                   />
+                   <meta
+                     property="og:description"
+                     content="Learn how Grow More Global Immigration Private Limited collects, uses, protects, and manages your personal information."
+                   />
+                   <meta property="og:url" content={url} />
+                   <meta property="og:image" content={ogImage} />
+                   <meta property="og:image:secure_url" content={ogImage} />
+                   <meta property="og:image:type" content="image/png" />
+                   <meta property="og:image:alt" content="Privacy Policy by Growmore Global Visa" />
+                   <meta name="twitter:card" content="summary_large_image" />
+                   <meta name="twitter:image" content={ogImage} />
+                 </Helmet>
          <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px]">
                 {/* Banner Image */}
                 <img

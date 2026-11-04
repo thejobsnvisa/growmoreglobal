@@ -1,8 +1,39 @@
 import img from "../assets/ai.png"
+import { Helmet } from "react-helmet-async";
 
 const AI = () =>{
-    return(
-        <>
+    const url = "https://growmoreglobalvisa.com/aritificial-intelligence-use-policy";
+           const ogImage = "https://growmoreglobalvisa.com/assets/ai-BwS0-m6F.png";
+           return (
+               <>
+                 <Helmet>
+                   <title>Artificial Intelligence Use Policy | Growmore Global Visa</title>
+           
+                   <meta
+                     name="description"
+                     content="Learn how Grow More Global Immigration Private Limited uses artificial intelligence responsibly, including permitted uses, human review, privacy safeguards and restrictions."
+                   />
+           
+                   {/* Canonical for AI Use Policy */}
+                   <link rel="canonical" href={url} />
+           
+                   {/* Open Graph metadata for AI Use Policy */}
+                   <meta
+                     property="og:title"
+                     content="Artificial Intelligence Use Policy | Growmore Global Visa"
+                   />
+                   <meta
+                     property="og:description"
+                     content="Learn how Grow More Global Immigration Private Limited uses artificial intelligence responsibly, including permitted uses, human review, privacy safeguards and restrictions."
+                   />
+                   <meta property="og:url" content={url} />
+                   <meta property="og:image" content={ogImage} />
+                   <meta property="og:image:secure_url" content={ogImage} />
+                   <meta property="og:image:type" content="image/png" />
+                   <meta property="og:image:alt" content="Artificial Intelligence Use Policy by Growmore Global Visa" />
+                   <meta name="twitter:card" content="summary_large_image" />
+                   <meta name="twitter:image" content={ogImage} />
+                 </Helmet>
          <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px]">
                 {/* Banner Image */}
                 <img

@@ -13,6 +13,7 @@ import Credit from "../Components/Credit";
 import PartnerQualificationStep from "../Components/PartnerQualificationStep";
 import ProfessionalStep from "../Components/ProfessionalStep";
 import FinalResult from "../Components/FinalResult";
+import { Helmet } from "react-helmet-async";
 
 const PointsCalculator = () => {
     /* ---------------- STEP CONTROLLER ---------------- */ const [
@@ -60,8 +61,38 @@ const PointsCalculator = () => {
   };
   /* ---------------- TOTAL POINTS ---------------- */ const totalScore =
     Object.values(scores).reduce((sum, val) => sum + (val || 0), 0);
-  return (
-    <>
+    const url = "https://growmoreglobalvisa.com/services/australia-pr-points-calculator";
+    const ogImage = "https://growmoreglobalvisa.com/assets/p1-CcKdh0jD.png";
+    return (
+        <>
+          <Helmet>
+            <title>Australia PR Points Calculator | Growmore Global Visa</title>
+    
+            <meta
+              name="description"
+              content="Estimate your Australia skilled migration points based on age, English ability, work experience, education, and other factors with the Australia PR Points Calculator from Growmore Global Visa."
+            />
+    
+            {/* ✅ Canonical for Australia PR Points Calculator */}
+            <link rel="canonical" href={url} />
+    
+            {/* ✅ OG */}
+            <meta
+              property="og:title"
+              content="Australia PR Points Calculator | Growmore Global Visa"
+            />
+            <meta
+              property="og:description"
+              content="Estimate your Australia skilled migration points based on age, English ability, work experience, education, and other factors with the Australia PR Points Calculator from Growmore Global Visa."
+            />
+            <meta property="og:url" content={url} />
+            <meta property="og:image" content={ogImage} />
+            <meta property="og:image:secure_url" content={ogImage} />
+            <meta property="og:image:type" content="image/png" />
+            <meta property="og:image:alt" content="Australia PR Points Calculator by Growmore Global Visa" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:image" content={ogImage} />
+          </Helmet>
       <section
         className="
             relative

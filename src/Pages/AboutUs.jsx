@@ -46,11 +46,11 @@ const AboutUs = () => {
           {/* ✅ OG */}
           <meta
             property="og:title"
-            content="Meet the Growmore Global Visa Team | Migration Guidance in Melbourne"
+            content="Meet the Growmore Global Visa Team | Migration Guidance Across the Globe"
           />
           <meta
             property="og:description"
-            content="Get to know the people behind Growmore Global Visa and discover how we guide clients through their migration journey, from visa options to settling in Australia."
+            content="Get to know the people behind Growmore Global Visa and discover how we guide clients through their migration journey, from visa options to settling in their destination country across the world."
           />
           <meta property="og:url" content={url} />
           <meta property="og:image" content={ogImage} />

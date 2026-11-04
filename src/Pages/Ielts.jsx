@@ -8,10 +8,43 @@ import f4 from "../assets/F4.png";
 import f5 from "../assets/F5.png";
 import f6 from "../assets/F6.png";
 import { IoIosArrowForward } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 const Ielts = () => {
-  return (
-    <>
+  const url = "https://growmoreglobalvisa.com/services/english-test";
+     const ogImage = "https://growmoreglobalvisa.com/assets/img11-CTRFvQMK.png";
+          
+          return (
+              <>
+               <Helmet>
+                  <title>English Test Services | Growmore Global Visa</title>
+          
+                  <meta
+                    name="description"
+                    content="Prepare for your English test with Growmore Global Visa. Get expert guidance to help meet your study and visa language requirements."
+                  />
+          
+                  {/* ✅ Canonical for English Test page */}
+                  <link rel="canonical" href={url} />
+          
+                  {/* ✅ OG */}
+                  <meta
+                    property="og:title"
+                    content="English Test Services | Growmore Global Visa"
+                  />
+                  <meta
+                    property="og:description"
+                    content="Prepare for your English test with Growmore Global Visa. Get expert guidance to help meet your study and visa language requirements."
+                  />
+                  <meta property="og:url" content={url} />
+                  <meta property="og:image" content={ogImage} />
+                  <meta property="og:image:secure_url" content={ogImage} />
+                  <meta property="og:image:type" content="image/png" />
+                  <meta property="og:image:alt" content="Growmore Global Visa" />
+                  <meta name="twitter:card" content="summary_large_image" />
+                  <meta name="twitter:image" content={ogImage} />
+          
+                </Helmet>
       {/* ==================== BANNER ==================== */}
       <section className="relative h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] w-full overflow-hidden ">
         {/* Banner Image */}

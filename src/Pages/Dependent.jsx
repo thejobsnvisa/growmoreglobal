@@ -7,6 +7,7 @@ import v1 from "../assets/de1.png";
 import v2 from "../assets/de2.png";
 import v3 from "../assets/de3.png";
 import bg2 from "../assets/bg2.png";
+import { Helmet } from "react-helmet-async";
 
 const Dependent = () => {
   const cardData = [
@@ -29,8 +30,40 @@ const Dependent = () => {
         "Valid passports, birth/marriage certificates for all dependants, and tenancy agreements are required to prove identity.",
     },
   ];
-  return (
-    <>
+    const url = "https://growmoreglobalvisa.com/services/dependent-visa";
+      const ogImage = "https://growmoreglobalvisa.com/assets/q3-BVifVJvg.png";
+      
+      return (
+          <>
+           <Helmet>
+              <title>Dependent Visa Services | Growmore Global Visa</title>
+      
+              <meta
+                name="description"
+                content="Get your dependent visa with Growmore Global Visa. We provide expert guidance for those looking to join their family members abroad."
+              />
+      
+              {/* ✅ Canonical for About Us page */}
+              <link rel="canonical" href={url} />
+      
+              {/* ✅ OG */}
+              <meta
+                property="og:title"
+                content="Dependent Visa Services | Growmore Global Visa"
+              />
+              <meta
+                property="og:description"
+                content="Get your dependent visa with Growmore Global Visa. We provide expert guidance for those looking to join their family members abroad."
+              />
+              <meta property="og:url" content={url} />
+              <meta property="og:image" content={ogImage} />
+              <meta property="og:image:secure_url" content={ogImage} />
+              <meta property="og:image:type" content="image/png" />
+              <meta property="og:image:alt" content="Growmore Global Visa" />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:image" content={ogImage} />
+      
+            </Helmet>
       {/* ================= HERO BANNER ================= */}
       <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px]">
         {/* Banner Image */}

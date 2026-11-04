@@ -7,10 +7,42 @@ import f4 from "../assets/F4.png";
 import f5 from "../assets/F5.png";
 import f6 from "../assets/F6.png";
 import { IoIosArrowForward } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 const Acadmic = () => {
-  return (
-    <>
+  const url = "https://growmoreglobalvisa.com/services/languagecert-academic";
+    const ogImage = "https://growmoreglobalvisa.com/assets/img16-C2vfdhoK.png";
+  
+    return (
+      <>
+        <Helmet>
+          <title>LanguageCert Academic Coaching & Preparation | Growmore Global Visa</title>
+  
+          <meta
+            name="description"
+            content="Prepare for the LanguageCert Academic English test with expert coaching from Growmore Global Visa. Build your reading, writing, listening, and speaking skills with personalized guidance."
+          />
+  
+          {/* ✅ Canonical for LanguageCert Academic page */}
+          <link rel="canonical" href={url} />
+  
+          {/* ✅ OG */}
+          <meta
+            property="og:title"
+            content="LanguageCert Academic Coaching & Preparation | Growmore Global Visa"
+          />
+          <meta
+            property="og:description"
+            content="Prepare for the LanguageCert Academic English test with expert coaching from Growmore Global Visa. Build your reading, writing, listening, and speaking skills with personalized guidance."
+          />
+          <meta property="og:url" content={url} />
+          <meta property="og:image" content={ogImage} />
+          <meta property="og:image:secure_url" content={ogImage} />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:alt" content="LanguageCert Academic preparation by Growmore Global Visa" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content={ogImage} />
+        </Helmet>
       {/* ==================== BANNER ==================== */}
            <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[400px]">
                                       {/* Banner Image */}

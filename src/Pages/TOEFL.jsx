@@ -7,10 +7,42 @@ import f4 from "../assets/F4.png";
 import f5 from "../assets/F5.png";
 import f6 from "../assets/F6.png";
 import { IoIosArrowForward } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 const TOEFL = () => {
-  return (
-    <>
+ const url = "https://growmoreglobalvisa.com/services/toefl";
+   const ogImage = "https://growmoreglobalvisa.com/assets/img13-CY-V8SHa.png";
+ 
+   return (
+     <>
+       <Helmet>
+         <title>TOEFL Coaching & Preparation | Growmore Global Visa</title>
+ 
+         <meta
+           name="description"
+           content="Get expert TOEFL coaching and preparation support at Growmore Global Visa. Improve your writing, speaking, reading, and listening skills with personalized guidance and visa-focused training."
+         />
+ 
+         {/* ✅ Canonical for TOEFL page */}
+         <link rel="canonical" href={url} />
+ 
+         {/* ✅ OG */}
+         <meta
+           property="og:title"
+           content="TOEFL Coaching & Preparation | Growmore Global Visa"
+         />
+         <meta
+           property="og:description"
+           content="Get expert TOEFL coaching and preparation support at Growmore Global Visa. Improve your writing, speaking, reading, and listening skills with personalized guidance and visa-focused training."
+         />
+         <meta property="og:url" content={url} />
+         <meta property="og:image" content={ogImage} />
+         <meta property="og:image:secure_url" content={ogImage} />
+         <meta property="og:image:type" content="image/png" />
+         <meta property="og:image:alt" content="TOEFL preparation by Growmore Global Visa" />
+         <meta name="twitter:card" content="summary_large_image" />
+         <meta name="twitter:image" content={ogImage} />
+       </Helmet>
       {/* ==================== BANNER ==================== */}
        <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px]">
                                 {/* Banner Image */}

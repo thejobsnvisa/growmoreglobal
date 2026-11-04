@@ -7,10 +7,42 @@ import f4 from "../assets/F4.png";
 import f5 from "../assets/F5.png";
 import f6 from "../assets/F6.png";
 import { IoIosArrowForward } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 const Cambridge = () => {
-  return (
-    <>
+  const url = "https://growmoreglobalvisa.com/services/cambridge-c1-advanced";
+    const ogImage = "https://growmoreglobalvisa.com/assets/img15-b_F0uiHg.png";
+  
+    return (
+      <>
+        <Helmet>
+          <title>Cambridge C1 Advanced English Preparation | Growmore Global Visa</title>
+  
+          <meta
+            name="description"
+            content="Prepare for the Cambridge C1 Advanced English exam with expert guidance at Growmore Global Visa. Build your reading, writing, listening, and speaking skills with personalized support."
+          />
+  
+          {/* ✅ Canonical for Cambridge C1 Advanced page */}
+          <link rel="canonical" href={url} />
+  
+          {/* ✅ OG */}
+          <meta
+            property="og:title"
+            content="Cambridge C1 Advanced English Preparation | Growmore Global Visa"
+          />
+          <meta
+            property="og:description"
+            content="Prepare for the Cambridge C1 Advanced English exam with expert guidance at Growmore Global Visa. Build your reading, writing, listening, and speaking skills with personalized support."
+          />
+          <meta property="og:url" content={url} />
+          <meta property="og:image" content={ogImage} />
+          <meta property="og:image:secure_url" content={ogImage} />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:alt" content="Cambridge C1 Advanced English preparation by Growmore Global Visa" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content={ogImage} />
+        </Helmet>
       {/* ==================== BANNER ==================== */}
         <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px]">
                                 {/* Banner Image */}

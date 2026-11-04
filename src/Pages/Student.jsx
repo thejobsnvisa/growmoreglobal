@@ -10,36 +10,36 @@ const Student = () => {
   const offerIcon = c3;
   const offerItems = [{ icon: offerIcon, title: "Visa Offer" }];
 
-  const url = "https://growmoreglobalvisa.com/student-visa";
-    const ogImage = "https://growmoreglobalvisa.com/assets/q12-URYmBZdgT.png";
+  const url = "https://growmoreglobalvisa.com/services/student-visa";
+    const ogImage = "https://growmoreglobalvisa.com/assets/q12.png";
     
     return (
         <>
          <Helmet>
-            <title>Student Visa Services | Study Abroad with Growmore Global Visa</title>
+            <title>Student Visa Services | Growmore Global Visa</title>
     
             <meta
               name="description"
-              content="Plan your study abroad journey with Growmore Global Visa. Get expert guidance on student visa applications, choosing a country and course, and preparing to study overseas."
+              content="Get your student visa with Growmore Global Visa. We provide expert guidance for international students pursuing education abroad."
             />
     
-            {/* ✅ Canonical for Student Visa page */}
+            {/* ✅ Canonical for About Us page */}
             <link rel="canonical" href={url} />
     
             {/* ✅ OG */}
             <meta
               property="og:title"
-              content="Student Visa Guidance | Growmore Global Visa"
+              content="Student Visa Services | Growmore Global Visa"
             />
             <meta
               property="og:description"
-              content="Explore student visa support for your study abroad plans, from selecting a destination and course to navigating the visa application process."
+              content="Get your student visa with Growmore Global Visa. We provide expert guidance for international students pursuing education abroad."
             />
             <meta property="og:url" content={url} />
             <meta property="og:image" content={ogImage} />
             <meta property="og:image:secure_url" content={ogImage} />
             <meta property="og:image:type" content="image/png" />
-            <meta property="og:image:alt" content="Student visa and study abroad guidance" />
+            <meta property="og:image:alt" content="Growmore Global Visa" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:image" content={ogImage} />
     

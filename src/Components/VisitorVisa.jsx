@@ -1,6 +1,40 @@
+import { Helmet } from "react-helmet";
+import q2 from "../assets/q2.png";
+
 const VisitorVisa = () => {
-  return (
-    <>
+    const url = "https://growmoreglobalvisa.com/services/visitor-visa";
+        const ogImage = q2;
+          
+          return (
+              <>
+               <Helmet>
+                  <title>Visitor Visa Services | Growmore Global Visa</title>
+          
+                  <meta
+                    name="description"
+                    content="Explore visitor visa options with Growmore Global Visa. Get expert guidance to plan your trip and navigate the visa application process."
+                  />
+          
+                  {/* ✅ Canonical for Visitor Visa page */}
+                  <link rel="canonical" href={url} />
+          
+                  {/* ✅ OG */}
+                  <meta
+                    property="og:title"
+                    content="Visitor Visa Services | Growmore Global Visa"
+                  />
+                  <meta
+                    property="og:description"
+                    content="Explore visitor visa options with Growmore Global Visa. Get expert guidance to plan your trip and navigate the visa application process."
+                  />
+                  <meta property="og:url" content={url} />
+                  <meta property="og:image" content={ogImage} />
+                  <meta property="og:image:secure_url" content={ogImage} />
+                  <meta property="og:image:type" content="image/png" />
+                  <meta property="og:image:alt" content="Visitor Visa Services | Growmore Global Visa" />
+                  <meta name="twitter:card" content="summary_large_image" />
+                  <meta name="twitter:image" content={ogImage} />        
+                </Helmet>
     <section
             className="
               relative

@@ -560,7 +560,7 @@ const Navbar = () => {
           ================================================== */}
 
           <a
-            href="/contact"
+            href="/contact-us"
             onClick={handleNavClick}
             className="
               mt-4

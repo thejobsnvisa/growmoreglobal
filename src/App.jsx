@@ -73,7 +73,7 @@ function App() {
         <Route path="/english-test/duolingo" element={<Duolingo/>} />
         <Route path="/english-test/cambridge-c1-advanced" element={<Cambridge/>} />
         <Route path="/english-test/languagecert-academic" element={<Acadmic/>} />
-        <Route path="/contact" element={<ContactUs/>}/>
+        <Route path="/contact-us" element={<ContactUs/>}/>
         <Route path="/brochures" element={<Brochures/>}/>
         <Route path="/migration-assessment/points-calculator-australia" element={<PointsCalculator/>}/>
         <Route path="/services/student-visa/australia" element={<StudentvisaAustralia/>}/>

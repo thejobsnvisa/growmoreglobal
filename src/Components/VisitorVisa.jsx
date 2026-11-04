@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import q2 from "../assets/q2.png";
 
 const VisitorVisa = () => {

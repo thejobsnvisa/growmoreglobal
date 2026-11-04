@@ -1,40 +1,9 @@
 import BlogsStep from "../Components/BlogStep"
 import img from "../assets/img23.png";
-import { Helmet } from "react-helmet-async";
 
 const Blogs = () => {
-  const url = "https://growmoreglobalvisa.com/blogs";
-       const ogImage = "https://growmoreglobalvisa.com/assets/img23-CEvjomMq.png";
-       return (
-           <>
-             <Helmet>
-               <title>Blogs | Growmore Global Visa</title>
-       
-               <meta
-                 name="description"
-                 content="Stay updated with the latest blogs and updates from Growmore Global Visa."
-               />
-       
-               {/* ✅ Canonical for Blogs */}
-               <link rel="canonical" href={url} />
-       
-               {/* ✅ OG */}
-               <meta
-                 property="og:title"
-                 content="Blogs | Growmore Global Visa"
-               />
-               <meta
-                 property="og:description"
-                 content="Stay updated with the latest blogs and updates from Growmore Global Visa."
-               />
-               <meta property="og:url" content={url} />
-               <meta property="og:image" content={ogImage} />
-               <meta property="og:image:secure_url" content={ogImage} />
-               <meta property="og:image:type" content="image/png" />
-               <meta property="og:image:alt" content="Blogs by Growmore Global Visa" />
-               <meta name="twitter:card" content="summary_large_image" />
-               <meta name="twitter:image" content={ogImage} />
-             </Helmet>
+  return (
+    <>
       <div>
         <section className="relative h-[240px] w-full overflow-hidden sm:h-[300px] md:h-[370px] lg:h-[480px] 2xl:h-[580px]">
           <img

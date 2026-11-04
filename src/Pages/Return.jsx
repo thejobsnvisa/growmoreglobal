@@ -1,39 +1,8 @@
 import img from "../assets/refund.png"
-import { Helmet } from "react-helmet-async";
 
 const Refund = () =>{
-          const url = "https://growmoreglobalvisa.com/cancellation-and-refund-policy";
-          const ogImage = "https://growmoreglobalvisa.com/assets/refund-igLFf3Gd.png";
-          return (
-              <>
-                <Helmet>
-                  <title>Cancellation &amp; Refund Policy | Growmore Global Visa</title>
-          
-                  <meta
-                    name="description"
-                    content="Read Growmore Global Visa's cancellation and refund policy for consultation bookings, appointment rescheduling, refunds, and visa processing services."
-                  />
-          
-                  {/* Canonical for the Cancellation & Refund Policy */}
-                  <link rel="canonical" href={url} />
-          
-                  {/* ✅ OG */}
-                  <meta
-                    property="og:title"
-                    content="Cancellation & Refund Policy | Growmore Global Visa"
-                  />
-                  <meta
-                    property="og:description"
-                    content="Read Growmore Global Visa's cancellation and refund policy for consultation bookings, appointment rescheduling, refunds, and visa processing services."
-                  />
-                  <meta property="og:url" content={url} />
-                  <meta property="og:image" content={ogImage} />
-                  <meta property="og:image:secure_url" content={ogImage} />
-                  <meta property="og:image:type" content="image/png" />
-                  <meta property="og:image:alt" content="Cancellation and Refund Policy by Growmore Global Visa" />
-                  <meta name="twitter:card" content="summary_large_image" />
-                  <meta name="twitter:image" content={ogImage} />
-                </Helmet>
+    return(
+        <>
          <section className="relative h-[300px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[370px] lg:h-[400px] xl:h-[420px]">
                 {/* Banner Image */}
                 <img

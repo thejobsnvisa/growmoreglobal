@@ -8,7 +8,6 @@ import Language from "../Components/Language";
 import Education from "../Components/Education";
 import Adaptibility from "../Components/Adaptibility";
 import Language2 from "../Components/Language2";
-import { Helmet } from "react-helmet-async";
 
 const PointsCalculatorCanada = () => {
     /* ---------------- STEP CONTROLLER ---------------- */ const [
@@ -46,51 +45,8 @@ const PointsCalculatorCanada = () => {
   };
   /* ---------------- TOTAL POINTS ---------------- */ const totalScore =
     Object.values(scores).reduce((sum, val) => sum + (val || 0), 0);
- const url = "https://growmoreglobalvisa.com/services/canada-pr-points-calculator";
-     const ogImage = "https://growmoreglobalvisa.com/assets/p2-D2o7P2d9.png";
-     return (
-         <>
-           <Helmet>
-             <title>Canada PR Points Calculator | Growmore Global Visa</title>
-     
-             <meta
-               name="description"
-               content="Estimate your Canada PR points based on age, language proficiency, work experience, education, and other factors with the Canada PR Points Calculator from Growmore Global Visa."
-             />
-     
-             {/* ✅ Canonical for Canada PR Points Calculator */}
-             <link rel="canonical" href={url} />
-     
-             {/* ✅ OG */}
-             <meta
-               property="og:title"
-               content="Canada PR Points Calculator | Growmore Global Visa"
-             />
-             <meta
-               property="og:description"
-               content="Estimate your Canada PR points based on age, language proficiency, work experience, education, and other factors with the Canada PR Points Calculator from Growmore Global Visa."
-             />
-     
-             {/* ✅ Canonical for Canada PR Points Calculator */}
-             <link rel="canonical" href={url} />
-     
-             {/* ✅ OG */}
-             <meta
-               property="og:title"
-               content="Videos | Growmore Global Visa"
-             />
-             <meta
-               property="og:description"
-               content="Explore expert migration advice, step-by-step guides, and success stories from our YouTube channel."
-             />
-             <meta property="og:url" content={url} />
-             <meta property="og:image" content={ogImage} />
-             <meta property="og:image:secure_url" content={ogImage} />
-             <meta property="og:image:type" content="image/png" />
-             <meta property="og:image:alt" content="Canada PR Points Calculator by Growmore Global Visa" />
-             <meta name="twitter:card" content="summary_large_image" />
-             <meta name="twitter:image" content={ogImage} />
-           </Helmet>
+  return (
+    <>
       <section
         className="
             relative

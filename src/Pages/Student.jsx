@@ -4,13 +4,46 @@ import Application1 from "../Components/Application1";
 import GlobalVisa1 from "../Components/GlobalVisa1";
 import c3 from "../assets/29.svg";
 import Country from "../Components/Country";
+import { Helmet } from "react-helmet-async";
 
 const Student = () => {
   const offerIcon = c3;
   const offerItems = [{ icon: offerIcon, title: "Visa Offer" }];
 
-  return (
-    <>
+  const url = "https://growmoreglobalvisa.com/student-visa";
+    const ogImage = "https://growmoreglobalvisa.com/assets/q8.png";
+    
+    return (
+        <>
+         <Helmet>
+            <title>Student Visa Services | Study Abroad with Growmore Global Visa</title>
+    
+            <meta
+              name="description"
+              content="Plan your study abroad journey with Growmore Global Visa. Get expert guidance on student visa applications, choosing a country and course, and preparing to study overseas."
+            />
+    
+            {/* ✅ Canonical for Student Visa page */}
+            <link rel="canonical" href={url} />
+    
+            {/* ✅ OG */}
+            <meta
+              property="og:title"
+              content="Student Visa Guidance | Growmore Global Visa"
+            />
+            <meta
+              property="og:description"
+              content="Explore student visa support for your study abroad plans, from selecting a destination and course to navigating the visa application process."
+            />
+            <meta property="og:url" content={url} />
+            <meta property="og:image" content={ogImage} />
+            <meta property="og:image:secure_url" content={ogImage} />
+            <meta property="og:image:type" content="image/png" />
+            <meta property="og:image:alt" content="Student visa and study abroad guidance" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:image" content={ogImage} />
+    
+          </Helmet>
       {/* ================= HERO / BANNER SECTION ================= */}
       <section className="relative h-[280px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[380px] lg:h-[450px]">
         {/* Banner Image */}

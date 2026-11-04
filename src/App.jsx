@@ -42,10 +42,12 @@ import Terms from "./Pages/Terms.jsx";
 import Policy from "./Pages/Policy.jsx";
 import Refund from "./Pages/Return.jsx";
 import AI from "./Pages/AI.jsx";
+import ScrollToTop from "./Components/ScrollToTop.jsx";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>

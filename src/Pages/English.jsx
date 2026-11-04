@@ -276,7 +276,7 @@ const English = () => {
               </p>
 
               <a
-                href="/contact"
+                href="/contact-us"
                 className="
                   mx-auto
                   mt-4

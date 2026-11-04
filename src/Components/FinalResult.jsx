@@ -31,7 +31,7 @@ export default function FinalResult({
 
             <p className="mt-2 text-gray-500">
               <Link
-                to="/contact"
+                to="/contact-us"
                 className="text-blue-600 font-medium hover:underline"
               >
                 Contact Us
@@ -118,7 +118,7 @@ export default function FinalResult({
             </p>
               <p className="mt-2 text-gray-500">
               <Link
-                to="/contact"
+                to="/contact-us"
                 className="text-blue-600 font-medium hover:underline"
               >
                 Contact Us

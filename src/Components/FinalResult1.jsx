@@ -31,10 +31,10 @@ export default function FinalResult1({
 
             <p className="mt-2 text-gray-500">
               <Link
-                to="/contact"
+                to="/contact-us"
                 className="text-blue-600 font-medium hover:underline"
               >
-                Contact Us
+                contact-us Us
               </Link>{" "}
               to know more.
             </p>
@@ -118,7 +118,7 @@ export default function FinalResult1({
             </p>
               <p className="mt-2 text-gray-500">
               <Link
-                to="/contact"
+                to="/contact-us"
                 className="text-blue-600 font-medium hover:underline"
               >
                 Contact Us

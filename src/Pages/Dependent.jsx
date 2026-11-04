@@ -89,7 +89,7 @@ const Dependent = () => {
 
           {/* Centered CTA Button */}
           <a
-            href="/contact"
+            href="/contact-us"
             className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-[#84C8AF] px-6 py-3 text-[16px] font-semibold text-[#27456E] transition-all hover:bg-[#6ebc9f] hover:shadow-md"
           >
             Contact Us

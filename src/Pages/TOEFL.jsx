@@ -236,7 +236,7 @@ const TOEFL = () => {
               ))}
             </div>
 
-            {/* Contact Box */}
+            {/* contact-us Box */}
             <div
               className="
                 mt-8
@@ -259,7 +259,7 @@ const TOEFL = () => {
               </p>
 
               <a
-                href="/contact"
+                href="/contact-us"
                 className="
                   mx-auto
                   mt-4

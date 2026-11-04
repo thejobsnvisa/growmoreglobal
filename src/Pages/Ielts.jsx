@@ -116,14 +116,14 @@ const Ielts = () => {
               ))}
             </div>
 
-            {/* Contact Box */}
+            {/* contact-us Box */}
             <div className="mt-8 rounded-[20px] bg-emerald-100 p-6 text-center">
               <p className="text-[15px] sm:text-[16px] font-bold text-slate-600">
                 Not sure which test is right for you?
               </p>
 
               <a
-                href="/contact"
+                href="/contact-us"
                 className="mx-auto mt-4 inline-flex h-[40px] w-[150px] items-center justify-center gap-2 rounded-[30px] bg-[#84C8AF] text-[15px] font-semibold text-[#27456E] transition-transform hover:scale-105"
               >
                 Contact Us

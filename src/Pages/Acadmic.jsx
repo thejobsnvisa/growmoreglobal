@@ -239,7 +239,7 @@ const Acadmic = () => {
               ))}
             </div>
 
-            {/* Contact Box */}
+            {/* contact-us Box */}
             <div
               className="
                 mt-8
@@ -262,7 +262,7 @@ const Acadmic = () => {
               </p>
 
               <a
-                href="/contact"
+                href="/contact-us"
                 className="
                   mx-auto
                   mt-4

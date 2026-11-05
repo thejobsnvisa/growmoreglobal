@@ -6,6 +6,8 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+
 jobs:
   web-deploy:
     name: Build and Deploy
@@ -24,11 +26,17 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Build Project
+      - name: Build React App
         env:
           VITE_YOUTUBE_API_KEY: ${{ secrets.VITE_YOUTUBE_API_KEY }}
           VITE_YOUTUBE_CHANNEL_ID: ${{ secrets.VITE_YOUTUBE_CHANNEL_ID }}
         run: npm run build
+
+      - name: Verify Generated HTML
+        run: |
+          echo "Checking generated HTML files..."
+          find dist -name "index.html" -type f
+          test -f dist/index.html
 
       - name: Sync Files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

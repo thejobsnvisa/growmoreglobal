@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -40,6 +41,53 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
+    "react-snap": "^1.23.0",
     "vite": "^8.2.0"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "include": [
+      "/",
+      "/about-us",
+      "/services/work-visa",
+      "/services/migration-visa",
+      "/services/dependent-visa",
+      "/services/visitor-visa",
+      "/services/student-visa",
+      "/latest-update/videos",
+      "/latest-update/news",
+      "/latest-update/blogs",
+      "/english-test",
+      "/english-test/ielts",
+      "/english-test/pte",
+      "/english-test/toefl",
+      "/english-test/duolingo",
+      "/english-test/cambridge-c1-advanced",
+      "/english-test/languagecert-academic",
+      "/contact-us",
+      "/brochures",
+      "/migration-assessment/points-calculator-australia",
+      "/services/student-visa/australia",
+      "/services/student-visa/dubai",
+      "/services/student-visa/france",
+      "/services/student-visa/germany",
+      "/services/student-visa/singapore",
+      "/services/student-visa/georgia",
+      "/services/student-visa/russia",
+      "/services/student-visa/new-zealand",
+      "/services/student-visa/canada",
+      "/services/student-visa/usa",
+      "/services/student-visa/united-kingdom",
+      "/services/student-visa/europe",
+      "/migration-assessment/points-calculator-canada",
+      "/terms-services",
+      "/privacy-policy",
+      "/cancellation-and-refund-policy",
+      "/aritificial-intelligence-use-policy"
+    ]
   }
 }

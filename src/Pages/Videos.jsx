@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { Helmet } from "react-helmet-async";
 
 import img from "../assets/e13.png";
 import g from "../assets/Group.png";
@@ -70,8 +71,38 @@ const Videos = () => {
     loadData();
   }, []);
 
-  return (
-    <>
+       const url = "https://growmoreglobalvisa.com/videos";
+       const ogImage = "https://growmoreglobalvisa.com/assets/e13-DDhqXK88.png";
+       return (
+           <>
+             <Helmet>
+               <title>Videos | Growmore Global Visa</title>
+       
+               <meta
+                 name="description"
+                 content="Estimate your Canada PR points based on age, language proficiency, work experience, education, and other factors with the Canada PR Points Calculator from Growmore Global Visa."
+               />
+       
+               {/* ✅ Canonical for Canada PR Points Calculator */}
+               <link rel="canonical" href={url} />
+       
+               {/* ✅ OG */}
+               <meta
+                 property="og:title"
+                 content="Videos | Growmore Global Visa"
+               />
+               <meta
+                 property="og:description"
+                 content="Explore expert migration advice, step-by-step guides, and success stories from our YouTube channel."
+               />
+               <meta property="og:url" content={url} />
+               <meta property="og:image" content={ogImage} />
+               <meta property="og:image:secure_url" content={ogImage} />
+               <meta property="og:image:type" content="image/png" />
+               <meta property="og:image:alt" content="Videos by Growmore Global Visa" />
+               <meta name="twitter:card" content="summary_large_image" />
+               <meta name="twitter:image" content={ogImage} />
+             </Helmet>
       <section className="relative h-[280px] w-full overflow-hidden 2xl:h-[580px] sm:h-[340px] md:h-[380px] lg:h-[520px]">
         <img
           src={img}

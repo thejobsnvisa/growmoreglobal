@@ -5,6 +5,7 @@ import email from "../assets/Rectangle.svg";
 import clock from "../assets/clock.png";
 import location from "../assets/location1.png";
 import Contact from "../Components/Contact";
+import { Helmet } from "react-helmet-async";
 
 const ContactUs = () => {
 
@@ -33,9 +34,38 @@ const ContactUs = () => {
       map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.991827088126!2d72.5299896!3d23.024072299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e858c5649e9f7%3A0x417159f01a72ec1c!2sGrowmore%20Global%20Visa!5e0!3m2!1sen!2sin!4v1773825960657!5m2!1sen!2sin",
     },
   ];
-
-  return (
-    <>
+  const url = "https://growmoreglobalvisa.com/contact-us";
+       const ogImage = "https://growmoreglobalvisa.com/assets/img17-CIqssDit.png";
+       return (
+           <>
+             <Helmet>
+               <title>Contact Us | Growmore Global Visa</title>
+       
+               <meta
+                 name="description"
+                 content="Get in touch with Growmore Global Visa. We're here to help you with any questions or inquiries you may have."
+               />
+       
+               {/* ✅ Canonical for Contact Us */}
+               <link rel="canonical" href={url} />
+       
+               {/* ✅ OG */}
+               <meta
+                 property="og:title"
+                 content="Contact Us | Growmore Global Visa"
+               />
+               <meta
+                 property="og:description"
+                 content="Get in touch with Growmore Global Visa. We're here to help you with any questions or inquiries you may have."
+               />
+               <meta property="og:url" content={url} />
+               <meta property="og:image" content={ogImage} />
+               <meta property="og:image:secure_url" content={ogImage} />
+               <meta property="og:image:type" content="image/png" />
+               <meta property="og:image:alt" content="Contact Us by Growmore Global Visa" />
+               <meta name="twitter:card" content="summary_large_image" />
+               <meta name="twitter:image" content={ogImage} />
+             </Helmet>
       <section className="relative h-[260px] w-full overflow-hidden sm:h-[320px] md:h-[380px] lg:h-[480px]">
         <img
           src={img}

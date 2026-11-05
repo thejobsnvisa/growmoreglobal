@@ -1,3 +1,4 @@
+
 name: Deploy React App to Hostinger via FTP
 
 on:
@@ -18,15 +19,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: npm
 
       - name: Install Dependencies
         run: npm ci
 
       - name: Build Project
         env:
-         VITE_YOUTUBE_API_KEY : ${{ secrets.VITE_YOUTUBE_API_KEY }}
-         VITE_YOUTUBE_CHANNEL_ID : ${{ secrets.VITE_YOUTUBE_CHANNEL_ID }}
+          VITE_YOUTUBE_API_KEY: ${{ secrets.VITE_YOUTUBE_API_KEY }}
+          VITE_YOUTUBE_CHANNEL_ID: ${{ secrets.VITE_YOUTUBE_CHANNEL_ID }}
         run: npm run build
 
       - name: Sync Files via FTP

@@ -7,7 +7,7 @@
   "dev": "vite",
   "generate-routes": "node scripts/generateRoutes.cjs",
   "generate-static-pages": "node scripts/generateStaticPages.cjs",
-  "build": "npx shx rm -rf dist && vite build && npm run generate-routes && npm run generate-static-pages && npx react-snap && node scripts/fixReactSnapUrls.cjs && npm run sitemap",
+  "build": "npx shx rm -rf dist && vite build  && npm run generate-static-pages && npx react-snap && node scripts/fixReactSnapUrls.cjs && npm run sitemap",
   "postbuild": "node scripts/prerender.mjs",
   "lint": "eslint .",
   "preview": "vite preview"

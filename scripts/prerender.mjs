@@ -67,8 +67,8 @@ try {
 
   console.log(`Preview server running at ${baseUrl}`);
 
-  // 2. Launch Chrome
-  console.log("Launching Puppeteer Chrome...");
+  // 2. Launch Puppeteer
+  console.log("Launching Chrome...");
 
   browser = await puppeteer.launch({
     headless: true,
@@ -79,8 +79,7 @@ try {
       "--disable-setuid-sandbox",
       "--disable-gpu",
       "--disable-dev-shm-usage",
-      "--disable-extensions",
-      "--no-zygote"
+      "--disable-extensions"
     ]
   });
 
@@ -133,22 +132,66 @@ try {
       await page.waitForFunction(() => {
         const root = document.querySelector("#root");
 
-        return (
-          root &&
-          root.children.length > 0 &&
-          root.innerHTML.trim().length > 0
-        );
+        return root && root.innerHTML.trim().length > 0;
       }, {
         timeout: 30000
       });
 
-      // Allow Helmet metadata and page content to settle
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Wait until React Helmet has updated the page title
+      await page.waitForFunction(() => {
+        const title = document.querySelector("head title");
 
-      // Get rendered HTML
+        return title && title.textContent.trim().length > 0;
+      }, {
+        timeout: 15000
+      });
+
+      // Allow all Helmet metadata to settle
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      // 4. Capture actual metadata from this route
+      const metadata = await page.evaluate(() => {
+        const getMeta = (selector) => {
+          return document.querySelector(selector)?.getAttribute("content") || "";
+        };
+
+        return {
+          title: document.title,
+
+          description: getMeta('meta[name="description"]'),
+
+          canonical:
+            document.querySelector('link[rel="canonical"]')?.href || "",
+
+          robots: getMeta('meta[name="robots"]'),
+
+          ogTitle: getMeta('meta[property="og:title"]'),
+
+          ogDescription: getMeta('meta[property="og:description"]'),
+
+          ogUrl: getMeta('meta[property="og:url"]'),
+
+          ogImage: getMeta('meta[property="og:image"]'),
+
+          ogType: getMeta('meta[property="og:type"]'),
+
+          twitterCard: getMeta('meta[name="twitter:card"]'),
+
+          twitterTitle: getMeta('meta[name="twitter:title"]'),
+
+          twitterDescription: getMeta('meta[name="twitter:description"]'),
+
+          twitterImage: getMeta('meta[name="twitter:image"]')
+        };
+      });
+
+      console.log("Captured Helmet Metadata:");
+      console.log(JSON.stringify(metadata, null, 2));
+
+      // 5. Capture complete rendered HTML
       const html = await page.content();
 
-      // Create correct output folder
+      // 6. Create route-specific directory
       const relativeRoute = route.replace(/^\/+|\/+$/g, "");
 
       const outputDirectory = relativeRoute
@@ -159,13 +202,13 @@ try {
         recursive: true
       });
 
-      // Save prerendered HTML
+      // 7. Save prerendered HTML
       const outputFile = path.join(outputDirectory, "index.html");
 
       await fs.writeFile(outputFile, html, "utf8");
 
       console.log(`Successfully prerendered: ${route}`);
-      console.log(`Saved to: ${outputFile}`);
+      console.log(`Saved: ${outputFile}`);
 
     } catch (error) {
       console.error(`Failed route: ${route}`);
@@ -184,14 +227,13 @@ try {
   process.exitCode = 1;
 
 } finally {
-  // 4. Close Chrome
+  // Close Chrome
   if (browser) {
     console.log("Closing Chrome...");
-
     await browser.close().catch(console.error);
   }
 
-  // 5. Stop Vite preview server
+  // Stop Vite preview server
   if (server?.httpServer) {
     console.log("Stopping Vite preview server...");
 

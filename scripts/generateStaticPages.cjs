@@ -1,11 +1,11 @@
-import fs from "node:fs";
-import path from "node:path";
-import { cwd } from "node:process";
+const fs = require("node:fs");
+const path = require("node:path");
+const { cwd } = require("node:process");
 
 (async () => {
   // Import blog and news data
-  const { blogs } = await import("../src/Data/blogsData.js");
-  const { news } = await import("../src/Data/newsData.js");
+  const { blogs } = await import("../src/Data/blogsData.jsx");
+  const { news } = await import("../src/Data/newsData.jsx");
 
   const distDir = path.join(cwd(), "dist");
 

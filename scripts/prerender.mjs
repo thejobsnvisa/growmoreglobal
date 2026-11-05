@@ -48,10 +48,13 @@ const host = "127.0.0.1";
 const port = 4173;
 const baseUrl = `http://${host}:${port}`;
 
+const outputRoot = path.resolve("dist");
+
 let server;
 let browser;
 
 try {
+  // 1. Start Vite preview server
   console.log("Starting Vite preview server...");
 
   server = await preview({
@@ -62,26 +65,56 @@ try {
     }
   });
 
+  console.log(`Preview server running at ${baseUrl}`);
+
+  // 2. Launch Chrome
+  console.log("Launching Puppeteer Chrome...");
+
   browser = await puppeteer.launch({
     headless: true,
+    timeout: 120000,
+    dumpio: true,
     args: [
       "--no-sandbox",
-      "--disable-setuid-sandbox"
+      "--disable-setuid-sandbox",
+      "--disable-gpu",
+      "--disable-dev-shm-usage",
+      "--disable-extensions",
+      "--no-zygote"
     ]
   });
 
+  console.log("Chrome launched successfully!");
+
   const page = await browser.newPage();
 
+  await page.setViewport({
+    width: 1440,
+    height: 1000,
+    deviceScaleFactor: 1
+  });
+
+  page.setDefaultNavigationTimeout(60000);
+  page.setDefaultTimeout(30000);
+
+  // Browser errors
   page.on("pageerror", (error) => {
     console.error("Browser page error:", error.message);
   });
 
+  page.on("console", (message) => {
+    if (message.type() === "error") {
+      console.error("Browser console error:", message.text());
+    }
+  });
+
+  // 3. Prerender every route
   for (const route of routes) {
-    console.log(`Prerendering: ${route}`);
+    console.log(`\nPrerendering: ${route}`);
 
     try {
       const response = await page.goto(`${baseUrl}${route}`, {
-        waitUntil: "domcontentloaded",
+        waitUntil: "networkidle2",
         timeout: 60000
       });
 
@@ -91,56 +124,78 @@ try {
         );
       }
 
+      // Wait for React root
       await page.waitForSelector("#root", {
         timeout: 30000
       });
 
+      // Wait for React content
       await page.waitForFunction(() => {
         const root = document.querySelector("#root");
-        return root && root.innerHTML.trim().length > 0;
+
+        return (
+          root &&
+          root.children.length > 0 &&
+          root.innerHTML.trim().length > 0
+        );
       }, {
         timeout: 30000
       });
 
-      // Allow client-side rendering and Helmet metadata to settle.
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Allow Helmet metadata and page content to settle
+      await new Promise(resolve => setTimeout(resolve, 2000));
 
+      // Get rendered HTML
       const html = await page.content();
 
-      const outputDirectory =
-        route === "/"
-          ? "dist"
-          : path.join("dist", route.replace(/^\/|\/$/g, ""));
+      // Create correct output folder
+      const relativeRoute = route.replace(/^\/+|\/+$/g, "");
+
+      const outputDirectory = relativeRoute
+        ? path.join(outputRoot, relativeRoute)
+        : outputRoot;
 
       await fs.mkdir(outputDirectory, {
         recursive: true
       });
 
-      await fs.writeFile(
-        path.join(outputDirectory, "index.html"),
-        html,
-        "utf8"
-      );
+      // Save prerendered HTML
+      const outputFile = path.join(outputDirectory, "index.html");
+
+      await fs.writeFile(outputFile, html, "utf8");
 
       console.log(`Successfully prerendered: ${route}`);
+      console.log(`Saved to: ${outputFile}`);
+
     } catch (error) {
       console.error(`Failed route: ${route}`);
-      console.error(error.message);
+      console.error(error);
+
       throw error;
     }
   }
 
-  console.log("All routes prerendered successfully!");
+  console.log("\nAll routes prerendered successfully!");
+
 } catch (error) {
-  console.error("Prerendering failed:", error);
+  console.error("\nPrerendering failed:");
+  console.error(error);
+
   process.exitCode = 1;
+
 } finally {
+  // 4. Close Chrome
   if (browser) {
-    await browser.close();
+    console.log("Closing Chrome...");
+
+    await browser.close().catch(console.error);
   }
 
+  // 5. Stop Vite preview server
   if (server?.httpServer) {
-    await new Promise(resolve => {
+    console.log("Stopping Vite preview server...");
+
+    await new Promise((resolve) => {
       server.httpServer.close(resolve);
     });
   }

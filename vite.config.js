@@ -11,6 +11,7 @@ export default defineConfig({
 
   build: {
     outDir: "dist",
-    target: "chrome64",
+    target: "es2019",
+    sourcemap: false
   }
 });

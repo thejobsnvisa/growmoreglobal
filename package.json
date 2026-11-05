@@ -4,14 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "generate-routes": "node scripts/generateRoutes.cjs",
-  "generate-static-pages": "node scripts/generateStaticPages.cjs",
-  "build": "npx shx rm -rf dist && vite build  && npm run generate-static-pages && npx react-snap && node scripts/fixReactSnapUrls.cjs && npm run sitemap",
-  "postbuild": "node scripts/prerender.mjs",
-  "lint": "eslint .",
-  "preview": "vite preview"
-},
+    "dev": "vite",
+    "generate-routes": "node scripts/generateRoutes.cjs",
+    "generate-static-pages": "node scripts/generateStaticPages.cjs",
+    "build": "npx shx rm -rf dist && vite build  && npm run generate-static-pages && npx react-snap && node scripts/fixReactSnapUrls.cjs && npm run sitemap",
+    "postbuild": "node scripts/prerender.mjs",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "framer-motion": "^13.1.1",
@@ -45,6 +45,7 @@
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
     "puppeteer": "^25.16.0",
+    "react-snap": "^1.23.0",
     "vite": "^8.2.0"
   },
   "reactSnap": {

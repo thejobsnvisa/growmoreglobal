@@ -1,5 +1,7 @@
+
 import img from "../assets/img20.png";
 import { useState, useRef } from "react";
+
 import {
   getCountries,
   getCountryCallingCode,
@@ -8,9 +10,11 @@ import {
 import PhoneInput from "react-phone-number-input/input";
 import en from "react-phone-number-input/locale/en";
 import flags from "react-phone-number-input/flags";
+
 import ReCAPTCHA from "react-google-recaptcha";
 import { ChevronDown } from "lucide-react";
 import { toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 import "react-phone-number-input/style.css";
 
@@ -49,7 +53,10 @@ const CountrySelect = ({ value, onChange }) => {
           +{getCountryCallingCode(selectedCountry)}
         </span>
 
-        <ChevronDown size={14} className="ml-auto shrink-0 text-[#34506d]" />
+        <ChevronDown
+          size={14}
+          className="ml-auto shrink-0 text-[#34506d]"
+        />
       </div>
     </div>
   );
@@ -61,7 +68,10 @@ const CountrySelect = ({ value, onChange }) => {
 
 const Contact = () => {
   const recaptchaRef = useRef(null);
-  const recaptchaSiteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+
+  const recaptchaSiteKey =
+    import.meta.env.VITE_RECAPTCHA_SITE_KEY ||
+    "6LdQnKYtAAAAAJkOhWSSnhScrzUBMtq-k_REKsc3";
 
   const initialFormData = {
     name: "",
@@ -75,7 +85,7 @@ const Contact = () => {
 
   const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [captchaToken, setCaptchaToken] = useState("");
+
   const [statusMessage, setStatusMessage] = useState({
     type: "",
     text: "",
@@ -87,6 +97,7 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -109,13 +120,15 @@ const Contact = () => {
   };
 
   /* =========================================================
-     CAPTCHA
+     CAPTCHA HANDLER
      ========================================================= */
 
   const handleCaptchaChange = (token) => {
-    setCaptchaToken(token || "");
     if (token) {
-      setStatusMessage({ type: "", text: "" });
+      setStatusMessage({
+        type: "",
+        text: "",
+      });
     }
   };
 
@@ -128,10 +141,13 @@ const Contact = () => {
 
     if (isSubmitting) return;
 
-    setStatusMessage({ type: "", text: "" });
+    setStatusMessage({
+      type: "",
+      text: "",
+    });
 
     /* -------------------------
-       VALIDATION
+       REQUIRED FIELD VALIDATION
        ------------------------- */
 
     const requiredFields = [
@@ -142,13 +158,18 @@ const Contact = () => {
       { name: "country", label: "Destination country" },
     ];
 
-    const missingField = requiredFields.find(
-      ({ name }) => !String(formData[name] || "").trim()
-    );
+    const missingField = requiredFields.find(({ name }) => {
+      return !String(formData[name] || "").trim();
+    });
 
     if (missingField) {
       const message = `${missingField.label} is required.`;
-      setStatusMessage({ type: "error", text: message });
+
+      setStatusMessage({
+        type: "error",
+        text: message,
+      });
+
       toast.error(message);
       return;
     }
@@ -158,9 +179,35 @@ const Contact = () => {
        ------------------------- */
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (!emailRegex.test(formData.email.trim())) {
       const message = "Please enter a valid email address.";
-      setStatusMessage({ type: "error", text: message });
+
+      setStatusMessage({
+        type: "error",
+        text: message,
+      });
+
+      toast.error(message);
+      return;
+    }
+
+    /* -------------------------
+       PHONE VALIDATION
+       ------------------------- */
+
+    const fullPhoneNumber = String(formData.phone || "").trim();
+
+    const phoneDigits = fullPhoneNumber.replace(/\D/g, "");
+
+    if (!fullPhoneNumber || phoneDigits.length < 7) {
+      const message = "Please enter a valid phone number.";
+
+      setStatusMessage({
+        type: "error",
+        text: message,
+      });
+
       toast.error(message);
       return;
     }
@@ -171,16 +218,19 @@ const Contact = () => {
 
     const tokenFromCaptcha = recaptchaRef.current
       ? recaptchaRef.current.getValue()
-      : null;
+      : "";
 
     if (recaptchaSiteKey && !tokenFromCaptcha) {
       const message = "Please verify the captcha before submitting.";
-      setStatusMessage({ type: "error", text: message });
+
+      setStatusMessage({
+        type: "error",
+        text: message,
+      });
+
       toast.warn(message);
       return;
     }
-
-    setCaptchaToken(tokenFromCaptcha || captchaToken);
 
     /* -------------------------
        START SUBMISSION
@@ -189,37 +239,13 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const callingCode = getCountryCallingCode(formData.phoneCountry);
-      const rawPhone = String(formData.phone || "");
-      const normalizedPhone = rawPhone.replace(/\s|-/g, "");
-      const phoneCode = String(callingCode);
-
-      let digitsOnly = normalizedPhone
-        .replace(/^\+/, "")
-        .replace(/\D/g, "");
-
-      if (digitsOnly.startsWith(phoneCode)) {
-        digitsOnly = digitsOnly.slice(phoneCode.length);
-      }
-
-      const fullPhoneNumber = digitsOnly.length >= 7
-        ? `+${phoneCode}${digitsOnly}`
-        : "";
-
-      if (!fullPhoneNumber) {
-        const message = "Please enter a valid phone number.";
-        setStatusMessage({ type: "error", text: message });
-        toast.error(message);
-        return;
-      }
-
       const payload = {
         name: formData.name.trim(),
         email: formData.email.trim(),
         phone: fullPhoneNumber,
         visaType: formData.inquiry || "General Inquiry",
         message: `[Destination Country: ${formData.country || "Not Specified"}] ${formData.comments || ""}`.trim(),
-        captchaToken: tokenFromCaptcha || captchaToken,
+        captchaToken: tokenFromCaptcha || "",
         source: "Website Hero Form",
       };
 
@@ -227,21 +253,27 @@ const Contact = () => {
 
       const response = await fetch(`${apiBaseUrl}/api/lead`, {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
+
         body: JSON.stringify(payload),
       });
 
       const responseText = await response.text();
+
       let result = {};
 
       if (responseText.trim()) {
         try {
           result = JSON.parse(responseText);
-        } catch (error) {
-          throw new Error("The server returned an invalid response. Please try again later.", { cause: error });
+        } catch (parseError) {
+          throw new Error(
+            "The server returned an invalid response. Please try again later.",
+            { cause: parseError }
+          );
         }
       }
 
@@ -250,28 +282,46 @@ const Contact = () => {
          ------------------------- */
 
       if (response.ok && result.success) {
-        const successMessage = result.message || "Thank you! Our team will contact you shortly.";
-        setStatusMessage({ type: "success", text: successMessage });
+        const successMessage =
+          result.message ||
+          "Thank you! Our team will contact you shortly.";
+
+        setStatusMessage({
+          type: "success",
+          text: successMessage,
+        });
+
         toast.success(successMessage);
 
-        // Reset form & captcha ref
+        // Reset form
         setFormData(initialFormData);
-        setCaptchaToken("");
+
         if (recaptchaRef.current) {
           recaptchaRef.current.reset();
         }
       } else {
-        const errorMessage = result.message || result.error || `Server error: ${response.status}`;
+        const errorMessage =
+          result.message ||
+          result.error ||
+          `Server error: ${response.status}`;
+
         throw new Error(errorMessage);
       }
     } catch (error) {
       console.error("Form Submission Error:", error);
-      const errorMessage = error?.message || "An error occurred while submitting. Please try again.";
-      setStatusMessage({ type: "error", text: errorMessage });
+
+      const errorMessage =
+        error && error.message
+          ? error.message
+          : "An error occurred while submitting. Please try again.";
+
+      setStatusMessage({
+        type: "error",
+        text: errorMessage,
+      });
+
       toast.error(errorMessage);
 
-      // Reset Captcha on submission error so user can re-verify
-      setCaptchaToken("");
       if (recaptchaRef.current) {
         recaptchaRef.current.reset();
       }
@@ -286,8 +336,10 @@ const Contact = () => {
 
   return (
     <div
-      className="w-full min-h-[727px] md:min-h-[900px] lg:min-h-[900px]  py-12 px-4 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat sm:px-6"
-      style={{ backgroundImage: `url(${img})` }}
+      className="w-full min-h-[727px] md:min-h-[900px] lg:min-h-[900px] py-12 px-4 flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat sm:px-6"
+      style={{
+        backgroundImage: `url(${img})`,
+      }}
     >
       <h2 className="text-[24px] sm:text-[30px] font-bold text-teal-800 text-center mb-4 mt-0 sm:mb-6 sm:mt-[-80px]">
         Get In Touch With Us
@@ -301,7 +353,13 @@ const Contact = () => {
           backdropFilter: "blur(4px)",
         }}
       >
-        <form onSubmit={handleSubmit} noValidate className="space-y-3">
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          className="space-y-3"
+        >
+          {/* NAME AND EMAIL */}
+
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             <input
               type="text"
@@ -324,6 +382,8 @@ const Contact = () => {
             />
           </div>
 
+          {/* PHONE NUMBER */}
+
           <div className="flex w-full gap-2">
             <div className="h-[36px] w-[115px] shrink-0 rounded-[9px] border border-[#e0e4e8] bg-white sm:w-[120px]">
               <CountrySelect
@@ -344,6 +404,8 @@ const Contact = () => {
             </div>
           </div>
 
+          {/* INQUIRY TYPE */}
+
           <div className="relative">
             <select
               name="inquiry"
@@ -351,10 +413,12 @@ const Contact = () => {
               onChange={handleChange}
               required
               className={`h-[36px] w-full appearance-none rounded-[9px] border border-[#e0e4e8] bg-white px-4 text-[12px] outline-none focus:border-[#69b99e] ${
-                formData.inquiry ? "text-sky-800" : "text-gray-400"
+                formData.inquiry
+                  ? "text-sky-800"
+                  : "text-gray-400"
               }`}
             >
-              <option value="" className="text-gray-400">Inquiry for</option>
+              <option value="">Inquiry for</option>
               <option value="Student Visa">Student Visa</option>
               <option value="Work Visa">Work Visa</option>
               <option value="Visitor Visa">Visitor Visa</option>
@@ -367,6 +431,8 @@ const Contact = () => {
             />
           </div>
 
+          {/* DESTINATION COUNTRY */}
+
           <div className="relative">
             <select
               name="country"
@@ -374,49 +440,24 @@ const Contact = () => {
               onChange={handleChange}
               required
               className={`h-[36px] w-full appearance-none rounded-[9px] border border-[#e0e4e8] bg-white px-4 text-[12px] outline-none focus:border-[#69b99e] ${
-                formData.country ? "text-sky-800" : "text-gray-400"
+                formData.country
+                  ? "text-sky-800"
+                  : "text-gray-400"
               }`}
             >
-              <option value="" className="text-gray-400">Country</option>
-                <option value="Australia">
-                        Australia
-                      </option>
-
-                      <option value="New Zealand">
-                        New Zealand
-                      </option>
-                       <option value="Dubai">
-                        Dubai
-                      </option>
-                       <option value="Germany">
-                        Germany
-                      </option>
-                      <option value="USA">
-                        USA
-                      </option>
-                      <option value="Georgia">
-                        Georgia
-                      </option>
-                      <option value="Russia">
-                        Russia
-                      </option>
-                      <option value="France">
-                        France
-                      </option>
-                      <option value="Europe">
-                        Europe
-                      </option>
-                      <option value="Singapore">
-                        Singapore
-                      </option>
-
-                      <option value="Canada">
-                        Canada
-                      </option>
-
-                      <option value="United Kingdom">
-                        United Kingdom
-                      </option>
+              <option value="">Country</option>
+              <option value="Australia">Australia</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Dubai">Dubai</option>
+              <option value="Germany">Germany</option>
+              <option value="USA">USA</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Russia">Russia</option>
+              <option value="France">France</option>
+              <option value="Europe">Europe</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Canada">Canada</option>
+              <option value="United Kingdom">United Kingdom</option>
             </select>
 
             <ChevronDown
@@ -424,6 +465,8 @@ const Contact = () => {
               className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#34506d]"
             />
           </div>
+
+          {/* COMMENTS */}
 
           <textarea
             name="comments"
@@ -434,20 +477,21 @@ const Contact = () => {
             className="min-h-[60px] w-full resize-none rounded-[10px] border border-[#e0e4e8] bg-white px-4 py-2 text-[12px] text-sky-800 outline-none placeholder:text-gray-400 focus:border-[#69b99e]"
           />
 
+          {/* RECAPTCHA */}
+
           <div className="flex justify-center overflow-x-auto py-1">
             <ReCAPTCHA
-              sitekey={recaptchaSiteKey || "6LdQnKYtAAAAAJkOhWSSnhScrzUBMtq-k_REKsc3"}
+              sitekey={recaptchaSiteKey}
               ref={recaptchaRef}
               onChange={handleCaptchaChange}
-              onExpired={() => {
-                setCaptchaToken("");
-              }}
             />
           </div>
 
+          {/* STATUS MESSAGE */}
+
           {statusMessage.text && (
             <div
-              className={`text-center text-[12px] font-medium p-2 rounded-md ${
+              className={`rounded-md p-2 text-center text-[12px] font-medium ${
                 statusMessage.type === "success"
                   ? "bg-green-100 text-green-700"
                   : "bg-red-100 text-red-700"
@@ -457,11 +501,13 @@ const Contact = () => {
             </div>
           )}
 
-          <div className="pt-2 flex justify-center">
+          {/* SUBMIT BUTTON */}
+
+          <div className="flex justify-center pt-2">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="pointer-events-auto h-[42px] w-[140px] items-center justify-center rounded-full bg-[#214c83] text-[14px] font-semibold text-white transition hover:bg-[#173f68] disabled:cursor-not-allowed disabled:opacity-70 sm:h-[45px] sm:w-[150px]"
+              className="pointer-events-auto flex h-[42px] w-[140px] items-center justify-center rounded-full bg-[#214c83] text-[14px] font-semibold text-white transition hover:bg-[#173f68] disabled:cursor-not-allowed disabled:opacity-70 sm:h-[45px] sm:w-[150px]"
             >
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>

@@ -71,7 +71,7 @@ const Videos = () => {
     loadData();
   }, []);
 
-       const url = "https://growmoreglobalvisa.com//latest-update/videos";
+       const url = "https://growmoreglobalvisa.com/latest-update/videos";
        const ogImage = "https://growmoreglobalvisa.com/assets/e13-DDhqXK88.png";
        return (
            <>

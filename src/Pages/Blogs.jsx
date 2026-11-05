@@ -3,7 +3,7 @@ import img from "../assets/img23.png";
 import { Helmet } from "react-helmet-async";
 
 const Blogs = () => {
-  const url = "https://growmoreglobalvisa.com/blogs";
+  const url = "https://growmoreglobalvisa.com//latest-update/blogs";
        const ogImage = "https://growmoreglobalvisa.com/assets/img23-CEvjomMq.png";
        return (
            <>

@@ -3,9 +3,20 @@ const path = require("node:path");
 const { cwd } = require("node:process");
 
 (async () => {
-  // Import blog and news data
-  const { blogs } = await import("../src/Data/blogsData.jsx");
-  const { news } = await import("../src/Data/newsData.jsx");
+  // Load JSX data files through Vite, since Node cannot import .jsx directly.
+  const { createServer } = require("vite");
+  const vite = await createServer({
+    server: { middlewareMode: true },
+    appType: "custom",
+  });
+  let blogs;
+  let news;
+  try {
+    ({ blogs } = await vite.ssrLoadModule("/src/Data/blogsData.jsx"));
+    ({ news } = await vite.ssrLoadModule("/src/Data/newsData.jsx"));
+  } finally {
+    await vite.close();
+  }
 
   const distDir = path.join(cwd(), "dist");
 

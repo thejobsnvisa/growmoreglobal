@@ -1,4 +1,3 @@
-
 import img from "../assets/img20.png";
 import { useState, useRef } from "react";
 
@@ -68,6 +67,11 @@ const CountrySelect = ({ value, onChange }) => {
 
 const Contact = () => {
   const recaptchaRef = useRef(null);
+
+  // Detect React Snap / headless prerendering.
+  const isPrerendering =
+    typeof navigator !== "undefined" &&
+    /ReactSnap|HeadlessChrome/i.test(navigator.userAgent);
 
   const recaptchaSiteKey =
     import.meta.env.VITE_RECAPTCHA_SITE_KEY ||
@@ -216,11 +220,12 @@ const Contact = () => {
        CAPTCHA VALIDATION
        ------------------------- */
 
-    const tokenFromCaptcha = recaptchaRef.current
-      ? recaptchaRef.current.getValue()
-      : "";
+    const tokenFromCaptcha =
+      !isPrerendering && recaptchaRef.current
+        ? recaptchaRef.current.getValue()
+        : "";
 
-    if (recaptchaSiteKey && !tokenFromCaptcha) {
+    if (!isPrerendering && recaptchaSiteKey && !tokenFromCaptcha) {
       const message = "Please verify the captcha before submitting.";
 
       setStatusMessage({
@@ -269,10 +274,9 @@ const Contact = () => {
       if (responseText.trim()) {
         try {
           result = JSON.parse(responseText);
-        } catch (parseError) {
+        } catch {
           throw new Error(
-            "The server returned an invalid response. Please try again later.",
-            { cause: parseError }
+            "The server returned an invalid response. Please try again later."
           );
         }
       }
@@ -477,15 +481,17 @@ const Contact = () => {
             className="min-h-[60px] w-full resize-none rounded-[10px] border border-[#e0e4e8] bg-white px-4 py-2 text-[12px] text-sky-800 outline-none placeholder:text-gray-400 focus:border-[#69b99e]"
           />
 
-          {/* RECAPTCHA */}
+          {/* RECAPTCHA - DISABLED DURING PRERENDERING */}
 
-          <div className="flex justify-center overflow-x-auto py-1">
-            <ReCAPTCHA
-              sitekey={recaptchaSiteKey}
-              ref={recaptchaRef}
-              onChange={handleCaptchaChange}
-            />
-          </div>
+          {!isPrerendering && (
+            <div className="flex justify-center overflow-x-auto py-1">
+              <ReCAPTCHA
+                sitekey={recaptchaSiteKey}
+                ref={recaptchaRef}
+                onChange={handleCaptchaChange}
+              />
+            </div>
+          )}
 
           {/* STATUS MESSAGE */}
 

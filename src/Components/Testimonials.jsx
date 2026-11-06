@@ -4,7 +4,13 @@ import one1 from "../assets/one1.png";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const testimonials = [
-  
+   {
+    id: -2,
+    name: "Mayank Gandhi",
+    visa: "SC500 - Australia student visa",
+    text: "I had a wonderful experience with this consultancy! The staff is extremely professional and supportive. They guided me very patiently and explained everything clearly, addressing all my doubts and concerns. Their excellent service and positive approach made the entire process smooth and stress-free. I am truly satisfied with their guidance and would highly recommend this consultancy to anyone looking for reliable and trustworthy assistance. Keep up the great work!",
+  },
+
   {
     id: -1,
     name: "Roschelle Atienza",

@@ -2,7 +2,18 @@ import news1 from "../assets/news1.jpg"
 import news2 from "../assets/news2.png"
 import news3 from "../assets/news3.png"
 import news4 from "../assets/news4.png"
+import news5 from "../assets/news5.jpg"
+
 export const news = [
+  {
+    id: 0,
+    slug: "uk-ilr-rules-2026-new-earned-settlement-policy-proposes-increasing-the-standard-route-from-5-to-10-years",
+    title: "UK ILR Rules 2026: New Earned Settlement Policy Proposes Increasing the Standard Route from 5 to 10 Years ",
+    metaTitle:"UK ILR New Rules 2026: 5 to 10 Years Settlement Update",
+    metaDescription:" Explore the latest UK ILR update 2026. Understand the new Earned Settlement policy, proposed 10-year settlement period, 3-year and 5-year pathways, eligibility requirements and implementation timeline.",
+    date: "Nov 6, 2026",
+    image: news5,
+  },
   {
     id: 1,
     slug: "germany-student-visa-appointment-waiting-list-update",

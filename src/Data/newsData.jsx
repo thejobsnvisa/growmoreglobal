@@ -8,7 +8,7 @@ export const news = [
   {
     id: 0,
     slug: "uk-ilr-rules-2026-new-earned-settlement-policy-proposes-increasing-the-standard-route-from-5-to-10-years",
-    title: "UK ILR Rules 2026: New Earned Settlement Policy Proposes Increasing the Standard Route from 5 to 10 Years ",
+    title: "UK ILR Rules 2026: New Earned Settlement Policy Proposes Increasing the .... ",
     metaTitle:"UK ILR New Rules 2026: 5 to 10 Years Settlement Update",
     metaDescription:" Explore the latest UK ILR update 2026. Understand the new Earned Settlement policy, proposed 10-year settlement period, 3-year and 5-year pathways, eligibility requirements and implementation timeline.",
     date: "Nov 6, 2026",

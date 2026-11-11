@@ -13,7 +13,7 @@ import bg from "../assets/bg.png";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full lg:mt-[-299px] mt-[-218px] text-white pt-16 pb-8 overflow-hidden min-h-[600px] flex flex-col justify-end">
+    <footer className="relative w-full lg:mt-[-299px] mt-[-256px] text-white pt-16 pb-8 overflow-hidden min-h-[600px] flex flex-col justify-end">
       
       {/* Background Curve Image (Wavy background covering the full area) */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0 ">

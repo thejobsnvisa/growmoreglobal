@@ -166,7 +166,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="lg:mt-8 mt-[26px] mb-[-40px] ">
           <Contact />
         </div>
       </section>

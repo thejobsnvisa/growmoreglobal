@@ -151,25 +151,25 @@ const States4 = () => {
   const activeData = stateData[selectedStateId];
 
   return (
-    <div ref={sectionRef} className="w-full h-[720px] lg:h-[650px] pt-10 bg-[#EBF7F6]">
+    <div ref={sectionRef} className="w-full h-auto min-h-[720px] lg:h-[650px] pt-8 lg:pt-10 pb-10 bg-[#EBF7F6]">
       {/* Title Header */}
       <div className="flex items-baseline justify-center whitespace-nowrap">
-        <p className="text-[40px] leading-none text-[#4298A9]">Canada</p>
-        <span className="ml-2 text-[60px] leading-none font-semibold text-[#5B9E7D]">
+        <p className="text-[32px] sm:text-[40px] leading-none text-[#4298A9]">Canada</p>
+        <span className="ml-2 text-[44px] sm:text-[60px] leading-none font-semibold text-[#5B9E7D]">
           States
         </span>
       </div>
 
-      <div className="mt-[60px] flex justify-center gap-10 px-10">
+      <div className="mt-8 lg:mt-[60px] flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 lg:gap-10 px-4 sm:px-8 lg:px-10">
         {/* Left Side Buttons */}
-        <div className="w-[420px] min-h-[580px]">
+        <div className="w-full max-w-[420px] lg:min-h-[580px]">
           <AnimatePresence mode="wait">
             <motion.div
               variants={buttonContainerVariants}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
               exit="exit"
-              className="flex flex-col gap-[18px]"
+              className="flex flex-col gap-3 sm:gap-[18px]"
             >
               {states4List.map(({ id, title }) => {
                 const isSelected = selectedStateId === id;
@@ -189,7 +189,7 @@ const States4 = () => {
                       scale: isSelected ? 1.02 : 1,
                     }}
                     transition={{ duration: 0.2 }}
-                    className="flex h-[62px] w-full items-center justify-center rounded-[12px] border text-center text-[20px] font-medium cursor-pointer shadow-sm"
+                    className="flex min-h-[56px] sm:h-[62px] w-full items-center justify-center rounded-[12px] border px-3 text-center text-base sm:text-[20px] font-medium cursor-pointer shadow-sm"
                   >
                     {title}
                   </motion.button>
@@ -200,7 +200,7 @@ const States4 = () => {
         </div>
 
         {/* Right Side: Entire Card Animated as a Whole */}
-        <div className="w-[580px] h-[400px] relative">
+        <div className="relative w-full max-w-[580px] min-h-[400px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedStateId}
@@ -208,18 +208,18 @@ const States4 = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -80 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="w-full h-full rounded-[36px] bg-white px-[36px] py-[30px] shadow-sm flex flex-col gap-[16px]"
+              className="w-full min-h-[400px] rounded-[28px] sm:rounded-[36px] bg-white px-5 sm:px-[36px] py-6 sm:py-[30px] shadow-sm flex flex-col gap-[16px]"
             >
               <div className="text-center">
-                <p className="text-[24px] font-bold text-[#20697B]">
+                <p className="text-xl sm:text-[24px] font-bold text-[#20697B]">
                   {activeData.title}
                 </p>
-                <p className="mt-1 text-[16px] text-slate-500">
+                <p className="mt-1 text-sm sm:text-[16px] text-slate-500">
                   {activeData.description}
                 </p>
               </div>
 
-              <div className="text-[16px] leading-[1.35] text-[#20697B] flex flex-col gap-2.5">
+              <div className="text-sm sm:text-[16px] leading-[1.35] text-[#20697B] flex flex-col gap-2.5">
 
                 <div>
                   <p className="font-bold">Popular Universities</p>

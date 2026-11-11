@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { news } from "../Data/newsData";
+import { news } from "../data/newsData";
 import CommentSection from "../Components/CommentSection";
 import { Helmet } from "react-helmet-async";
 import { LuCalendarDays } from "react-icons/lu";

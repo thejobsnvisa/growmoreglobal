@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { blogs } from "../Data/blogsData";
+import { blogs } from "../data/blogsData";
 import CommentSection from "../Components/CommentSection";
 import { LuCalendarDays } from "react-icons/lu";
 

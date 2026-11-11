@@ -1,7 +1,7 @@
 import { SitemapStream, streamToPromise } from "sitemap";
 import { writeFileSync } from "fs";
-import { news } from "../src/data/newsData.js";
-import { blogs } from "../src/data/blogsData.js";
+import { news } from "../src/data/newsData.jsx";
+import { blogs } from "../src/data/blogsData.jsx";
 
 const sitemap = new SitemapStream({
   hostname: "https://growmoreglobalvisa.com",

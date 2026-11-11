@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { blogs } from "../Data/blogsData";
+import { blogs } from "../data/blogsData";
 import { Link } from "react-router-dom";
 import { LuArrowLeft, LuCalendarDays } from "react-icons/lu";
 import { LuArrowRight } from "react-icons/lu";

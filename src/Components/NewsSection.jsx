@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { news } from "../Data/newsData";
+import { news } from "../data/newsData";
 import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
 
 const NewsSection = () => {

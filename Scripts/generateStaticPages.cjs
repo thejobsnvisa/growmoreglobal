@@ -3,8 +3,8 @@ const path = require("path");
 
 (async () => {
   // Import blog and news data
-  const { blogs } = await import("../src/data/blogsData.js");
-  const { news } = await import("../src/data/newsData.js");
+  const { blogs } = await import("../src/data/blogsData.jsx");
+  const { news } = await import("../src/data/newsData.jsx");
 
   const distDir = path.join(process.cwd(), "dist");
 

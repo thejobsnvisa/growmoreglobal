@@ -8,6 +8,11 @@ on:
 
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   web-deploy:
     name: Build and Deploy
@@ -38,6 +43,11 @@ jobs:
           find dist -name "index.html" -type f
           test -f dist/index.html
 
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
       - name: Sync Files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -48,3 +58,14 @@ jobs:
           local-dir: ./dist/
           protocol: ftp
           port: 21
+
+  deploy-pages:
+    needs: web-deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

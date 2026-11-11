@@ -3,8 +3,18 @@ import news2 from "../assets/news2.png"
 import news3 from "../assets/news3.png"
 import news4 from "../assets/news4.png"
 import news5 from "../assets/news5.jpg"
+import news6 from "../assets/news6.png"
 
 export const news = [
+  {
+    id: -1,
+    slug: "uk-graduate-visa-update-2026-two-year-post-study-work-visa-to-continue-for-graduates-of-eligible-universities",
+    title: "UK Graduate Visa Update 2026: Two-Year Post-Study Work Visa to Continue for Graduates of Eligible Universities",
+    metaTitle:"UK Graduate Visa Update 2026: Two-Year Post-Study Work Visa",
+    metaDescription:"The UK Graduate visa will continue to offer a two-year post-study work period for graduates of eligible universities. Learn who may qualify and what the 2026 update means for international students.",
+    date: "Nov 11, 2026",
+    image: news6,
+  },
   {
     id: 0,
     slug: "uk-ilr-rules-2026-new-earned-settlement-policy-proposes-increasing-the-standard-route-from-5-to-10-years",

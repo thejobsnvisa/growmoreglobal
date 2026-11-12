@@ -32,7 +32,7 @@ const GlobalVisa = () => {
 
   return (
     <div
-      className="w-full  min-h-[940px] bg-cover bg-center bg-no-repeat px-4 py-10 sm:px-6 sm:py-10  md:px-8 md:py-12 md:min-h-[980px] lg:px-10 lg:py-16 lg:min-h-[880px] mb-30 lg:mb-24 xl:mb-30 2xl:mb-27 overflow-hidden"
+      className="w-full  min-h-[940px] bg-cover bg-center bg-no-repeat px-4 py-10 sm:px-6 sm:py-10  md:px-8 md:py-12 md:min-h-[980px] lg:px-10 lg:py-16 lg:min-h-[880px] mb-12 lg:mb-24 xl:mb-30 2xl:mb-27 overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(#70CBDB99, #70CBDB99), url(${bgImage})`,
       }}

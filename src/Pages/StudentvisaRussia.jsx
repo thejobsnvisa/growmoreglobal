@@ -3,10 +3,43 @@ import a3 from "../assets/ru2.png";
 import a4 from "../assets/ru3.png";
 import Contact from "../Components/Contact";
 import RequirementsRight6 from "../Components/RequirementsRight6";
+import { Helmet } from "react-helmet-async";
 
 const  StudentvisaRussia = () => {
-  return (
-    <>
+    const url = "https://growmoreglobalvisa.com/services/student-visa/russia/";
+                const ogImage = "https://growmoreglobalvisa.com/assets/ru1-D9ng5bH2.png";
+                  
+                  return (
+                      <>
+                       <Helmet>
+                          <title>Russia Student Visa Services | Growmore Global Visa</title>
+                  
+                          <meta
+                            name="description"
+                            content="Study in Russia with Growmore Global Visa. We provide expert guidance for student visa applications, eligibility checks, and document support for Russia education aspirants."
+                          />
+                  
+                          {/* ✅ Canonical for Dubai Student Visa page */}
+                          <link rel="canonical" href={url} />
+                  
+                          {/* ✅ OG */}
+                          <meta
+                            property="og:title"
+                            content="Russia Student Visa Services | Growmore Global Visa"
+                          />
+                          <meta
+                            property="og:description"
+                            content="Study in Russia with Growmore Global Visa. We provide expert guidance for student visa applications, eligibility checks, and document support for Russia education aspirants."
+                          />
+                          <meta property="og:url" content={url} />
+                          <meta property="og:image" content={ogImage} />
+                          <meta property="og:image:secure_url" content={ogImage} />
+                          <meta property="og:image:type" content="image/png" />
+                          <meta property="og:image:alt" content="Russia Student Visa Services | Growmore Global Visa" />
+                          <meta name="twitter:card" content="summary_large_image" />
+                          <meta name="twitter:image" content={ogImage} />
+                  
+                        </Helmet>
    <section
            className="
                    relative

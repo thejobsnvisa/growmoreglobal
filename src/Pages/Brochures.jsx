@@ -17,6 +17,7 @@ import RussiaPdf from "../assets/Russia.pdf";
 import NewZealandPdf from "../assets/New Zealand.pdf";
 import l1 from "../assets/l1.png";
 import { PiFileArrowDownDuotone } from "react-icons/pi";
+import { Helmet } from "react-helmet-async";
 
 const Brochures = () => {
   const Data = [
@@ -69,8 +70,39 @@ const Brochures = () => {
       title: "New Zealand",
     },
   ];
-  return (
-    <>
+    const url = "https://growmoreglobalvisa.com/brochures/";
+    const ogImage = "https://growmoreglobalvisa.com/assets/brochure-ChcuJdOm.png";
+                          
+         return (
+         <>
+         <Helmet>
+         <title>Brochures | Growmore Global Visa</title>
+                          
+         <meta
+         name="description"
+         content="Explore our brochures for detailed information on visa services, study abroad programs, and immigration guidance offered by Growmore Global Visa."
+         />
+                          
+         {/* ✅ Canonical for Dubai Student Visa page */}
+        <link rel="canonical" href={url} />
+                          
+        {/* ✅ OG */}
+        <meta
+          property="og:title"
+          content="Brochures | Growmore Global Visa"
+        />
+        <meta
+          property="og:description"
+          content="Explore our brochures for detailed information on visa services, study abroad programs, and immigration guidance offered by Growmore Global Visa."
+        />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:secure_url" content={ogImage} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="Brochures | Growmore Global Visa" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={ogImage} />             
+        </Helmet>
       <section className="relative h-[300px] w-full overflow-hidden sm:h-[340px] 2xl:h-[580px] md:h-[370px] lg:h-[480px]">
         <img
           src={img}

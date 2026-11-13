@@ -4,10 +4,43 @@ import a3 from "../assets/fa2.png";
 import a4 from "../assets/fa3.png";
 import RequirementsRight2 from "../Components/RequirementRight2";
 import States1 from "../Components/States1";
+import { Helmet } from "react-helmet-async";
 
 const StudentvisaFrance = () => {
-  return (
-    <>
+  const url = "https://growmoreglobalvisa.com/services/student-visa/france/";
+            const ogImage = "https://growmoreglobalvisa.com/assets/fa1-D9tPGS2v.png";
+              
+              return (
+                  <>
+                   <Helmet>
+                      <title>France Student Visa Services | Growmore Global Visa</title>
+              
+                      <meta
+                        name="description"
+                        content="Study in France with Growmore Global Visa. We provide expert guidance for student visa applications, eligibility checks, and document support for French education aspirants."
+                      />
+              
+                      {/* ✅ Canonical for Dubai Student Visa page */}
+                      <link rel="canonical" href={url} />
+              
+                      {/* ✅ OG */}
+                      <meta
+                        property="og:title"
+                        content="France Student Visa Services | Growmore Global Visa"
+                      />
+                      <meta
+                        property="og:description"
+                        content="Study in France with Growmore Global Visa. We provide expert guidance for student visa applications, eligibility checks, and document support for French education aspirants."
+                      />
+                      <meta property="og:url" content={url} />
+                      <meta property="og:image" content={ogImage} />
+                      <meta property="og:image:secure_url" content={ogImage} />
+                      <meta property="og:image:type" content="image/png" />
+                      <meta property="og:image:alt" content="France Student Visa Services | Growmore Global Visa" />
+                      <meta name="twitter:card" content="summary_large_image" />
+                      <meta name="twitter:image" content={ogImage} />
+              
+                    </Helmet>
       <section
               className="
                       relative

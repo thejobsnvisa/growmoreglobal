@@ -4,10 +4,42 @@ import a3 from "../assets/uk2.png";
 import a4 from "../assets/uk3.png";
 import States6 from "../Components/States6";
 import RequirementsRight10 from "../Components/RequirementsRight10";
+import { Helmet } from "react-helmet-async";
 
 const StudentvisaUk = () => {
-  return (
-    <>
+   const url = "https://growmoreglobalvisa.com/services/student-visa/uk/";
+   const ogImage = "https://growmoreglobalvisa.com/assets/uk1-EMxr_ctX.png";
+                      
+     return (
+     <>
+     <Helmet>
+     <title>UK Student Visa Services | Growmore Global Visa</title>
+                      
+     <meta
+     name="description"
+     content="Study in the UK with Growmore Global Visa. We provide expert guidance for student visa applications, eligibility checks, and document support for UK education aspirants."
+     />
+                      
+     {/* ✅ Canonical for Dubai Student Visa page */}
+    <link rel="canonical" href={url} />
+                      
+    {/* ✅ OG */}
+    <meta
+      property="og:title"
+      content="UK Student Visa Services | Growmore Global Visa"
+    />
+    <meta
+      property="og:description"
+      content="Study in the UK with Growmore Global Visa. We provide expert guidance for student visa applications, eligibility checks, and document support for UK education aspirants."
+    />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="UK Student Visa Services | Growmore Global Visa" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />             
+     </Helmet>
       <section
               className="
                       relative

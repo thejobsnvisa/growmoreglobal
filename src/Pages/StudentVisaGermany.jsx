@@ -4,10 +4,43 @@ import a3 from "../assets/ge2.png";
 import a4 from "../assets/ge3.png";
 import States2 from "../Components/States2";
 import RequirementsRight3 from "../Components/RequirementsRight3";
+import { Helmet } from "react-helmet-async";
 
 const StudentvisaGermany = () => {
-  return (
-    <>
+  const url = "https://growmoreglobalvisa.com/services/student-visa/germany/";
+              const ogImage = "https://growmoreglobalvisa.com/assets/ge1-QE-6Lv6m.png";
+                
+                return (
+                    <>
+                     <Helmet>
+                        <title>Germany Student Visa Services | Growmore Global Visa</title>
+                
+                        <meta
+                          name="description"
+                          content="Study in Germany with Growmore Global Visa. We provide expert guidance for student visa applications, eligibility checks, and document support for German education aspirants."
+                        />
+                
+                        {/* ✅ Canonical for Dubai Student Visa page */}
+                        <link rel="canonical" href={url} />
+                
+                        {/* ✅ OG */}
+                        <meta
+                          property="og:title"
+                          content="Germany Student Visa Services | Growmore Global Visa"
+                        />
+                        <meta
+                          property="og:description"
+                          content="Study in Germany with Growmore Global Visa. We provide expert guidance for student visa applications, eligibility checks, and document support for German education aspirants."
+                        />
+                        <meta property="og:url" content={url} />
+                        <meta property="og:image" content={ogImage} />
+                        <meta property="og:image:secure_url" content={ogImage} />
+                        <meta property="og:image:type" content="image/png" />
+                        <meta property="og:image:alt" content="Germany Student Visa Services | Growmore Global Visa" />
+                        <meta name="twitter:card" content="summary_large_image" />
+                        <meta name="twitter:image" content={ogImage} />
+                
+                      </Helmet>
       <section
               className="
                       relative

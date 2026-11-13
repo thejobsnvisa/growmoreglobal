@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import { blogs } from "../data/blogsData";
 import CommentSection from "../Components/CommentSection";
 import { LuCalendarDays } from "react-icons/lu";
+import { Helmet } from "react-helmet-async";
 
 const BlogsArtical = () => {
   const { slug: routeSlug = "" } = useParams();
@@ -70,7 +71,43 @@ const BlogsArtical = () => {
     );
 
   return (
-    <>
+     <>
+          <Helmet prioritizeSeoTags>
+            <title>{article.metaTitle || article.title}</title>
+    
+            <meta
+              name="description"
+              content={article.metaDescription || article.title}
+            />
+    
+            <link
+              rel="canonical"
+              href={`https://growmoreglobalvisa.com/blogs/${slug}/`}
+              key="canonical"
+            />
+    
+            <meta property="og:type" content="article" />
+    
+            <meta
+              property="og:title"
+              content={article.metaTitle || article.title}
+            />
+    
+            <meta
+              property="og:description"
+              content={article.metaDescription || article.title}
+            />
+    
+            <meta property="og:image" content={article.image} />
+    
+            <meta
+              property="og:url"
+              content={`https://growmoreglobalvisa.com/blogs/${slug}/`}
+              key="og-url"
+            />
+    
+            <meta name="robots" content="index, follow" />
+          </Helmet>
       <div className="min-h-screen bg-white font-jakarta text-[#042325]">
         {/* HEADER */}
         <section className="bg-slate-100 min-h-[170px] w-full max-w-[1321px] mx-auto px-4 sm:px-6 py-10 sm:py-14 text-sky-800 rounded-2xl sm:rounded-[34px] mt-6">

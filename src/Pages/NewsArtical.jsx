@@ -71,7 +71,7 @@ const NewsArticle = () => {
 
         <link
           rel="canonical"
-          href={`https://www.growmore.one/news/${slug}/`}
+          href={`https://growmoreglobalvisa.com/news/${slug}/`}
           key="canonical"
         />
 
@@ -91,7 +91,7 @@ const NewsArticle = () => {
 
         <meta
           property="og:url"
-          content={`https://www.growmore.one/news/${slug}/`}
+          content={`https://growmoreglobalvisa.com/news/${slug}/`}
           key="og-url"
         />
 

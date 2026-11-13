@@ -10,7 +10,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Helmet } from "react-helmet-async";
 
 const Duolingo = () => {
-  const url = "https://growmoreglobalvisa.com/services/english-test/duolingo/";
+  const url = "https://growmoreglobalvisa.com/english-test/duolingo/";
   const ogImage = "https://growmoreglobalvisa.com/assets/img14-CxDzqvyH.png";
 
   return (

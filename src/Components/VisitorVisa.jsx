@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import q2 from "../assets/q2.png";
 
 const VisitorVisa = () => {
-    const url = "https://growmoreglobalvisa.com/services/visitor-visa";
+    const url = "https://growmoreglobalvisa.com/services/visitor-visa/";
         const ogImage = q2;
           
           return (

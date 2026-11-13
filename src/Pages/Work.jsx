@@ -73,7 +73,7 @@ const Work = () => {
     return () => cancelAnimationFrame(frameId);
   }, []);
 
-  const url = "https://growmoreglobalvisa.com/services/work-visa";
+  const url = "https://growmoreglobalvisa.com/services/work-visa/";
     const ogImage = "https://growmoreglobalvisa.com/assets/img29-kS0-QExO.png";
       
       return (

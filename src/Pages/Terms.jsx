@@ -2,7 +2,7 @@ import img from "../assets/terms.png"
 import { Helmet } from "react-helmet-async";
 
 const Terms = () =>{
- const url = "https://growmoreglobalvisa.com/terms-services";
+ const url = "https://growmoreglobalvisa.com/terms-services/";
        const ogImage = "https://growmoreglobalvisa.com/assets/terms-BedbFlaM.png";
        return (
            <>

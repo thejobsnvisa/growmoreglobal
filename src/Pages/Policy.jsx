@@ -2,7 +2,7 @@ import img from "../assets/privacy.png"
 import { Helmet } from "react-helmet-async";
 
 const Policy = () =>{
-     const url = "https://growmoreglobalvisa.com/privacy-policy";
+     const url = "https://growmoreglobalvisa.com/privacy-policy/";
            const ogImage = "https://growmoreglobalvisa.com/assets/privacy-Y5dXACC5.png";
            return (
                <>

@@ -10,7 +10,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Helmet } from "react-helmet-async";
 
 const TOEFL = () => {
- const url = "https://growmoreglobalvisa.com/services/toefl";
+ const url = "https://growmoreglobalvisa.com/services/toefl/";
    const ogImage = "https://growmoreglobalvisa.com/assets/img13-CY-V8SHa.png";
  
    return (

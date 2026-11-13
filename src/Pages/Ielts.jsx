@@ -11,7 +11,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Helmet } from "react-helmet-async";
 
 const Ielts = () => {
-  const url = "https://growmoreglobalvisa.com/services/ielts";
+  const url = "https://growmoreglobalvisa.com/services/ielts/";
   const ogImage = "https://growmoreglobalvisa.com/assets/img11-CTRFvQMK.png";
 
   return (

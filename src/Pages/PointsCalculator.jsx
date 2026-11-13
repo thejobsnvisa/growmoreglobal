@@ -61,7 +61,7 @@ const PointsCalculator = () => {
   };
   /* ---------------- TOTAL POINTS ---------------- */ const totalScore =
     Object.values(scores).reduce((sum, val) => sum + (val || 0), 0);
-    const url = "https://growmoreglobalvisa.com/services/australia-pr-points-calculator";
+    const url = "https://growmoreglobalvisa.com/services/australia-pr-points-calculator/";
     const ogImage = "https://growmoreglobalvisa.com/assets/p1-CcKdh0jD.png";
     return (
         <>

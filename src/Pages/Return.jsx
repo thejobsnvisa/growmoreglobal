@@ -2,7 +2,7 @@ import img from "../assets/refund.png"
 import { Helmet } from "react-helmet-async";
 
 const Refund = () =>{
-          const url = "https://growmoreglobalvisa.com/cancellation-and-refund-policy";
+          const url = "https://growmoreglobalvisa.com/cancellation-and-refund-policy/";
           const ogImage = "https://growmoreglobalvisa.com/assets/refund-igLFf3Gd.png";
           return (
               <>

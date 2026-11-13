@@ -30,7 +30,7 @@ const Dependent = () => {
         "Valid passports, birth/marriage certificates for all dependants, and tenancy agreements are required to prove identity.",
     },
   ];
-    const url = "https://growmoreglobalvisa.com/services/dependent-visa";
+    const url = "https://growmoreglobalvisa.com/services/dependent-visa/";
       const ogImage = "https://growmoreglobalvisa.com/assets/q3-BVifVJvg.png";
       
       return (

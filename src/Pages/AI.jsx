@@ -2,7 +2,7 @@ import img from "../assets/ai.png"
 import { Helmet } from "react-helmet-async";
 
 const AI = () =>{
-    const url = "https://growmoreglobalvisa.com/aritificial-intelligence-use-policy";
+    const url = "https://growmoreglobalvisa.com/aritificial-intelligence-use-policy/";
            const ogImage = "https://growmoreglobalvisa.com/assets/ai-BwS0-m6F.png";
            return (
                <>

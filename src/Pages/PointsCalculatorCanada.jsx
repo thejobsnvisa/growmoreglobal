@@ -46,7 +46,7 @@ const PointsCalculatorCanada = () => {
   };
   /* ---------------- TOTAL POINTS ---------------- */ const totalScore =
     Object.values(scores).reduce((sum, val) => sum + (val || 0), 0);
- const url = "https://growmoreglobalvisa.com/services/canada-pr-points-calculator";
+ const url = "https://growmoreglobalvisa.com/services/canada-pr-points-calculator/";
      const ogImage = "https://growmoreglobalvisa.com/assets/p2-D2o7P2d9.png";
      return (
          <>

@@ -34,7 +34,7 @@ const ContactUs = () => {
       map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.991827088126!2d72.5299896!3d23.024072299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e858c5649e9f7%3A0x417159f01a72ec1c!2sGrowmore%20Global%20Visa!5e0!3m2!1sen!2sin!4v1773825960657!5m2!1sen!2sin",
     },
   ];
-  const url = "https://growmoreglobalvisa.com/contact-us";
+  const url = "https://growmoreglobalvisa.com/contact-us/";
        const ogImage = "https://growmoreglobalvisa.com/assets/img17-CIqssDit.png";
        return (
            <>

@@ -10,7 +10,7 @@ const Student = () => {
   const offerIcon = c3;
   const offerItems = [{ icon: offerIcon, title: "Visa Offer" }];
 
-  const url = "https://growmoreglobalvisa.com/services/student-visa";
+  const url = "https://growmoreglobalvisa.com/services/student-visa/";
     const ogImage = "https://growmoreglobalvisa.com/assets/q12.png";
     
     return (

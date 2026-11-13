@@ -27,7 +27,7 @@ const AboutUs = () => {
     },
   ];
   
-  const url = "https://growmoreglobalvisa.com/about-us";
+  const url = "https://growmoreglobalvisa.com/about-us/";
   const ogImage = "https://growmoreglobalvisa.com/assets/about-us-L3HA7v7S.png";
   
   return (

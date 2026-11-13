@@ -52,7 +52,7 @@ const destination = [
 ];
 
 const Migration = () => {
-    const url = "https://growmoreglobalvisa.com/services/migration-visa";
+    const url = "https://growmoreglobalvisa.com/services/migration-visa/";
       const ogImage = q2;
         
         return (

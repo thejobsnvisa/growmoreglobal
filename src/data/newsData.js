@@ -4,7 +4,7 @@ import news3 from "../assets/news3.png"
 import news4 from "../assets/news4.png"
 import news5 from "../assets/news5.jpg"
 import news6 from "../assets/news6.png"
-import news7 from "../assets/news6.png"
+import news7 from "../assets/news7.jpg"
 
 export const news = [
    {

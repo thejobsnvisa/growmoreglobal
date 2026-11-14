@@ -4,8 +4,18 @@ import news3 from "../assets/news3.png"
 import news4 from "../assets/news4.png"
 import news5 from "../assets/news5.jpg"
 import news6 from "../assets/news6.png"
+import news7 from "../assets/news6.png"
 
 export const news = [
+   {
+    id: -2,
+    slug: "australia-announces-mandatory-condition-8503-for-visitor-visas-from-28-november-2026",
+    title: "Australia Announces Mandatory Condition 8503 for Visitor Visas from 28 November 2026",
+    metaTitle:"Australia Announces Mandatory Condition 8503 for Visitor Visas",
+    metaDescription:"Australia has announced a new mandatory condition 8503 for visitor visas starting 28 November 2026. Learn about the implications for travelers.",
+    date: "Nov 14, 2026",
+    image: news7,
+  },
   {
     id: -1,
     slug: "uk-graduate-visa-update-2026-two-year-post-study-work-visa-to-continue-for-graduates-of-eligible-universities",

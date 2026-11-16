@@ -37,6 +37,7 @@ jobs:
         env:
           VITE_YOUTUBE_API_KEY: ${{ secrets.VITE_YOUTUBE_API_KEY }}
           VITE_YOUTUBE_CHANNEL_ID: ${{ secrets.VITE_YOUTUBE_CHANNEL_ID }}
+          VITE_NEWS_SHEET_URL: ${{ secrets.VITE_NEWS_SHEET_URL }}
         run: npm run build
 
       # Verify Generated HTML

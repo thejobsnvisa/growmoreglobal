@@ -279,16 +279,16 @@ const Ielts = () => {
                   </ul>
 
                   {/* Academic + General Reading Card */}
-                  <div className="mt-4 rounded-[24px] bg-slate-100 p-6 sm:p-8">
-                    <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
+                  <div className="mt-4 rounded-[24px] bg-slate-100 p-4 sm:p-6 lg:p-8">
+                    <div className="grid grid-cols-1 items-stretch gap-6 xl:grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)] xl:gap-8">
                       
                       {/* Academic Reading */}
                       <div className="flex flex-col justify-between">
                         <div>
-                          <p className="text-[18px] sm:text-[20px] font-semibold text-emerald-700">
+                          <p className="text-lg sm:text-xl font-semibold text-emerald-700">
                             For Academic Reading
                           </p>
-                          <ul className="mt-3 text-[16px] sm:text-[17px] text-cyan-600 space-y-3 list-disc ml-5">
+                          <ul className="mt-3 ml-5 list-disc space-y-3 break-words text-sm sm:text-base lg:text-[17px] text-cyan-600">
                             <li>Three long passages, each followed by tasks.</li>
                             <li>Topics are suitable for undergraduate or postgraduate study.</li>
                             <li>Texts may include diagrams, graphs, or illustrations.</li>
@@ -299,15 +299,15 @@ const Ielts = () => {
                       </div>
 
                       {/* Vertical Divider (Desktop only) */}
-                      <div className="hidden xl:block w-px bg-slate-300 mx-auto self-stretch" />
+                      <div className="hidden xl:block bg-slate-300 self-stretch" />
 
                       {/* General Training Reading */}
                       <div className="flex flex-col justify-between">
                         <div>
-                          <p className="text-[18px] sm:text-[20px] font-semibold text-emerald-700">
+                          <p className="text-lg sm:text-xl font-semibold text-emerald-700">
                             For General Training Reading
                           </p>
-                          <ul className="mt-3 text-[16px] sm:text-[17px] text-cyan-600 space-y-3 list-disc ml-5">
+                          <ul className="mt-3 ml-5 list-disc space-y-3 break-words text-sm sm:text-base lg:text-[17px] text-cyan-600">
                             <li>Five to six texts of different lengths, divided into 3 sections.</li>
                             <li>Section 1: Short everyday texts.</li>
                             <li>Section 2: Work-related, factual texts.</li>

@@ -46,7 +46,7 @@ const BlogStep = () => {
             {currentBlogs.map((article) => (
               <article
                 key={article.id}
-                className="
+               className="
                 group
                 w-full
                 max-w-[450px]

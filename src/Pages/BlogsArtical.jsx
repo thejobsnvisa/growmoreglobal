@@ -1,113 +1,75 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { blogs } from "../data/blogsData";
+import { useBlogsData } from "../hooks/useBlogsData";
 import CommentSection from "../Components/CommentSection";
-import { LuCalendarDays } from "react-icons/lu";
 import { Helmet } from "react-helmet-async";
+import { LuCalendarDays } from "react-icons/lu";
 
-const BlogsArtical = () => {
-  const { slug: routeSlug = "" } = useParams();
-  const [content, setContent] = useState("");
-
-  // React Router can include a trailing slash in the URL. Normalize the
-  // value before matching it with the metadata slug.
-  const slug = decodeURIComponent(routeSlug)
-    .replace(/^\/+|\/+$/g, "")
-    .trim();
-  const article = blogs.find(
-    (item) =>
-      item.slug
-        .replace(/^\/+|\/+$/g, "")
-        .trim()
-        .toLowerCase() === slug.toLowerCase(),
-  );
+const BlogsArticle = () => {
+  const { slug } = useParams();
+  const { blogs, loading } = useBlogsData();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [slug]);
 
-    if (article) {
-      let isMounted = true;
-
-      // Use BASE_URL so this also works when deployed below the domain root.
-      const baseUrl = import.meta.env.BASE_URL || "/";
-      const filePath = `${baseUrl.replace(/\/$/, "")}/content/blogs/${encodeURIComponent(article.slug)}.md`;
-
-      fetch(filePath)
-        .then((res) => {
-          if (!res.ok) throw new Error("File not found");
-          return res.text();
-        })
-        .then((text) => {
-          if (isMounted) {
-            // A hosting fallback page means the Markdown file was not found.
-            const trimmedText = text.trim().toLowerCase();
-            if (
-              trimmedText.startsWith("<!doctype html") ||
-              trimmedText.startsWith("<html")
-            ) {
-              throw new Error(`Markdown file not found at ${filePath}`);
-            }
-            setContent(text);
-          }
-        })
-        .catch((err) => {
-          console.error("Fetch error:", err);
-          setContent(
-            "# Content Not Found\nPlease check that the file exists in `public/content/blogs/`.",
-          );
-        });
-
-      return () => {
-        isMounted = false;
-      };
-    }
-  }, [slug, article]);
-
-  if (!article)
+  if (loading) {
     return (
-      <div className="py-20 text-center font-bold">Metadata not found.</div>
+      <div className="min-h-screen py-20 text-center text-slate-500 font-jakarta">
+        Loading article...
+      </div>
     );
+  }
+
+  const article = blogs.find((item) => item.slug === slug);
+
+  if (!article) {
+    return (
+      <div className="py-20 text-center font-bold">Article not found.</div>
+    );
+  }
 
   return (
-     <>
-          <Helmet prioritizeSeoTags>
-            <title>{article.metaTitle || article.title}</title>
-    
-            <meta
-              name="description"
-              content={article.metaDescription || article.title}
-            />
-    
-            <link
-              rel="canonical"
-              href={`https://growmoreglobalvisa.com/blogs/${slug}/`}
-              key="canonical"
-            />
-    
-            <meta property="og:type" content="article" />
-    
-            <meta
-              property="og:title"
-              content={article.metaTitle || article.title}
-            />
-    
-            <meta
-              property="og:description"
-              content={article.metaDescription || article.title}
-            />
-    
-            <meta property="og:image" content={article.image} />
-    
-            <meta
-              property="og:url"
-              content={`https://growmoreglobalvisa.com/blogs/${slug}/`}
-              key="og-url"
-            />
-    
-            <meta name="robots" content="index, follow" />
-          </Helmet>
+    <>
+      <Helmet prioritizeSeoTags>
+        <title>{article.metaTitle || article.title}</title>
+
+        <meta
+          name="description"
+          content={article.metaDescription || article.title}
+        />
+
+        <link
+          rel="canonical"
+          href={`https://growmoreglobalvisa.com/blogs/${slug}/`}
+          key="canonical"
+        />
+
+        <meta property="og:type" content="article" />
+
+        <meta
+          property="og:title"
+          content={article.metaTitle || article.title}
+        />
+
+        <meta
+          property="og:description"
+          content={article.metaDescription || article.title}
+        />
+
+        <meta property="og:image" content={article.image} />
+
+        <meta
+          property="og:url"
+          content={`https://growmoreglobalvisa.com/blogs/${slug}/`}
+          key="og-url"
+        />
+
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
       <div className="min-h-screen bg-white font-jakarta text-[#042325]">
         {/* HEADER */}
         <section className="bg-slate-100 min-h-[170px] w-full max-w-[1321px] mx-auto px-4 sm:px-6 py-10 sm:py-14 text-sky-800 rounded-2xl sm:rounded-[34px] mt-6">
@@ -124,54 +86,112 @@ const BlogsArtical = () => {
         </section>
 
         {/* CONTENT */}
-        <section className="py-8 sm:py-12 max-w-5xl mx-auto px-4 sm:px-6">
+        <section className="py-12 max-w-5xl mx-auto px-6">
           {/* IMAGE */}
-          <img
-            src={article.image}
-            alt={article.title}
-            className="w-full rounded-2xl sm:rounded-4xl mb-8 object-cover max-h-[640px]"
-          />
+          {article.image && (
+            <img
+              src={article.image}
+              alt={article.title}
+              className="w-full rounded-4xl mb-8 object-cover max-h-[640px]"
+            />
+          )}
 
           {/* MARKDOWN CONTENT */}
-          <div>
+          <article className="blog-article">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
+                h1: ({ ...props }) => (
+                  <h1
+                    className="text-[28px] md:text-[34px] font-bold text-[#042325] mt-8 mb-4 leading-tight"
+                    {...props}
+                  />
+                ),
+
                 h2: ({ ...props }) => (
                   <h2
-                    className="text-[#28535B] text-[22px] font-semibold mt-8 mb-3"
+                    className="text-[#28535B] text-[22px] md:text-[26px] font-semibold mt-10 mb-3 leading-tight"
+                    {...props}
+                  />
+                ),
+
+                h3: ({ ...props }) => (
+                  <h3
+                    className="text-[#1d3c42] text-[18px] md:text-[20px] font-semibold mt-8 mb-2"
                     {...props}
                   />
                 ),
 
                 p: ({ ...props }) => (
                   <p
-                    className="text-[16px] leading-[1.7] text-[#333] mb-4"
+                    className="text-[15px] md:text-[16px] leading-[1.8] text-[#333] mb-5"
                     {...props}
                   />
                 ),
 
                 ul: ({ ...props }) => (
-                  <ul className="pl-5 mb-4 list-disc" {...props} />
+                  <ul className="pl-6 mb-5 list-disc space-y-2 text-[#333]" {...props} />
+                ),
+
+                ol: ({ ...props }) => (
+                  <ol className="pl-6 mb-5 list-decimal space-y-2 text-[#333]" {...props} />
                 ),
 
                 li: ({ ...props }) => (
-                  <li className="mb-2 marker:text-[#333333]" {...props} />
+                  <li className="marker:text-[#333333] leading-[1.8]" {...props} />
                 ),
 
                 strong: ({ ...props }) => (
                   <strong className="font-semibold text-[#042325]" {...props} />
                 ),
 
+                em: ({ ...props }) => (
+                  <em className="italic text-[#1c3740]" {...props} />
+                ),
+
                 a: ({ ...props }) => (
                   <a
-                    className="text-[#2ED09B] underline"
+                    className="text-[#0ea5a4] underline decoration-2 underline-offset-2 hover:text-[#0c8c8c]"
                     target="_blank"
+                    rel="noopener noreferrer"
                     {...props}
                   />
                 ),
 
-                // ✅ TABLE SUPPORT STARTS HERE
+                blockquote: ({ ...props }) => (
+                  <blockquote
+                    className="border-l-4 border-[#2ED09B] bg-[#f3fbf8] px-4 py-3 my-6 italic text-[#24464f] rounded-r-lg"
+                    {...props}
+                  />
+                ),
+
+                hr: ({ ...props }) => (
+                  <hr className="my-8 border-t border-slate-200" {...props} />
+                ),
+
+                img: ({ ...props }) => (
+                  <img
+                    className="w-full my-8 rounded-2xl object-cover shadow-sm"
+                    {...props}
+                  />
+                ),
+
+                pre: ({ ...props }) => (
+                  <pre
+                    className="overflow-x-auto rounded-xl bg-slate-900 text-slate-100 p-4 my-6 text-sm leading-6"
+                    {...props}
+                  />
+                ),
+
+                code: ({ inline, ...props }) =>
+                  inline ? (
+                    <code
+                      className="rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em] text-[#0f172a]"
+                      {...props}
+                    />
+                  ) : (
+                    <code className="text-sm" {...props} />
+                  ),
 
                 table: ({ ...props }) => (
                   <div className="overflow-x-auto my-6 border border-gray-300 rounded-lg">
@@ -195,7 +215,7 @@ const BlogsArtical = () => {
 
                 td: ({ ...props }) => (
                   <td
-                    className="border border-gray-300 px-4 py-2 text-[#333]"
+                    className="border border-gray-300 px-4 py-2 text-[#333] align-top"
                     {...props}
                   />
                 ),
@@ -203,20 +223,19 @@ const BlogsArtical = () => {
                 tr: ({ ...props }) => (
                   <tr className="hover:bg-gray-50 transition" {...props} />
                 ),
-
-                // ✅ TABLE SUPPORT ENDS HERE
               }}
             >
-              {content}
+              {article.content}
             </ReactMarkdown>
-          </div>
+          </article>
+
           {/* CONTACT BAR */}
-          <div className="w-full bg-[#2ED09B] rounded-lg p-4 sm:p-5 shadow-sm my-8">
-            <div className="flex flex-col md:flex-row justify-start items-center gap-2 md:gap-4 pl-0 sm:pl-3 text-black font-semibold text-center text-[15px] sm:text-[17px]">
+          <div className="w-full bg-[#2ED09B] rounded-lg p-5 shadow-sm my-8">
+            <div className="flex flex-col md:flex-row justify-start items-center gap-2 md:gap-4 pl-3 text-black font-semibold text-center text-[15px] sm:text-[17px]">
               <div className="flex items-center">
                 <span>Email: </span>
                 <a
-                  href="mailto:info@growmore.one"
+                  href="mailto:study@growmore.one"
                   className="ml-1 text-blue-500 transition-colors"
                 >
                   study@growmore.one
@@ -228,8 +247,8 @@ const BlogsArtical = () => {
               <div className="flex items-center">
                 <span>WhatsApp: </span>
                 <a
-                  href="https://wa.me/61434202021"
-                  className="ml-1 text-blue-500 "
+                  href="https://wa.me/919081899669"
+                  className="ml-1 text-blue-500"
                 >
                   (+91) 9081899669
                 </a>
@@ -239,12 +258,13 @@ const BlogsArtical = () => {
 
               <div className="flex items-center">
                 <span>Phone: </span>
-                <a href="tel:+61387643334" className="ml-1 text-black ">
+                <a href="tel:+919081899668" className="ml-1 text-black">
                   (+91) 9081899668
                 </a>
               </div>
             </div>
           </div>
+
           <CommentSection />
         </section>
       </div>
@@ -252,4 +272,4 @@ const BlogsArtical = () => {
   );
 };
 
-export default BlogsArtical;
+export default BlogsArticle;

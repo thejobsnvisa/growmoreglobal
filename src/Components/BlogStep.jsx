@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { blogs } from "../data/blogsData";
 import { Link } from "react-router-dom";
-import { LuArrowLeft, LuCalendarDays } from "react-icons/lu";
-import { LuArrowRight } from "react-icons/lu";
+import { useBlogsData } from "../hooks/useBlogsData";
+import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
+
 const BlogStep = () => {
+  const { blogs, loading, error } = useBlogsData();
   const [currentPage, setCurrentPage] = useState(1);
 
   const blogsPerPage = 9;
@@ -13,152 +14,86 @@ const BlogStep = () => {
 
   const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
-  const totalPages = Math.ceil(blogs.length / blogsPerPage);
+  const totalPages = Math.max(1, Math.ceil(blogs.length / blogsPerPage));
 
   const goToPreviousPage = () => {
-    setCurrentPage((page) => Math.max(page - 1, 1));
+    setCurrentPage((page) => (page > 1 ? page - 1 : page));
   };
 
   const goToNextPage = () => {
-    setCurrentPage((page) => Math.min(page + 1, totalPages));
+    setCurrentPage((page) => (page < totalPages ? page + 1 : page));
   };
 
+  if (loading) {
+    return (
+      <section className="bg-white py-20 mb-40">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {[...Array(6)].map((_, idx) => (
+            <div
+              key={idx}
+              className="xl:h-[242px] h-[200px] w-full max-w-[450px] rounded-2xl bg-slate-100 animate-pulse"
+            />
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="py-20 text-center text-red-500 font-medium">{error}</div>
+    );
+  }
+
   return (
-    <section className="bg-white py-20 mb-40 lg:mb-[170px] md:mb-40 xl:mb-50 ">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
-        {/* Grid */}
-        <div className="mx-auto w-full">
-          {/* Articles */}
-          <div
-            className="
-            grid
-            w-full
-            grid-cols-1
-            justify-items-center
-            gap-[25px]
-            sm:grid-cols-2
-            sm:gap-[30px]
-            md:gap-[35px]
-            lg:grid-cols-3
-            lg:gap-[40px]
-          "
-          >
-            {currentBlogs.map((article) => (
-              <article
-                key={article.id}
-               className="
-                group
-                w-full
-                max-w-[450px]
-                overflow-hidden
-                rounded-[30px]
-                bg-[linear-gradient(69.28deg,_#F4FFF6_4.06%,_#E8FAFF_92.34%)]
-                shadow-[0px_4px_14px_rgba(0,0,0,0.12)]
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:shadow-[0px_8px_22px_rgba(0,0,0,0.15)]
-              "
-              >
-                {/* Image */}
-                <div
-                  className="
-                  relative
-                  mx-[7px]
-                  mt-[7px]
-                  overflow-hidden
-                  rounded-[20px]
-                "
+    <section className="bg-white py-20 mb-40 lg:mb-[155px] md:mb-40 xl:mb-50 ">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        {/* BLOG GRID */}
+        <div className="grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {currentBlogs.map((blog) => (
+            <div
+              key={blog.id || blog.slug}
+              className="group relative xl:h-[242px] h-[200px] w-full max-w-[450px] overflow-hidden rounded-[30px] bg-[linear-gradient(69.28deg,_#F4FFF6_4.06%,_#E8FAFF_92.34%)] shadow-[0px_4px_14px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_8px_22px_rgba(0,0,0,0.15)]"
+            >
+              <img
+                src={blog.image}
+                alt={blog.title}
+                className="absolute inset-0 aspect-[24/10] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 mt-[-15px] bottom-0 flex items-end justify-between gap-3 h-[74px] bg-[#FFFFFF33] px-4 pb-3 pt-12 backdrop-blur-[12px]">
+                <h3 className="max-w-[280px] text-sm font-semibold leading-5 text-slate-800">
+                  {blog.title}
+                </h3>
+                <Link
+                  to={`/blogs/${blog.slug}/`}
+                  aria-label={`Read ${blog.title}`}
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 font-bold transition-transform duration-300 group-hover:translate-x-1"
                 >
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="
-                    h-[180px]
-                    rounded-[40px]
-                    w-full
-                    object-contain
-                    transition-transform
-                    duration-300
-                    group-hover:scale-[1.03]
-                  "
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="flex min-h-[190px] flex-col px-[12px] pb-[15px] pt-[10px]">
-                  {/* Title */}
-                  <h3
-                    className="
-                    mt-[10px]
-                    line-clamp-2
-                    text-[17px]
-                    font-bold
-                    leading-[1.35]
-                    text-[#078C67]
-                    sm:text-[18px]
-                  "
-                  >
-                    {article.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p
-                    className="
-                    mt-[10px]
-                    line-clamp-2
-                    text-[13px]
-                    font-normal
-                    leading-[1.45]
-                    text-[#3295A5]
-                    sm:text-[14px]
-                  "
-                  >
-                    {article.description}
-                  </p>
-
-                  {/* Push button to bottom */}
-                  <div className="mt-auto">
-                    <p className="text-gray-500 text-sm mt-6 flex items-center gap-2 ml-1">
-                      <LuCalendarDays className="h-4 w-4 text-slate-400 " />{" "}
-                      {article.date}
-                    </p>
-                    <Link to={`/blogs/${article.slug}`}>
-                      <button className="group text-[#078C67] mt-[-20px] font-semibold flex items-center gap-2 justify-end w-full transition-all duration-300">
-                        <span className="relative">
-                          READ MORE
-                          <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#078C67] transition-all duration-300 group-hover:w-full"></span>
-                        </span>
-                        <span className="transition-transform duration-300 group-hover:translate-x-1">
-                          <LuArrowRight  className="h-6 w-6"/>
-                        </span>
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                  <LuArrowRight className="h-6 w-6" />
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* ✅ PAGINATION */}
-        <div className="relative z-20 isolate mt-8 flex w-full items-center justify-center gap-3">
+        {/* PAGINATION */}
+        <div className="mt-12 flex items-center justify-center gap-3">
           {/* PREV */}
           <button
             type="button"
             onClick={goToPreviousPage}
             disabled={currentPage === 1}
             aria-label="Previous page"
-            className={`relative z-20 flex h-7 w-7 items-center justify-center rounded-full bg-sky-100 text-cyan-700 font-bold cursor-pointer ${
+            className={`flex h-9 w-9 items-center justify-center rounded-full bg-sky-100 font-bold ${
               currentPage === 1
-                ? "text-blue-400 cursor-pointer hover:text-green-500"
-                : "text-black hover:text-green-500 cursor-pointer"
+                ? "text-blue-400 cursor-not-allowed"
+                : "text-cyan-700 hover:text-green-500 cursor-pointer"
             }`}
           >
-           <LuArrowLeft  className="h-6 w-6"/>
+            <LuArrowLeft className="h-6 w-6" />
           </button>
 
-          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-400">
+          <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-400 text-[18px]">
             {currentPage} / {totalPages}
           </span>
 
@@ -167,9 +102,13 @@ const BlogStep = () => {
             onClick={goToNextPage}
             disabled={currentPage === totalPages}
             aria-label="Next page"
-            className="relative z-20 flex h-7 w-7 items-center justify-center rounded-full bg-sky-100 text-cyan-700 font-bold cursor-pointer"
+            className={`flex h-9 w-9 items-center justify-center rounded-full bg-sky-100 font-bold ${
+              currentPage === totalPages
+                ? "text-blue-400 cursor-not-allowed"
+                : "text-cyan-700 hover:text-green-500 cursor-pointer"
+            }`}
           >
-            <LuArrowRight  className="h-6 w-6"/>
+            <LuArrowRight className="h-6 w-6" />
           </button>
         </div>
       </div>
